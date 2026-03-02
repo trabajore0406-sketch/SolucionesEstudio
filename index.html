@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SolucionesEstudio | Apoyo Académico Integral</title>
-  <link rel="icon" href="https://i.imgur.com/ojpfeGU.jpeg" type="image/x-icon" />
+  <link rel="icon" href="https://raw.githubusercontent.com/trabajore0406-sketch/sketch/main/image_1.png" type="image/x-icon" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
     * {
@@ -14,12 +14,13 @@
     }
     body {
       font-family: 'Inter', sans-serif;
-      background-color: #f9fafb;
+      background-color: #fcf9f9; /* Un blanco muy suave tirando a rosa para combinar */
       color: #1e293b;
       line-height: 1.6;
     }
     header {
-      background: linear-gradient(135deg, #0f172a, #3b82f6);
+      /* CAMBIO DE COLOR: Gradiente en tonos vino y burdeos */
+      background: linear-gradient(135deg, #5c0a24, #941138); 
       color: white;
       text-align: center;
       padding: 4rem 1rem 2rem;
@@ -27,6 +28,8 @@
     }
     header img {
       width: 120px;
+      height: 120px; /* Asegura que sea un círculo perfecto */
+      object-fit: cover; /* Recorta la imagen para que encaje bien en el círculo */
       border-radius: 50%;
       border: 4px solid white;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
@@ -52,7 +55,8 @@
     }
     nav a {
       text-decoration: none;
-      color: #1e3a8a;
+      /* CAMBIO DE COLOR: Texto del menú en color vino oscuro */
+      color: #5c0a24;
       font-weight: 600;
     }
     section {
@@ -61,7 +65,8 @@
       margin: auto;
     }
     h2 {
-      color: #1e40af;
+      /* CAMBIO DE COLOR: Títulos de sección en color vino */
+      color: #7d0c2e;
       font-size: 2rem;
       margin-bottom: 1rem;
     }
@@ -88,7 +93,8 @@
     }
     form button {
       margin-top: 15px;
-      background-color: #1e3a8a;
+      /* CAMBIO DE COLOR: Botón en color vino */
+      background-color: #7d0c2e;
       color: white;
       border: none;
       padding: 14px 24px;
@@ -96,6 +102,9 @@
       border-radius: 8px;
       cursor: pointer;
       font-weight: bold;
+    }
+    form button:hover {
+        background-color: #5c0a24; /* Color más oscuro al pasar el mouse */
     }
     .contact-links a {
       display: inline-block;
@@ -111,7 +120,8 @@
     a.whatsapp { background-color: #25d366; }
     a.facebook { background-color: #1877f2; }
     footer {
-      background-color: #1e293b;
+      /* CAMBIO DE COLOR: Fondo del pie de página en burdeos muy oscuro */
+      background-color: #3b0516;
       color: white;
       text-align: center;
       padding: 2rem;
@@ -119,12 +129,32 @@
     }
     table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
     th, td { padding: 12px; border: 1px solid #ddd; text-align: left; }
-    th { background-color: #1e40af; color: white; }
+    th {
+        /* CAMBIO DE COLOR: Encabezados de tabla en color vino */
+        background-color: #7d0c2e;
+        color: white;
+    }
+    .promo-banner {
+        margin-bottom: 1rem;
+        /* CAMBIO DE COLOR: Fondo del banner en un tono beige/rosa suave */
+        background-color: #f8e8eb;
+        /* CAMBIO DE COLOR: Texto en color burdeos */
+        color: #7d0c2e;
+        padding: 1rem;
+        border-radius: 10px;
+        font-weight: bold;
+        text-align: center;
+        font-size: 1.1rem;
+        border: 1px solid #e8c6cc;
+    }
+    .highlight {
+        color: #b91c1c; /* Mantenemos este rojo para destacar los descuentos */
+    }
   </style>
 </head>
 <body>
   <header>
-    <img src="https://i.imgur.com/ojpfeGU.jpeg" alt="Logo SolucionesEstudio" />
+    <img src="https://raw.githubusercontent.com/trabajore0406-sketch/sketch/main/image_1.png" alt="Logo Cacomixtle SolucionesEstudio" />
     <h1>SolucionesEstudio</h1>
     <p>Expertos en apoyo académico multidisciplinario. Entrega + explicación + confianza total.</p>
   </header>
@@ -182,8 +212,8 @@
   </section>
 
   <section id="precios">
-    <div style="margin-bottom: 1rem; background-color: #fef08a; color: #92400e; padding: 1rem; border-radius: 10px; font-weight: bold; text-align: center; font-size: 1.1rem;">
-      🎁 Promo Especial: De 3 a 10 cuartillas <span style="color: #b91c1c;">30% DESCUENTO</span> | 10+ cuartillas <span style="color: #b91c1c;">50% DESCUENTO</span>
+    <div class="promo-banner">
+      🎁 Promo Especial: De 3 a 10 cuartillas <span class="highlight">30% DESCUENTO</span> | 10+ cuartillas <span class="highlight">50% DESCUENTO</span>
     </div>
 
     <div class="card">
@@ -204,8 +234,7 @@
             <td>Resúmenes simples, cuestionarios directos, mapas conceptuales o definiciones de fuentes proporcionadas.</td>
             <td>Entregas rápidas de cumplimiento básico sin análisis profundo.</td>
           </tr>
-          <tr style="background-color: #f3f4f6;">
-            <td>📘 Media</td>
+          <tr style="background-color: #fdf2f4;"> <td>📘 Media</td>
             <td>$20 – $40</td>
             <td>Ensayos formales, cuadros comparativos desde cero, reportes de lectura y análisis de temas generales.</td>
             <td>Trabajos que requieren estructura profesional y uso de diversas fuentes.</td>
