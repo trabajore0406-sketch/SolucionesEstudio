@@ -7,6 +7,7 @@
   <link rel="icon" href="https://raw.githubusercontent.com/trabajore0406-sketch/sketch/main/image_1.png" type="image/x-icon" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
+    /* --- Estilos Globales y de Contraste --- */
     * {
       margin: 0;
       padding: 0;
@@ -14,13 +15,17 @@
     }
     body {
       font-family: 'Inter', sans-serif;
-      background-color: #fdfafb;
-      color: #1e293b;
+      /* FONDO GRIS OSCURO */
+      background-color: #121212; 
+      /* LETRAS BLANCAS */
+      color: #ffffff; 
       line-height: 1.6;
     }
+
+    /* --- Encabezado (Header) --- */
     header {
-      /* Fondo color vino intenso */
-      background: linear-gradient(135deg, #4a0404, #800020);
+      /* Gradiente en tonos vino, pero más oscuros para combinar */
+      background: linear-gradient(135deg, #2d0202, #5c0a24); 
       color: white;
       text-align: center;
       padding: 4rem 1rem 2rem;
@@ -31,19 +36,28 @@
       height: 140px;
       border-radius: 50%;
       border: 4px solid white;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
       object-fit: cover;
     }
     header h1 {
       font-size: 2.8rem;
       margin-top: 1rem;
+      color: #ffffff;
     }
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      color: #ffffff;
+    }
+
+    /* --- Navegación (Nav) --- */
     nav {
       position: sticky;
       top: 0;
-      background-color: white;
+      /* Fondo oscuro para el menú */
+      background-color: #1f1f1f; 
       padding: 0.8rem 2rem;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
       display: flex;
       justify-content: center;
       gap: 2rem;
@@ -51,29 +65,109 @@
     }
     nav a {
       text-decoration: none;
-      color: #800020;
-      font-weight: 700;
+      /* Texto del menú en blanco */
+      color: #ffffff; 
+      font-weight: 600;
+      transition: color 0.3s ease;
     }
+    nav a:hover {
+      /* Resaltado en vino al pasar el mouse */
+      color: #ff4d79; 
+    }
+
+    /* --- Secciones y Tarjetas (Cards) --- */
     section {
       padding: 3rem 1.5rem;
       max-width: 1000px;
       margin: auto;
     }
     h2 {
-      color: #800020;
+      /* Títulos en color vino para contraste */
+      color: #ff4d79; 
       font-size: 2rem;
       margin-bottom: 1rem;
     }
     .card {
-      background-color: white;
+      /* Fondo gris ligeramente más claro para las tarjetas */
+      background-color: #1f1f1f; 
       padding: 2rem;
       border-radius: 12px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
       margin-bottom: 2rem;
+      /* Asegurar texto blanco dentro de tarjetas */
+      color: #ffffff; 
+    }
+    .card p {
+      margin-bottom: 1rem;
+    }
+    .card strong {
+      color: #ff4d79; /* Resaltar texto importante en vino */
+    }
+
+    /* --- Tabla de Precios --- */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      /* Fondo oscuro para la tabla */
+      background-color: #1a1a1a; 
+    }
+    th, td {
+      padding: 12px;
+      /* Bordes gris oscuro */
+      border: 1px solid #333333; 
+      text-align: left;
+      /* Texto blanco */
+      color: #ffffff; 
+    }
+    th {
+      /* Encabezados en vino oscuro */
+      background-color: #5c0a24; 
+    }
+    tr:nth-child(even) {
+      /* Filas alternas ligeramente más oscuras */
+      background-color: #1f1f1f; 
+    }
+
+    /* --- Banner de Promoción --- */
+    .promo-banner {
+      margin-bottom: 2rem;
+      /* Fondo vino oscuro */
+      background-color: #3b0516; 
+      /* Texto blanco */
+      color: #ffffff; 
+      padding: 1rem;
+      border-radius: 10px;
+      font-weight: bold;
+      text-align: center;
+      font-size: 1.1rem;
+      border: 1px solid #5c0a24;
+    }
+
+    /* --- Formularios y Botones --- */
+    form label {
+      display: block;
+      margin-top: 1rem;
+      color: #ffffff;
+    }
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 5px;
+      /* Fondo y borde oscuros para inputs */
+      background-color: #1a1a1a; 
+      border: 1px solid #333333; 
+      border-radius: 8px;
+      font-size: 1rem;
+      font-family: inherit;
+      /* Texto blanco al escribir */
+      color: #ffffff; 
     }
     form button {
       margin-top: 15px;
-      background-color: #800020;
+      /* Botón en vino */
+      background-color: #800020; 
       color: white;
       border: none;
       padding: 14px 24px;
@@ -81,36 +175,36 @@
       border-radius: 8px;
       cursor: pointer;
       font-weight: bold;
+      transition: background-color 0.3s ease;
     }
-    table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
-    th { background-color: #800020; color: white; padding: 12px; text-align: left; }
-    td { padding: 12px; border: 1px solid #ddd; }
-    .promo-banner {
-      background-color: #fbe7eb;
-      color: #800020;
-      padding: 1rem;
-      border-radius: 10px;
-      font-weight: bold;
-      text-align: center;
-      margin-bottom: 2rem;
-      border: 1px solid #f5c2cb;
+    form button:hover {
+      /* Vino más oscuro al pasar el mouse */
+      background-color: #5c0a24; 
     }
+
+    /* --- Enlaces de Contacto --- */
     .contact-links a {
       display: inline-block;
       margin-top: 15px;
+      margin-right: 10px;
       padding: 12px 20px;
       border-radius: 30px;
       text-decoration: none;
+      font-size: 1rem;
       font-weight: bold;
       color: white;
     }
     a.whatsapp { background-color: #25d366; }
     a.facebook { background-color: #1877f2; }
+
+    /* --- Pie de Página (Footer) --- */
     footer {
-      background-color: #2d0202;
+      /* Fondo negro profundo */
+      background-color: #000000; 
       color: white;
       text-align: center;
       padding: 2rem;
+      font-size: 0.9rem;
     }
   </style>
 </head>
@@ -137,6 +231,16 @@
     </div>
   </section>
 
+  <section id="beneficios">
+    <div class="card">
+      <h2>Beneficios</h2>
+      <p><strong>Personalización:</strong> Cada trabajo es único y sigue tus instrucciones.</p>
+      <p><strong>Calidad:</strong> Fuentes confiables y redacción clara.</p>
+      <p><strong>Puntualidad:</strong> Respetamos tus fechas de entrega.</p>
+      <p><strong>Confidencialidad:</strong> Tu información está segura con nosotros.</p>
+    </div>
+  </section>
+
   <section id="precios">
     <div class="promo-banner">
       🎁 Promo Especial: 3 a 10 cuartillas (30% OFF) | +10 cuartillas (50% OFF)
@@ -153,7 +257,7 @@
         </thead>
         <tbody>
           <tr><td>🍃 Básico</td><td>$10 – $20</td><td>Resúmenes, cuestionarios, mapas.</td></tr>
-          <tr style="background-color: #fff5f6;"><td>📘 Medio</td><td>$20 – $40</td><td>Ensayos, cuadros comparativos, reportes.</td></tr>
+          <tr><td>📘 Medio</td><td>$20 – $40</td><td>Ensayos, cuadros comparativos, reportes.</td></tr>
           <tr><td>🧠 Avanzado</td><td>$40 – $70</td><td>Investigaciones profundas, casos técnicos.</td></tr>
         </tbody>
       </table>
@@ -164,7 +268,9 @@
     <div class="card">
       <h2>📬 Solicita tu trabajo</h2>
       <form onsubmit="enviarMensaje(); return false;">
-        <textarea id="mensaje" rows="4" placeholder="¿Qué tarea necesitas?"></textarea>
+        <label for="mensaje">¿Qué tarea necesitas?</label>
+        <textarea id="mensaje" rows="4" placeholder="Ejemplo: Resumen de 3 cuartillas sobre la Revolución Mexicana..."></textarea>
+        <label for="contacto">¿Cómo te contactamos?</label>
         <input id="contacto" type="text" placeholder="Tu WhatsApp o Correo" />
         <button type="submit">Enviar por WhatsApp</button>
       </form>
@@ -185,7 +291,11 @@
     function enviarMensaje() {
       const msj = document.getElementById('mensaje').value;
       const cont = document.getElementById('contacto').value;
-      const texto = `Hola SolucionesEstudio, necesito ayuda: ${msj}. Mi contacto es: ${cont}`;
+      if (!msj || !cont) {
+        alert("Por favor, llena ambos campos.");
+        return;
+      }
+      const texto = `Hola SolucionesEstudio, necesito ayuda con una tarea:%0A%0A${msj}%0A%0AMi contacto es: ${cont}`;
       window.open("https://wa.me/5215592005048?text=" + encodeURIComponent(texto), "_blank");
     }
   </script>
