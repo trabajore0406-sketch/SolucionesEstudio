@@ -3,25 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
   <title>SolucionesEstudio | Apoyo Académico Integral</title>
-  <link rel="icon" href="https://raw.githubusercontent.com/trabajore0406-sketch/sketch/main/image_1.png" type="image/x-icon" />
+  <meta name="description" content="Apoyo académico profesional en todas las áreas. Tareas, ensayos y proyectos con explicación incluida.">
+  <meta property="og:title" content="SolucionesEstudio | Apoyo Académico">
+  <meta property="og:description" content="¿Necesitas ayuda con tus tareas? Calidad, puntualidad y precios accesibles.">
+  <meta property="og:image" content="image_1.png">
+
+  <link rel="icon" href="image_1.png" type="image/x-icon" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
+    html {
+      scroll-behavior: smooth;
+    }
     body {
       font-family: 'Inter', sans-serif;
-      /* FONDO GRIS OSCURO */
       background-color: #121212; 
-      /* LETRAS BLANCAS */
       color: #ffffff; 
       line-height: 1.6;
     }
     header {
-      /* GRADIENTE VINO OSCURO */
       background: linear-gradient(135deg, #2d0202, #5c0a24); 
       color: white;
       text-align: center;
@@ -37,28 +44,33 @@
       object-fit: cover;
     }
     header h1 {
-      font-size: 2.8rem;
+      font-size: 2.5rem;
       margin-top: 1rem;
     }
     header p {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       opacity: 0.95;
+      max-width: 600px;
+      margin: 0 auto;
     }
     nav {
       position: sticky;
       top: 0;
       background-color: #1f1f1f;
-      padding: 0.8rem 2rem;
+      padding: 0.8rem 1rem;
       box-shadow: 0 2px 10px rgba(0,0,0,0.5);
       display: flex;
       justify-content: center;
-      gap: 2rem;
+      gap: 1.5rem;
       z-index: 1000;
+      flex-wrap: wrap;
     }
     nav a {
       text-decoration: none;
       color: #ffffff;
       font-weight: 600;
+      font-size: 0.9rem;
+      transition: color 0.3s;
     }
     nav a:hover {
       color: #ff4d79;
@@ -70,8 +82,8 @@
     }
     h2 {
       color: #ff4d79;
-      font-size: 2rem;
-      margin-bottom: 1rem;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
     }
     .card {
       background-color: #1f1f1f;
@@ -83,235 +95,207 @@
     }
     .card strong {
       color: #ff4d79;
+      display: block;
+      margin-top: 1rem;
     }
-    form input,
-    form textarea {
+    
+    /* Tablas responsivas */
+    .table-container {
+      overflow-x: auto;
+      margin-top: 1rem;
+    }
+    table { 
+      width: 100%; 
+      border-collapse: collapse; 
+      background-color: #1a1a1a;
+      min-width: 500px;
+    }
+    th, td { 
+      padding: 12px; 
+      border: 1px solid #333; 
+      text-align: left; 
+      color: white; 
+    }
+    th { background-color: #5c0a24; }
+    
+    .promo-banner {
+      margin-top: 1rem;
+      background-color: #3b0516;
+      color: #ffffff;
+      padding: 1.2rem;
+      border-radius: 10px;
+      font-weight: bold;
+      text-align: center;
+      border: 1px solid #5c0a24;
+    }
+
+    form label { display: block; margin-top: 1rem; font-weight: 600; }
+    form input, form textarea {
       width: 100%;
       padding: 12px;
-      margin-top: 10px;
+      margin-top: 8px;
       background-color: #121212;
       border: 1px solid #444;
       border-radius: 8px;
       font-size: 1rem;
-      font-family: inherit;
       color: white;
     }
     form button {
-      margin-top: 15px;
+      width: 100%;
+      margin-top: 20px;
       background-color: #800020;
       color: white;
       border: none;
-      padding: 14px 24px;
-      font-size: 1rem;
+      padding: 16px;
+      font-size: 1.1rem;
       border-radius: 8px;
       cursor: pointer;
       font-weight: bold;
+      transition: background 0.3s;
+    }
+    form button:hover { background-color: #a00028; }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 20px;
     }
     .contact-links a {
-      display: inline-block;
-      margin-top: 15px;
-      margin-right: 10px;
-      padding: 12px 20px;
+      padding: 12px 25px;
       border-radius: 30px;
       text-decoration: none;
-      font-size: 1rem;
       font-weight: bold;
       color: white;
+      transition: transform 0.2s;
     }
+    .contact-links a:hover { transform: scale(1.05); }
     a.whatsapp { background-color: #25d366; }
     a.facebook { background-color: #1877f2; }
-    
-    table { width: 100%; border-collapse: collapse; margin-top: 1rem; background-color: #1a1a1a; }
-    th, td { padding: 12px; border: 1px solid #333; text-align: left; color: white; }
-    th { background-color: #5c0a24; }
-    
-    .promo-banner {
-      margin-top: 2rem;
-      background-color: #3b0516;
-      color: #ffffff;
-      padding: 1rem;
-      border-radius: 10px;
-      font-weight: bold;
-      text-align: center;
-      font-size: 1.1rem;
-      border: 1px solid #5c0a24;
-    }
+
     footer {
       background-color: #000000;
-      color: white;
+      color: #777;
       text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
+      padding: 2.5rem;
+      font-size: 0.85rem;
     }
   </style>
 </head>
 <body>
+
   <header>
-    <img src="https://raw.githubusercontent.com/trabajore0406-sketch/sketch/main/image_1.png" alt="Logo SolucionesEstudio" />
+    <img src="image_1.png" alt="Logo SolucionesEstudio" />
     <h1>SolucionesEstudio</h1>
-    <p>Apoyo académico profesional en todas las áreas. Entrega + explicación + confianza total.</p>
+    <p>Apoyo académico profesional. Entrega puntual, explicación detallada y confianza total en cada proyecto.</p>
   </header>
 
   <nav>
     <a href="#servicios">Servicios</a>
     <a href="#beneficios">Beneficios</a>
-    <a href="#porqueelegirnos">¿Por qué nosotros?</a>
     <a href="#precios">Precios</a>
     <a href="#contacto">Contacto</a>
   </nav>
 
   <section id="servicios">
     <div class="card">
-      <h2>¿Qué ofrecemos?</h2>
-      <p><strong>📚 Tareas, ensayos, resúmenes y cuadros comparativos hechos a tu medida</strong></p>
-      <p>Realizamos todo tipo de trabajos académicos de cualquier materia, desde tareas sencillas hasta ensayos argumentativos y resúmenes estructurados. También elaboramos cuadros comparativos claros y bien organizados que te permiten visualizar diferencias y similitudes de manera eficiente. Cada entrega se adapta a tus requisitos específicos.</p>
-
-      <p><strong>📝 Redacción de proyectos, investigaciones y documentos académicos</strong></p>
-      <p>Elaboramos documentos con fines didácticos, protocolos, reportes y proyectos finales. Estos materiales están diseñados para ayudarte a comprender cómo se estructura un trabajo profesional en tu área, siempre con un enfoque formativo.</p>
-
-      <p><strong>🎤 Asesoría personalizada para exposiciones y proyectos</strong></p>
-      <p>¿Tienes que exponer o presentar un proyecto? Te brindamos apoyo completo para que lo hagas con seguridad y claridad. Te ayudamos a estructurar el contenido y reforzar tus argumentos para que presentes con confianza.</p>
-
-      <p><strong>💡 Material acompañado de explicaciones para que realmente aprendas</strong></p>
-      <p>Cada trabajo se entrega con una explicación complementaria. No solo te damos el resultado, también te enseñamos el porqué, para que avances en tu formación. Nuestro objetivo es que apruebes y comprendas los temas.</p>
-
-      <p><strong>📖 Citas en formato APA y presentación profesional</strong></p>
-      <p>Tu trabajo incluirá las referencias correctamente citadas en estilo APA (u otros requeridos). Cuidamos todos los detalles de formato: ortografía, redacción, estructura y presentación.</p>
+      <h2>📚 ¿Qué ofrecemos?</h2>
+      <p><strong>Tareas y Ensayos</strong> Realizamos trabajos a medida, desde resúmenes hasta ensayos argumentativos estructurados.</p>
+      <p><strong>Proyectos de Investigación</strong> Elaboramos protocolos, reportes y proyectos finales con enfoque didáctico.</p>
+      <p><strong>Asesoría para Exposiciones</strong> Te ayudamos a estructurar el contenido para que presentes con total seguridad.</p>
+      <p><strong>Formato APA Profesional</strong> Cuidamos la ortografía, redacción y las citas bibliográficas correctamente aplicadas.</p>
     </div>
   </section>
 
   <section id="beneficios">
     <div class="card">
-      <h2>Beneficios</h2>
-      <p><strong>Personalización integral:</strong> Cada tarea es elaborada según tus requerimientos específicos, asegurando un trabajo único.</p>
-      <p><strong>Calidad académica garantizada:</strong> Documentos desarrollados con rigor, fundamentados, redactados con claridad y coherencia.</p>
-      <p><strong>Aprendizaje efectivo:</strong> Proporcionamos explicaciones y apoyo adicional para que comprendas y aproveches el contenido.</p>
-      <p><strong>Flexibilidad en revisiones:</strong> Atendemos cualquier ajuste posterior a la entrega para que tu trabajo cumpla con todos los criterios.</p>
-      <p><strong>Confidencialidad absoluta:</strong> Tu información personal y académica se maneja con la máxima discreción y profesionalismo.</p>
-      <p><strong>Entrega puntual:</strong> Respetamos estrictamente los tiempos acordados para que dispongas de tu material cuando lo necesites.</p>
-    </div>
-  </section>
-
-  <section id="porqueelegirnos">
-    <div class="card">
-      <h2>¿Por qué elegirnos?</h2>
-      <p><strong>💼 Expertos en diversas áreas académicas:</strong> Contamos con un equipo especializado en múltiples ramas, garantizando calidad y rigor en cualquier tema.</p>
-      <p><strong>💰 Precios accesibles desde $20 pesos:</strong> Tarifas competitivas diseñadas para estudiantes, ajustándose a tu presupuesto sin sacrificar la calidad.</p>
-      <p><strong>⏱️ Entregas rápidas y urgentes:</strong> Ofrecemos la opción de entregas el mismo día para cuando los tiempos apremian, manteniendo la excelencia.</p>
-      <p><strong>🧠 Explicaciones personalizadas:</strong> Te ayudamos a comprender los conceptos involucrados para fortalecer tus conocimientos y confianza.</p>
-      <p><strong>📱 Atención vía WhatsApp:</strong> Comunicación directa y rápida para resolver dudas y acompañarte durante todo el proceso.</p>
-      <p><strong>🔍 Confianza comprobada:</strong> Cientos de estudiantes confían en nosotros por nuestra responsabilidad y resultados.</p>
+      <h2>✨ Beneficios</h2>
+      <ul>
+        <li>✅ <strong>Personalización:</strong> Según tus requerimientos exactos.</li>
+        <li>✅ <strong>Aprendizaje:</strong> Incluimos explicación para que entiendas el tema.</li>
+        <li>✅ <strong>Confidencialidad:</strong> Manejo discreto de tu información.</li>
+        <li>✅ <strong>Puntualidad:</strong> Respetamos estrictamente la fecha de entrega.</li>
+      </ul>
     </div>
   </section>
 
   <section id="precios">
+    <h2>💰 Planes y Precios</h2>
     <div class="promo-banner">
-      En la compra de 3 a 10 cuartillas, obtienes un <span style="color: #ff4d79;">30% de descuento</span> en el total.
+      🎁 De 3 a 10 cuartillas: <span style="color: #ff4d79;">30% de DESCUENTO</span>
     </div>
-    <div class="promo-banner" style="margin-top: 1rem;">
-      En la compra de 10 cuartillas o más, obtienes un <span style="color: #ff4d79;">50% de descuento</span> en el total.
+    <div class="promo-banner">
+      🔥 +10 cuartillas: <span style="color: #ff4d79;">50% de DESCUENTO</span>
     </div>
   
     <div class="card">
-      <h2>📊 Tabla de precios por cuartilla</h2>
-      <p>📍 Los precios se calculan según el tiempo, análisis y redacción técnica requerida.</p>
-
-      <table>
-        <thead>
-          <tr>
-            <th>Complejidad</th>
-            <th>Precio</th>
-            <th>¿Qué incluye?</th>
-            <th>¿Cuándo aplica?</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>🍃 Fácil</td>
-            <td>$10 – $20</td>
-            <td>Resúmenes simples, cuestionarios directos, definiciones y mapas básicos.</td>
-            <td>Cumplimiento simple con información ya proporcionada.</td>
-          </tr>
-          <tr>
-            <td>📘 Media</td>
-            <td>$20 – $40</td>
-            <td>Ensayos formales, cuadros comparativos desde cero y redacción estructurada.</td>
-            <td>Requiere análisis e interpretación de conceptos académicos.</td>
-          </tr>
-          <tr>
-            <td>🧠 Difícil</td>
-            <td>$40 – $70</td>
-            <td>Investigaciones profundas, casos técnicos complejos y redacción especializada.</td>
-            <td>Análisis alto, técnico y argumentativo de nivel profesional.</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <h2 style="margin-top: 2rem;">💡 Factores que influyen en el precio</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>🛠️ Factor</th>
-            <th>📌 Influencia</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>⏰ Tiempo de elaboración</td>
-            <td>A mayor urgencia y personalización, mayor es el análisis requerido.</td>
-          </tr>
-          <tr>
-            <td>📚 Investigación</td>
-            <td>Búsqueda de fuentes externas, autores o datos específicos.</td>
-          </tr>
-          <tr>
-            <td>🧠 Nivel de conocimiento</td>
-            <td>Aplicación de teorías o argumentos complejos.</td>
-          </tr>
-          <tr>
-            <td>🧾 Formato y estructura</td>
-            <td>Citas APA, índices, bibliografía y formatos especiales.</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Complejidad</th>
+              <th>Precio (Cuartilla)</th>
+              <th>Ejemplos</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>🍃 Fácil</td>
+              <td>$10 – $20</td>
+              <td>Resúmenes, cuestionarios, mapas básicos.</td>
+            </tr>
+            <tr>
+              <td>📘 Media</td>
+              <td>$20 – $40</td>
+              <td>Ensayos formales, cuadros comparativos.</td>
+            </tr>
+            <tr>
+              <td>🧠 Difícil</td>
+              <td>$40 – $70</td>
+              <td>Investigaciones profundas, casos técnicos.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </section>
 
   <section id="contacto">
     <div class="card">
-      <h2>📬 Buzón de contacto</h2>
+      <h2>📬 Cotiza tu tarea</h2>
       <form onsubmit="enviarMensaje(); return false;">
-        <label for="mensaje">¿Qué tarea necesitas?</label>
-        <textarea id="mensaje" rows="5" placeholder="Ejemplo: Ensayo de 3 cuartillas sobre comunicación organizacional..."></textarea>
-        <label for="contacto">¿Dónde podemos contactarte?</label>
-        <input id="contacto" type="text" placeholder="Ejemplo: WhatsApp o Correo electrónico" />
-        <button type="submit">Enviar mensaje por WhatsApp</button>
+        <label>¿Qué tarea necesitas?</label>
+        <textarea id="mensaje" rows="4" placeholder="Ej: Ensayo de 5 páginas sobre Derecho Civil..." required></textarea>
+        
+        <label>Tu contacto (WhatsApp o Correo)</label>
+        <input id="contacto-info" type="text" placeholder="Tu número o email" required />
+        
+        <button type="submit">Enviar a WhatsApp</button>
       </form>
     </div>
 
     <div class="card" style="text-align: center;">
-      <h2>Contáctanos directamente</h2>
+      <h2>Atención Directa</h2>
       <div class="contact-links">
-        <a class="whatsapp" href="https://wa.me/5215592005048" target="_blank">💬 WhatsApp Directo</a>
+        <a class="whatsapp" href="https://wa.me/5215592005048" target="_blank">💬 WhatsApp</a>
         <a class="facebook" href="https://www.facebook.com/jose.vazquez.916889" target="_blank">📘 Facebook</a>
       </div>
     </div>
   </section>
 
   <footer>
-    <p>&copy; 2025 SolucionesEstudio | Tu éxito académico es nuestro compromiso</p>
+    <p>&copy; 2026 SolucionesEstudio | Tu éxito académico es nuestro compromiso</p>
   </footer>
 
   <script>
     function enviarMensaje() {
       const mensaje = document.getElementById('mensaje').value.trim();
-      const contacto = document.getElementById('contacto').value.trim();
-      if (!mensaje || !contacto) {
-        alert("Por favor, llena ambos campos.");
-        return;
-      }
-      const texto = `Hola SolucionesEstudio, me gustaría solicitar una tarea:%0A%0A${mensaje}%0A%0AContacto: ${contacto}`;
-      const url = "https://wa.me/5215592005048?text=" + encodeURIComponent(texto);
+      const contacto = document.getElementById('contacto-info').value.trim();
+      
+      const textoWhatsApp = `Hola SolucionesEstudio, me gustaría cotizar una tarea:%0A%0A*Detalles:* ${mensaje}%0A*Contacto:* ${contacto}`;
+      const url = "https://wa.me/5215592005048?text=" + textoWhatsApp;
+      
       window.open(url, "_blank");
     }
   </script>
