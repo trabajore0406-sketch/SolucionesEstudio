@@ -5,323 +5,606 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SolucionesEstudio | Apoyo Académico Integral</title>
   <link rel="icon" href="https://i.imgur.com/ojpfeGU.jpeg" type="image/x-icon" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
+    /* RESET BÁSICO */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    
     body {
       font-family: 'Inter', sans-serif;
-      background-color: #000000; /* Fondo negro */
-      color: white;
-      line-height: 1.6;
+      background-color: #3f3f46; /* Gris rata principal */
+      color: #ffffff; /* Letras blancas */
+      line-height: 1.7;
     }
 
+    /* COLORES Y VARIABLES CLAVE */
+    :root {
+      --bg-principal: #3f3f46;
+      --bg-secundario: #52525b;
+      --bg-oscuro: #27272a;
+      --color-vino: #800020;
+      --color-vino-oscuro: #5e0017;
+      --color-vino-claro: #d47985;
+      --texto-blanco: #ffffff;
+      --texto-gris: #d4d4d8;
+    }
+
+    /* ENCABEZADO (HERO SECTION) */
     header {
-      background: linear-gradient(135deg, #5c001f, #8a0030);
-      color: white;
+      background: linear-gradient(135deg, rgba(74, 14, 27, 0.95), rgba(128, 0, 32, 0.95)), url('https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80') center/cover;
+      color: var(--texto-blanco);
       text-align: center;
-      padding: 4rem 1rem 2rem;
+      padding: 6rem 1rem 4rem;
+      position: relative;
+      border-bottom: 5px solid var(--color-vino-oscuro);
     }
-
     header img {
-      width: 120px;
+      width: 140px;
       border-radius: 50%;
-      border: 4px solid white;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border: 4px solid var(--texto-blanco);
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+      margin-bottom: 1rem;
+      transition: transform 0.3s ease;
     }
-
+    header img:hover {
+      transform: scale(1.05);
+    }
     header h1 {
-      font-size: 2.8rem;
-      margin-top: 1rem;
+      font-size: 3.5rem;
+      font-weight: 700;
+      letter-spacing: -1px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+    header p {
+      font-size: 1.3rem;
+      opacity: 0.95;
+      max-width: 600px;
+      margin: 1rem auto 2rem;
+      font-weight: 300;
+    }
+    .btn-hero {
+      background-color: var(--texto-blanco);
+      color: var(--color-vino);
+      padding: 12px 30px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 30px;
+      font-size: 1.1rem;
+      transition: all 0.3s;
+      display: inline-block;
+    }
+    .btn-hero:hover {
+      background-color: var(--color-vino-claro);
+      color: var(--texto-blanco);
+      box-shadow: 0 4px 15px rgba(212, 121, 133, 0.4);
     }
 
+    /* BARRA DE NAVEGACIÓN */
     nav {
       position: sticky;
       top: 0;
-      background-color: #5c001f;
-      padding: 0.8rem 2rem;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+      background-color: var(--bg-oscuro);
+      padding: 1rem 2rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
       display: flex;
       justify-content: center;
+      flex-wrap: wrap;
       gap: 2rem;
       z-index: 1000;
     }
+    nav a {
+      text-decoration: none;
+      color: var(--texto-blanco);
+      font-weight: 600;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: var(--color-vino-claro);
+    }
 
-    nav a { text-decoration: none; color: white; font-weight: 600; }
-
+    /* SECCIONES GENERALES */
     section {
-      padding: 3rem 1.5rem;
-      max-width: 1000px;
+      padding: 5rem 1.5rem;
+      max-width: 1200px;
       margin: auto;
     }
-
-    h2 {
-      color: #ffd9e4;
-      font-size: 2rem;
-      margin-bottom: 1rem;
+    section:nth-child(even) {
+      background-color: var(--bg-secundario);
+      border-radius: 20px;
+    }
+    h2.section-title {
+      color: var(--texto-blanco);
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 3rem;
+      position: relative;
+    }
+    h2.section-title::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      background-color: var(--color-vino);
+      margin: 10px auto 0;
+      border-radius: 2px;
     }
 
+    /* TARJETAS Y GRIDS */
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
     .card {
-      background-color: #5c001f;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.3);
-      margin-bottom: 2rem;
-      transition: transform 0.3s ease;
-      color: white;
+      background-color: var(--bg-oscuro);
+      padding: 2.5rem 2rem;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease, border-bottom 0.3s ease;
+      border-bottom: 4px solid transparent;
+      text-align: left;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+      border-bottom: 4px solid var(--color-vino);
+    }
+    .card h3 {
+      color: var(--color-vino-claro);
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .card p {
+      color: var(--texto-gris);
+      font-size: 1rem;
     }
 
-    .card:hover { transform: translateY(-4px); }
+    /* CÓMO FUNCIONA (PASOS) */
+    .steps-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+    .step-box {
+      background-color: var(--bg-secundario);
+      width: 250px;
+      padding: 2rem;
+      text-align: center;
+      border-radius: 15px;
+      border: 1px solid var(--color-vino);
+      position: relative;
+    }
+    .step-number {
+      background-color: var(--color-vino);
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
 
-    form input,
-    form textarea {
+    /* TABLA DE PRECIOS */
+    .promo-banner {
+      background: linear-gradient(90deg, var(--color-vino-oscuro), var(--color-vino));
+      color: var(--texto-blanco);
+      padding: 1.5rem;
+      border-radius: 10px;
+      font-weight: bold;
+      text-align: center;
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(128, 0, 32, 0.7); }
+      70% { box-shadow: 0 0 0 15px rgba(128, 0, 32, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(128, 0, 32, 0); }
+    }
+    .table-wrapper {
+      overflow-x: auto;
+    }
+    table {
       width: 100%;
-      padding: 12px;
+      border-collapse: collapse;
+      background-color: var(--bg-oscuro);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    th, td {
+      padding: 18px;
+      border: 1px solid #3f3f46;
+      text-align: left;
+    }
+    th {
+      background-color: var(--color-vino);
+      color: white;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+    }
+    tr.alt-row {
+      background-color: var(--bg-secundario);
+    }
+    tr:hover td {
+      background-color: rgba(212, 121, 133, 0.1);
+    }
+
+    /* PREGUNTAS FRECUENTES (FAQ) */
+    .faq-item {
+      background-color: var(--bg-oscuro);
+      margin-bottom: 1rem;
+      padding: 1.5rem;
+      border-radius: 10px;
+      border-left: 5px solid var(--color-vino);
+    }
+    .faq-item h4 {
+      color: var(--color-vino-claro);
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+    }
+
+    /* FORMULARIO Y CONTACTO */
+    .contact-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      background-color: var(--bg-secundario);
+      padding: 3rem;
+      border-radius: 20px;
+    }
+    @media(max-width: 768px) {
+      .contact-container { grid-template-columns: 1fr; }
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 15px;
       margin-top: 10px;
-      border: 1px solid #ccc;
+      margin-bottom: 20px;
+      background-color: var(--bg-oscuro);
+      color: var(--texto-blanco);
+      border: 1px solid var(--color-vino);
       border-radius: 8px;
       font-size: 1rem;
-      color: #000;
+      font-family: inherit;
     }
-
+    form input::placeholder, form textarea::placeholder {
+      color: #a1a1aa;
+    }
+    form input:focus, form textarea:focus {
+      outline: none;
+      border-color: var(--color-vino-claro);
+      box-shadow: 0 0 8px rgba(212, 121, 133, 0.5);
+    }
     form button {
-      margin-top: 15px;
-      background-color: #8a0030;
+      width: 100%;
+      background-color: var(--color-vino);
       color: white;
       border: none;
-      padding: 14px 24px;
-      font-size: 1rem;
+      padding: 16px;
+      font-size: 1.1rem;
       border-radius: 8px;
       cursor: pointer;
       font-weight: bold;
+      text-transform: uppercase;
+      transition: background-color 0.3s, transform 0.2s;
     }
-
-    .contact-links a {
-      display: inline-block;
-      margin-top: 15px;
-      margin-right: 10px;
-      padding: 12px 20px;
+    form button:hover {
+      background-color: var(--color-vino-oscuro);
+      transform: scale(1.02);
+    }
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+    .contact-info p { font-size: 1.1rem; }
+    .social-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 25px;
       border-radius: 30px;
       text-decoration: none;
-      font-size: 1rem;
+      font-size: 1.1rem;
       font-weight: bold;
       color: white;
-    }
-
-    a.whatsapp { background-color: #25d366; }
-    a.facebook { background-color: #1877f2; }
-
-    footer {
-      background-color: #2b2b2b;
-      color: white;
+      transition: transform 0.3s, opacity 0.3s;
+      width: 100%;
       text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
     }
+    .social-btn:hover {
+      transform: translateY(-3px);
+      opacity: 0.9;
+    }
+    .whatsapp-btn { background-color: #25d366; color: #1e293b; }
+    .facebook-btn { background-color: #1877f2; }
 
-    table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
-    th, td { padding: 12px; border: 1px solid #ddd; text-align: left; }
-    th { background-color: #8a0030; color: white; }
+    /* PIE DE PÁGINA */
+    footer {
+      background-color: var(--bg-oscuro);
+      color: var(--texto-gris);
+      text-align: center;
+      padding: 3rem 1rem;
+      font-size: 0.95rem;
+      border-top: 2px solid var(--color-vino);
+    }
+    footer span {
+      color: var(--color-vino-claro);
+      font-weight: bold;
+    }
   </style>
 </head>
-
 <body>
 
-<header>
-  <img src="https://i.imgur.com/ojpfeGU.jpeg" alt="Logo SolucionesEstudio" />
-  <h1>SolucionesEstudio</h1>
-  <p>Apoyo experto en todas las materias. Entregas rápidas, explicadas y completamente personalizadas.</p>
-</header>
+  <header id="inicio">
+    <img src="https://i.imgur.com/ojpfeGU.jpeg" alt="Logo SolucionesEstudio" />
+    <h1>SolucionesEstudio</h1>
+    <p>La plataforma integral para salvar tu semestre. Trabajos impecables, entregas urgentes y aprendizaje garantizado.</p>
+    <a href="#contacto" class="btn-hero">Cotizar mi Tarea Ahora</a>
+  </header>
 
-<nav>
-  <a href="#servicios">Servicios</a>
-  <a href="#beneficios">Beneficios</a>
-  <a href="#porqueelegirnos">¿Por qué nosotros?</a>
-  <a href="#precios">Precios</a>
-  <a href="#contacto">Contacto</a>
-</nav>
+  <nav>
+    <a href="#nosotros">Nosotros</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#como-funciona">Metodología</a>
+    <a href="#beneficios">Beneficios</a>
+    <a href="#precios">Precios</a>
+    <a href="#faq">FAQ</a>
+  </nav>
 
-<!-- SERVICIOS -->
-<section id="servicios">
-  <div class="card">
-    <h2>¿Qué ofrecemos?</h2>
-
-    <p><strong>📚 Tareas, ensayos, resúmenes y proyectos elaborados a tu medida</strong></p>
-    <p>
-      En SolucionesEstudio realizamos todo tipo de trabajos académicos adaptados exactamente a tus instrucciones.
-      Redactamos desde actividades sencillas hasta investigaciones profundas con análisis detallado, citas completas y estructura profesional.
-      Cada trabajo es completamente original y hecho desde cero para cumplir con tus necesidades específicas.
-      Nos ajustamos al estilo que solicites: formal, descriptivo, argumentativo, académico, técnico o narrativo.
-    </p>
-
-    <p><strong>📝 Presentaciones, mapas conceptuales y material visual profesional</strong></p>
-    <p>
-      Creamos presentaciones visualmente atractivas y 100% personalizadas. 
-      Utilizamos esquemas claros, iconografía, infografías y elementos visuales que mejoran la comprensión de los temas.
-      Los mapas conceptuales y diagramas se entregan limpios y bien estructurados para que puedas usarlos en exposiciones o entregas escolares sin complicaciones.
-    </p>
-
-    <p><strong>🎤 Asesoría personalizada para exámenes y exposiciones</strong></p>
-    <p>
-      Si necesitas reforzar un tema o prepararte para una exposición, te ofrecemos orientación puntual.
-      Te explicamos los conceptos clave de manera sencilla, ayudamos a ordenar tus ideas,
-      y te damos un guion claro que te permite presentar con mayor seguridad.
-    </p>
-
-    <p><strong>💡 Material detallado con explicación incluida</strong></p>
-    <p>
-      No solo entregamos el documento final; también añadimos notas y explicaciones breves
-      para que puedas comprender los conceptos principales y dominar el tema.
-      Nuestro objetivo es facilitarte el proceso y ayudarte a aprender de forma rápida y clara.
-    </p>
-
-  </div>
-</section>
-
-<!-- BENEFICIOS -->
-<section id="beneficios">
-  <div class="card">
-    <h2>Beneficios</h2>
-
-    <p><strong>Atención Multidisciplinaria:</strong> Contamos con especialistas en humanidades, administración, ciencias sociales, comunicación, literatura y más.</p>
-
-    <p><strong>Explicaciones Claras:</strong> Recibes trabajos acompañados de una breve guía que resume los puntos importantes.</p>
-
-    <p><strong>Edición Profesional:</strong> Ortografía impecable, estructura clara y formato uniforme en todos tus documentos.</p>
-
-    <p><strong>Revisión y Ajustes:</strong> Si deseas modificar algo después de recibir tu archivo, te apoyamos a corregirlo sin complicaciones.</p>
-
-    <p><strong>Variedad de Formatos:</strong> Entregas en PDF, Word, diapositivas, imágenes o el formato que necesites.</p>
-
-    <p><strong>Puntualidad:</strong> Cumplimos tiempos de entrega de acuerdo al nivel de urgencia que necesites.</p>
-
-    <p><strong>Comunicación Constante:</strong> Siempre puedes escribir para resolver dudas o solicitar cambios antes de recibir la versión final.</p>
-
-  </div>
-</section>
-
-<!-- POR QUE ELEGIRNOS -->
-<section id="porqueelegirnos">
-  <div class="card">
-    <h2>¿Por qué elegirnos?</h2>
-
-    <p><strong>💼 Amplia Experiencia:</strong> Nuestro equipo cuenta con años de trabajo académico en distintas áreas. Cada solicitud es atendida por alguien que domina el tema y entiende los estándares de redacción que buscan los profesores.</p>
-
-    <p><strong>💰 Precios Justos y Accesibles:</strong> Nuestras tarifas están diseñadas para estudiantes. No pagas de más: cada nivel de precio se basa en la complejidad, el tiempo de investigación y el nivel de profundidad requerido.</p>
-
-    <p><strong>⏱️ Entregas Urgentes:</strong> Si tienes un trabajo para el mismo día, contamos con servicio exprés. Nos enfocamos en cumplir fechas límite sin descuidar la calidad del contenido.</p>
-
-    <p><strong>🎯 Personalización Total:</strong> Nos ajustamos completamente a las instrucciones que envíes. Si tu profesor tiene un estilo o formato específico, lo seguimos al pie de la letra.</p>
-
-    <p><strong>📱 Atención Rápida:</strong> Respuesta inmediata por WhatsApp para resolver cualquier duda, solicitud o ajuste durante el proceso.</p>
-
-  </div>
-</section>
-
-<!-- PRECIOS -->
-<section id="precios">
-
-  <div style="background-color: #ffd1e0; color: #5c001f; padding: 1rem; border-radius: 10px; font-weight: bold; text-align: center; font-size: 1.1rem; margin-bottom: 1rem;">
-    🔥 Descuentos por volumen: Entre más páginas solicites, menos pagas por cada una.
-  </div>
-
-  <div class="card">
-    <h2>Precios por Cuartilla</h2>
-
-    <p>
-      Los precios varían según el nivel de complejidad, el tiempo requerido y la cantidad de investigación que se debe realizar.
-      No todos los trabajos toman el mismo esfuerzo: algunos requieren únicamente redacción,
-      otros análisis profundo, consulta de fuentes o creación de material visual.
-    </p>
-
-    <table>
-      <thead>
-        <tr>
-          <th>Nivel</th>
-          <th>Precio</th>
-          <th>¿Qué incluye?</th>
-          <th>Ejemplo</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>🍃 Básico</td>
-          <td>$10 – $20</td>
-          <td>
-            Actividades sencillas, resúmenes cortos, cuestionarios o pequeñas explicaciones descriptivas.
-            Ideal para tareas rápidas que no requieren análisis profundo.
-          </td>
-          <td>Resumen de un capítulo corto o cuestionario simple.</td>
-        </tr>
-
-        <tr style="background-color: #6e0026;">
-          <td>📘 Intermedio</td>
-          <td>$20 – $40</td>
-          <td>
-            Ensayos completos, análisis de contenido, cuadros comparativos, explicaciones detalladas y textos con estructura formal.
-          </td>
-          <td>Ensayo con introducción, desarrollo y conclusión.</td>
-        </tr>
-
-        <tr>
-          <td>🧠 Avanzado</td>
-          <td>$40 – $70</td>
-          <td>
-            Investigaciones complejas, análisis teóricos, proyectos de fin de semestre,
-            trabajos extensos con bibliografía y documentación más elaborada.
-          </td>
-          <td>Análisis profundo o investigación con varias fuentes.</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
-<!-- CONTACTO -->
-<section id="contacto">
-  <div class="card">
-    <h2>📬 Solicita tu tarea</h2>
-
-    <form onsubmit="enviarMensaje(); return false;">
-      <label for="mensaje">¿Qué necesitas?</label>
-      <textarea id="mensaje" rows="5" placeholder="Describe aquí tu tarea, tema, número de páginas, fecha de entrega..."></textarea>
-
-      <label for="contacto">¿Cómo te contactamos?</label>
-      <input id="contacto" type="text" placeholder="Tu WhatsApp o correo" />
-
-      <button type="submit">Enviar solicitud vía WhatsApp</button>
-    </form>
-  </div>
-
-  <div class="card" style="text-align: center;">
-    <h2>Contacto Directo</h2>
-    <div class="contact-links">
-      <a class="whatsapp" href="https://wa.me/5215592005048" target="_blank">💬 WhatsApp</a>
-      <a class="facebook" href="https://www.facebook.com/jose.vazquez.916889" target="_blank">📘 Facebook</a>
+  <section id="nosotros">
+    <h2 class="section-title">¿Quiénes Somos?</h2>
+    <div style="text-align: center; max-width: 800px; margin: auto; font-size: 1.1rem; color: #d4d4d8;">
+      <p>En <strong>SolucionesEstudio</strong> entendemos la presión académica. Somos un equipo multidisciplinario de profesionales, investigadores y redactores expertos dedicados a brindarte el respaldo que necesitas para alcanzar la excelencia.</p>
+      <br>
+      <p>No solo hacemos trabajos; creamos herramientas de aprendizaje para que domines cualquier tema, liberes tu estrés y asegures tus calificaciones.</p>
     </div>
-  </div>
-</section>
+  </section>
 
-<footer>
-  <p>&copy; 2025 SolucionesEstudio | Apoyo académico en todas las áreas</p>
-</footer>
+  <section id="servicios">
+    <h2 class="section-title">Catálogo de Servicios</h2>
+    <div class="grid-container">
+      
+      <div class="card">
+        <h3>📚 Trabajos Escritos</h3>
+        <p>Ensayos, reseñas, monografías, resúmenes y reportes de lectura. Estructurados con introducción, desarrollo, conclusiones y bibliografía en el formato que pida tu profesor.</p>
+      </div>
 
-<script>
-  function enviarMensaje() {
-    const mensaje = document.getElementById('mensaje').value.trim();
-    const contacto = document.getElementById('contacto').value.trim();
+      <div class="card">
+        <h3>📝 Material Didáctico y Expositivo</h3>
+        <p>Creación de diapositivas en PowerPoint, Canva o Prezi. Mapas mentales, conceptuales, cuadros sinópticos e infografías listas para impresionar en tus exposiciones.</p>
+      </div>
 
-    if (!mensaje || !contacto) {
-      alert("Por favor, llena ambos campos.");
-      return;
+      <div class="card">
+        <h3>🧠 Proyectos y Casos Prácticos</h3>
+        <p>Resolución de guías de estudio, estudios de caso, cuestionarios y análisis de textos complejos. Desglosamos la información para que sea fácil de digerir.</p>
+      </div>
+
+      <div class="card">
+        <h3>📖 Edición y Formato (APA, Vancouver)</h3>
+        <p>¿Ya tienes tu trabajo pero no sabes citar? Revisamos tu ortografía, gramática, coherencia y aplicamos el formato exacto de citación (APA, MLA, Chicago, etc.).</p>
+      </div>
+
+      <div class="card">
+        <h3>🎤 Asesoría y Explicación</h3>
+        <p>Si tienes que defender tu trabajo o exponerlo, te preparamos un guion detallado y te explicamos los puntos críticos para que domines el tema al 100% frente a la clase.</p>
+      </div>
+
+      <div class="card">
+        <h3>🌍 Traducciones Académicas</h3>
+        <p>Traducción de papers, artículos científicos, resúmenes (abstracts) y capítulos de libros del inglés al español y viceversa, manteniendo el rigor académico.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="como-funciona" style="background-color: transparent;">
+    <h2 class="section-title">¿Cómo trabajamos?</h2>
+    <div class="steps-container">
+      <div class="step-box">
+        <div class="step-number">1</div>
+        <h4 style="color: var(--color-vino-claro); margin-bottom: 10px;">Contacto Inicial</h4>
+        <p>Mándanos las instrucciones, rúbrica de evaluación y la fecha de entrega de tu trabajo vía WhatsApp.</p>
+      </div>
+      <div class="step-box">
+        <div class="step-number">2</div>
+        <h4 style="color: var(--color-vino-claro); margin-bottom: 10px;">Cotización Rápida</h4>
+        <p>Analizamos la dificultad y te damos un presupuesto justo y transparente al instante.</p>
+      </div>
+      <div class="step-box">
+        <div class="step-number">3</div>
+        <h4 style="color: var(--color-vino-claro); margin-bottom: 10px;">Desarrollo Experto</h4>
+        <p>Nuestros especialistas redactan tu proyecto desde cero, asegurando calidad y cero plagio.</p>
+      </div>
+      <div class="step-box">
+        <div class="step-number">4</div>
+        <h4 style="color: var(--color-vino-claro); margin-bottom: 10px;">Entrega y Revisión</h4>
+        <p>Recibes tu trabajo a tiempo. Si algo necesita ajustarse según las instrucciones iniciales, lo corregimos gratis.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="beneficios">
+    <h2 class="section-title">¿Por qué elegir SolucionesEstudio?</h2>
+    <div class="grid-container">
+      <div class="card">
+        <h3>⏱️ Entregas Urgentes (Express)</h3>
+        <p>¿Se te olvidó la tarea y es para hoy en la noche? Contamos con modalidades de entrega express (hasta en 6 horas) para sacarte del apuro.</p>
+      </div>
+      <div class="card">
+        <h3>🔒 100% Confidencial</h3>
+        <p>Garantizamos absoluta discreción con tu identidad, institución escolar y los archivos que nos compartes. Tu privacidad está blindada.</p>
+      </div>
+      <div class="card">
+        <h3>🚫 Cero Plagio</h3>
+        <p>Todo se redacta desde cero a la medida. No copiamos y pegamos de Wikipedia. Entregamos trabajos originales y analíticos.</p>
+      </div>
+      <div class="card">
+        <h3>💰 Precios de Estudiante</h3>
+        <p>Sabemos cómo es la economía estudiantil. Nuestras tarifas están ajustadas para ser accesibles sin sacrificar ni una gota de calidad.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="precios" style="background-color: transparent;">
+    <h2 class="section-title">Inversión Educativa</h2>
+    
+    <div class="promo-banner">
+      🔥 ¡PROMOCIÓN EXCLUSIVA! Descuentos por volumen: 3 a 10 cuartillas (30% OFF) | +10 cuartillas (50% OFF) 🔥
+    </div>
+    
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Nivel de Dificultad</th>
+            <th>Precio x Cuartilla</th>
+            <th>¿Qué incluye?</th>
+            <th>Ejemplo de Tarea</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>🍃 <strong>Básico</strong></td>
+            <td>$10 – $20 MXN</td>
+            <td>Lectura superficial, síntesis simple, estructura básica.</td>
+            <td>Resumir una lectura, cuestionarios de preparatoria.</td>
+          </tr>
+          <tr class="alt-row">
+            <td>📘 <strong>Intermedio</strong></td>
+            <td>$20 – $40 MXN</td>
+            <td>Investigación en fuentes, opinión crítica, formato APA.</td>
+            <td>Ensayo argumentativo, cuadros comparativos universitarios.</td>
+          </tr>
+          <tr>
+            <td>🧠 <strong>Avanzado</strong></td>
+            <td>$40 – $70 MXN</td>
+            <td>Investigación profunda, bases de datos académicas, análisis crítico.</td>
+            <td>Protocolos de investigación, proyectos finales de semestre.</td>
+          </tr>
+          <tr class="alt-row">
+            <td>🎓 <strong>Especializado</strong></td>
+            <td>$70 – $150+ MXN</td>
+            <td>Metodología compleja, acompañamiento a largo plazo.</td>
+            <td>Apoyo en Tesinas, análisis estadístico o trabajos de maestría.</td>
+          </tr>
+          <tr>
+            <td>🎨 <strong>Diseño Visual</strong></td>
+            <td>$20 – $50 c/u</td>
+            <td>Diseño estético, síntesis de info, elementos gráficos.</td>
+            <td>Infografías completas, Presentaciones por diapositiva.</td>
+          </tr>
+          <tr class="alt-row">
+            <td>🌍 <strong>Traducciones</strong></td>
+            <td>$30 – $50 MXN</td>
+            <td>Traducción técnica y académica (Inglés - Español).</td>
+            <td>Abstracts, Papers o capítulos de libros.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="faq">
+    <h2 class="section-title">Preguntas Frecuentes</h2>
+    <div style="max-width: 800px; margin: auto;">
+      <div class="faq-item">
+        <h4>¿Cómo se realiza el pago?</h4>
+        <p>Aceptamos transferencias bancarias (SPEI) y depósitos en tiendas de conveniencia (OXXO, 7-Eleven). Normalmente solicitamos un 50% de anticipo para agendar y el resto contra entrega.</p>
+      </div>
+      <div class="faq-item">
+        <h4>¿Qué pasa si mi profesor me pide correcciones?</h4>
+        <p>¡No te preocupes! Si las correcciones están dentro de las instrucciones originales que nos mandaste, realizamos los ajustes totalmente GRATIS.</p>
+      </div>
+      <div class="faq-item">
+        <h4>¿Hacen trabajos de materias numéricas o programación?</h4>
+        <p>Nos especializamos en redacción, análisis, humanidades, ciencias sociales y administrativas. Para ciencias exactas muy complejas o código, evaluamos el caso particular antes de aceptarlo para asegurar calidad.</p>
+      </div>
+      <div class="faq-item">
+        <h4>¿Puedo pedir una tarea para el mismo día?</h4>
+        <p>Sí, manejamos el servicio "Express". Está sujeto a disponibilidad de nuestros asesores y tiene un cargo adicional por urgencia, pero haremos todo lo posible por salvar tu calificación.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto" style="background-color: transparent;">
+    <h2 class="section-title">📬 Inicia tu Solución Hoy</h2>
+    
+    <div class="contact-container">
+      <div>
+        <h3 style="color: var(--color-vino-claro); margin-bottom: 1rem;">Cuéntanos qué necesitas</h3>
+        <form onsubmit="enviarMensaje(); return false;">
+          <label for="mensaje" style="font-weight: bold;">Detalles de la Tarea:</label>
+          <textarea id="mensaje" rows="5" placeholder="Ejemplo: Necesito un ensayo de 5 páginas sobre la Revolución Industrial, con formato APA y mínimo 3 fuentes. Es para el viernes a las 10 PM."></textarea>
+          
+          <label for="contacto" style="font-weight: bold;">Tu Nombre / Medio de Contacto:</label>
+          <input id="contacto" type="text" placeholder="Ej: Juan Pérez - Mi correo o WhatsApp es..." />
+          
+          <button type="submit">Enviar Solicitud a WhatsApp 🚀</button>
+        </form>
+      </div>
+
+      <div class="contact-info">
+        <h3 style="color: var(--color-vino-claro);">Contacto Directo</h3>
+        <p>Estamos en línea para responder tus dudas casi de inmediato. Mándanos un mensaje y cotiza sin ningún compromiso.</p>
+        
+        <div style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1rem;">
+          <a class="social-btn whatsapp-btn" href="https://wa.me/5215592005048" target="_blank">
+            💬 Enviar mensaje por WhatsApp
+          </a>
+          <a class="social-btn facebook-btn" href="https://www.facebook.com/jose.vazquez.916889" target="_blank">
+            📘 Visitar nuestra página de Facebook
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <h2>SolucionesEstudio</h2>
+    <p style="margin-top: 10px;">Tu apoyo académico de confianza. No más noches sin dormir, nosotros nos encargamos.</p>
+    <p style="margin-top: 20px; font-size: 0.85rem; opacity: 0.7;">
+      &copy; 2025 SolucionesEstudio. Todos los derechos reservados. | Diseñado para el éxito estudiantil.
+    </p>
+  </footer>
+
+  <script>
+    function enviarMensaje() {
+      const mensaje = document.getElementById('mensaje').value.trim();
+      const contacto = document.getElementById('contacto').value.trim();
+      
+      if (!mensaje || !contacto) {
+        alert("Por favor, llena todos los campos para poder darte una cotización exacta.");
+        return;
+      }
+      
+      // Construir el mensaje formateado para WhatsApp
+      const texto = `👋 Hola SolucionesEstudio, quiero cotizar una tarea.%0A%0A*Detalles:*%0A${mensaje}%0A%0A*Mis datos:*%0A${contacto}`;
+      const url = "https://wa.me/5215592005048?text=" + texto;
+      
+      // Abrir en nueva pestaña
+      window.open(url, "_blank");
     }
-
-    const texto = `Hola, necesito apoyo con una tarea:%0A%0A${mensaje}%0A%0AContacto: ${contacto}`;
-    const url = "https://wa.me/5215592005048?text=" + encodeURIComponent(texto);
-    window.open(url, "_blank");
-  }
-</script>
-
+  </script>
 </body>
 </html>
