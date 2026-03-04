@@ -8,22 +8,17 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Inter', sans-serif;
-      background-color: #3b3b3b; /* Gris Oxford */
+      background-color: #000000; /* Fondo negro */
       color: white;
       line-height: 1.6;
     }
 
-    /* HEADER */
     header {
-      background: linear-gradient(135deg, #5c001f, #8a0030); /* Vino */
+      background: linear-gradient(135deg, #5c001f, #8a0030);
       color: white;
       text-align: center;
       padding: 4rem 1rem 2rem;
@@ -41,16 +36,10 @@
       margin-top: 1rem;
     }
 
-    header p {
-      font-size: 1.2rem;
-      opacity: 0.95;
-    }
-
-    /* NAV */
     nav {
       position: sticky;
       top: 0;
-      background-color: #5c001f; 
+      background-color: #5c001f;
       padding: 0.8rem 2rem;
       box-shadow: 0 2px 5px rgba(0,0,0,0.15);
       display: flex;
@@ -59,13 +48,8 @@
       z-index: 1000;
     }
 
-    nav a {
-      text-decoration: none;
-      color: white;
-      font-weight: 600;
-    }
+    nav a { text-decoration: none; color: white; font-weight: 600; }
 
-    /* SECCIONES */
     section {
       padding: 3rem 1.5rem;
       max-width: 1000px;
@@ -88,9 +72,7 @@
       color: white;
     }
 
-    .card:hover {
-      transform: translateY(-4px);
-    }
+    .card:hover { transform: translateY(-4px); }
 
     form input,
     form textarea {
@@ -146,187 +128,200 @@
 
 <body>
 
-  <header>
-    <img src="https://i.imgur.com/ojpfeGU.jpeg" alt="Logo SolucionesEstudio" />
-    <h1>SolucionesEstudio</h1>
-    <p>Apoyo académico profesional con entregas rápidas, claras y totalmente personalizadas.</p>
-  </header>
+<header>
+  <img src="https://i.imgur.com/ojpfeGU.jpeg" alt="Logo SolucionesEstudio" />
+  <h1>SolucionesEstudio</h1>
+  <p>Apoyo experto en todas las materias. Entregas rápidas, explicadas y completamente personalizadas.</p>
+</header>
 
-  <nav>
-    <a href="#servicios">Servicios</a>
-    <a href="#beneficios">Beneficios</a>
-    <a href="#porqueelegirnos">¿Por qué nosotros?</a>
-    <a href="#precios">Precios</a>
-    <a href="#contacto">Contacto</a>
-  </nav>
+<nav>
+  <a href="#servicios">Servicios</a>
+  <a href="#beneficios">Beneficios</a>
+  <a href="#porqueelegirnos">¿Por qué nosotros?</a>
+  <a href="#precios">Precios</a>
+  <a href="#contacto">Contacto</a>
+</nav>
 
-  <!-- SERVICIOS -->
-  <section id="servicios">
-    <div class="card">
-      <h2>¿Qué ofrecemos?</h2>
+<!-- SERVICIOS -->
+<section id="servicios">
+  <div class="card">
+    <h2>¿Qué ofrecemos?</h2>
 
-      <p><strong>📚 Tareas, ensayos, resúmenes y trabajos completos</strong></p>
-      <p>En SolucionesEstudio desarrollamos una amplia variedad de trabajos académicos adaptados a tus necesidades específicas. Podemos crear desde tareas breves hasta investigaciones completas, ensayos críticos, reportes de lectura, mapas conceptuales, análisis detallados de contenido, proyectos finales y cualquier otro material escolar o universitario.</p>
+    <p><strong>📚 Tareas, ensayos, resúmenes y proyectos elaborados a tu medida</strong></p>
+    <p>
+      En SolucionesEstudio realizamos todo tipo de trabajos académicos adaptados exactamente a tus instrucciones.
+      Redactamos desde actividades sencillas hasta investigaciones profundas con análisis detallado, citas completas y estructura profesional.
+      Cada trabajo es completamente original y hecho desde cero para cumplir con tus necesidades específicas.
+      Nos ajustamos al estilo que solicites: formal, descriptivo, argumentativo, académico, técnico o narrativo.
+    </p>
 
-      <p>No solo redactamos. También organizamos tus ideas, definimos la estructura, corregimos estilo, mejoramos coherencia y hacemos que tu documento cumpla exactamente con lo solicitado por tu profesor. Cada entrega se realiza desde cero y se ajusta a tus indicaciones, formato requerido, número de cuartillas y nivel académico.</p>
+    <p><strong>📝 Presentaciones, mapas conceptuales y material visual profesional</strong></p>
+    <p>
+      Creamos presentaciones visualmente atractivas y 100% personalizadas. 
+      Utilizamos esquemas claros, iconografía, infografías y elementos visuales que mejoran la comprensión de los temas.
+      Los mapas conceptuales y diagramas se entregan limpios y bien estructurados para que puedas usarlos en exposiciones o entregas escolares sin complicaciones.
+    </p>
 
-      <p><strong>📝 Presentaciones y material didáctico profesional</strong></p>
-      <p>Si necesitas material visual, elaboramos presentaciones altamente profesionales, con diseño atractivo, contenido organizado y colores uniformes. También preparamos mapas mentales, infografías, líneas del tiempo, esquemas comparativos y diapositivas para exponer con seguridad.</p>
+    <p><strong>🎤 Asesoría personalizada para exámenes y exposiciones</strong></p>
+    <p>
+      Si necesitas reforzar un tema o prepararte para una exposición, te ofrecemos orientación puntual.
+      Te explicamos los conceptos clave de manera sencilla, ayudamos a ordenar tus ideas,
+      y te damos un guion claro que te permite presentar con mayor seguridad.
+    </p>
 
-      <p><strong>🎤 Asesorías personalizadas</strong></p>
-      <p>¿Debes exponer un tema complicado? ¿No entendiste un capítulo o una lectura? Te explicamos paso a paso el contenido, aclaramos dudas y te brindamos una guía para que puedas presentar sin nervios. Ofrecemos apoyo para preparar argumentos, discursos, exposiciones, guiones y demostraciones.</p>
+    <p><strong>💡 Material detallado con explicación incluida</strong></p>
+    <p>
+      No solo entregamos el documento final; también añadimos notas y explicaciones breves
+      para que puedas comprender los conceptos principales y dominar el tema.
+      Nuestro objetivo es facilitarte el proceso y ayudarte a aprender de forma rápida y clara.
+    </p>
 
-      <p><strong>📖 Formatos y estilos profesionales</strong></p>
-      <p>Conocemos los principales formatos académicos como APA, MLA, Chicago, Vancouver y más. Adaptamos tus trabajos a la estructura correcta y cuidamos la cohesión, gramática, ortografía y estilo. Recibirás documentos limpios, bien presentados y listos para entregar.</p>
+  </div>
+</section>
+
+<!-- BENEFICIOS -->
+<section id="beneficios">
+  <div class="card">
+    <h2>Beneficios</h2>
+
+    <p><strong>Atención Multidisciplinaria:</strong> Contamos con especialistas en humanidades, administración, ciencias sociales, comunicación, literatura y más.</p>
+
+    <p><strong>Explicaciones Claras:</strong> Recibes trabajos acompañados de una breve guía que resume los puntos importantes.</p>
+
+    <p><strong>Edición Profesional:</strong> Ortografía impecable, estructura clara y formato uniforme en todos tus documentos.</p>
+
+    <p><strong>Revisión y Ajustes:</strong> Si deseas modificar algo después de recibir tu archivo, te apoyamos a corregirlo sin complicaciones.</p>
+
+    <p><strong>Variedad de Formatos:</strong> Entregas en PDF, Word, diapositivas, imágenes o el formato que necesites.</p>
+
+    <p><strong>Puntualidad:</strong> Cumplimos tiempos de entrega de acuerdo al nivel de urgencia que necesites.</p>
+
+    <p><strong>Comunicación Constante:</strong> Siempre puedes escribir para resolver dudas o solicitar cambios antes de recibir la versión final.</p>
+
+  </div>
+</section>
+
+<!-- POR QUE ELEGIRNOS -->
+<section id="porqueelegirnos">
+  <div class="card">
+    <h2>¿Por qué elegirnos?</h2>
+
+    <p><strong>💼 Amplia Experiencia:</strong> Nuestro equipo cuenta con años de trabajo académico en distintas áreas. Cada solicitud es atendida por alguien que domina el tema y entiende los estándares de redacción que buscan los profesores.</p>
+
+    <p><strong>💰 Precios Justos y Accesibles:</strong> Nuestras tarifas están diseñadas para estudiantes. No pagas de más: cada nivel de precio se basa en la complejidad, el tiempo de investigación y el nivel de profundidad requerido.</p>
+
+    <p><strong>⏱️ Entregas Urgentes:</strong> Si tienes un trabajo para el mismo día, contamos con servicio exprés. Nos enfocamos en cumplir fechas límite sin descuidar la calidad del contenido.</p>
+
+    <p><strong>🎯 Personalización Total:</strong> Nos ajustamos completamente a las instrucciones que envíes. Si tu profesor tiene un estilo o formato específico, lo seguimos al pie de la letra.</p>
+
+    <p><strong>📱 Atención Rápida:</strong> Respuesta inmediata por WhatsApp para resolver cualquier duda, solicitud o ajuste durante el proceso.</p>
+
+  </div>
+</section>
+
+<!-- PRECIOS -->
+<section id="precios">
+
+  <div style="background-color: #ffd1e0; color: #5c001f; padding: 1rem; border-radius: 10px; font-weight: bold; text-align: center; font-size: 1.1rem; margin-bottom: 1rem;">
+    🔥 Descuentos por volumen: Entre más páginas solicites, menos pagas por cada una.
+  </div>
+
+  <div class="card">
+    <h2>Precios por Cuartilla</h2>
+
+    <p>
+      Los precios varían según el nivel de complejidad, el tiempo requerido y la cantidad de investigación que se debe realizar.
+      No todos los trabajos toman el mismo esfuerzo: algunos requieren únicamente redacción,
+      otros análisis profundo, consulta de fuentes o creación de material visual.
+    </p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Nivel</th>
+          <th>Precio</th>
+          <th>¿Qué incluye?</th>
+          <th>Ejemplo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>🍃 Básico</td>
+          <td>$10 – $20</td>
+          <td>
+            Actividades sencillas, resúmenes cortos, cuestionarios o pequeñas explicaciones descriptivas.
+            Ideal para tareas rápidas que no requieren análisis profundo.
+          </td>
+          <td>Resumen de un capítulo corto o cuestionario simple.</td>
+        </tr>
+
+        <tr style="background-color: #6e0026;">
+          <td>📘 Intermedio</td>
+          <td>$20 – $40</td>
+          <td>
+            Ensayos completos, análisis de contenido, cuadros comparativos, explicaciones detalladas y textos con estructura formal.
+          </td>
+          <td>Ensayo con introducción, desarrollo y conclusión.</td>
+        </tr>
+
+        <tr>
+          <td>🧠 Avanzado</td>
+          <td>$40 – $70</td>
+          <td>
+            Investigaciones complejas, análisis teóricos, proyectos de fin de semestre,
+            trabajos extensos con bibliografía y documentación más elaborada.
+          </td>
+          <td>Análisis profundo o investigación con varias fuentes.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto">
+  <div class="card">
+    <h2>📬 Solicita tu tarea</h2>
+
+    <form onsubmit="enviarMensaje(); return false;">
+      <label for="mensaje">¿Qué necesitas?</label>
+      <textarea id="mensaje" rows="5" placeholder="Describe aquí tu tarea, tema, número de páginas, fecha de entrega..."></textarea>
+
+      <label for="contacto">¿Cómo te contactamos?</label>
+      <input id="contacto" type="text" placeholder="Tu WhatsApp o correo" />
+
+      <button type="submit">Enviar solicitud vía WhatsApp</button>
+    </form>
+  </div>
+
+  <div class="card" style="text-align: center;">
+    <h2>Contacto Directo</h2>
+    <div class="contact-links">
+      <a class="whatsapp" href="https://wa.me/5215592005048" target="_blank">💬 WhatsApp</a>
+      <a class="facebook" href="https://www.facebook.com/jose.vazquez.916889" target="_blank">📘 Facebook</a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- BENEFICIOS -->
-  <section id="beneficios">
-    <div class="card">
-      <h2>Beneficios</h2>
+<footer>
+  <p>&copy; 2025 SolucionesEstudio | Apoyo académico en todas las áreas</p>
+</footer>
 
-      <p><strong>✔ Atención multidisciplinaria</strong><br>
-      Contamos con apoyo en humanidades, ciencias sociales, administración, comunicación, psicología, economía, educación y más. Siempre te atenderá alguien con experiencia en la materia.</p>
+<script>
+  function enviarMensaje() {
+    const mensaje = document.getElementById('mensaje').value.trim();
+    const contacto = document.getElementById('contacto').value.trim();
 
-      <p><strong>✔ Material personalizado</strong><br>
-      Nada es genérico: cada trabajo se adapta exactamente a tus instrucciones, tono, nivel académico, extensión y formato solicitado.</p>
-
-      <p><strong>✔ Explicaciones incluidas</strong><br>
-      No solo entregamos un archivo: te explicamos los puntos clave, el razonamiento detrás de la estructura y los argumentos principales del contenido.</p>
-
-      <p><strong>✔ Entregas rápidas</strong><br>
-      Podemos entregar en horas si lo necesitas. También manejamos niveles de urgencia según tus fechas límite.</p>
-
-      <p><strong>✔ Seguimiento constante</strong><br>
-      Puedes solicitar ajustes, ampliaciones, mejoras, correcciones o cambios durante el proceso.</p>
-
-      <p><strong>✔ Compatibilidad total</strong><br>
-      Entregamos en Word, PDF, PowerPoint, Google Docs o cualquier formato que pidas.</p>
-
-      <p><strong>✔ Claridad y coherencia garantizada</strong><br>
-      Todos los trabajos son revisados para asegurar que sean fáciles de leer, estén bien ordenados y sean comprensibles.</p>
-    </div>
-  </section>
-
-  <!-- POR QUÉ ELEGIRNOS -->
-  <section id="porqueelegirnos">
-    <div class="card">
-      <h2>¿Por qué elegirnos?</h2>
-
-      <p><strong>💼 Experiencia real en múltiples áreas</strong><br>
-      Nuestro equipo está formado por personas con experiencia en redacción, investigación y análisis académico. Conocemos las exigencias de maestros de secundaria, preparatoria y universidad.</p>
-
-      <p><strong>💰 Precios pensados para estudiantes</strong><br>
-      Sabemos que no todos tienen un gran presupuesto, por eso manejamos tarifas accesibles desde lo más básico hasta proyectos complejos, siempre con la opción de paquetes o descuentos por volumen.</p>
-
-      <p><strong>⏱️ Entregas garantizadas</strong><br>
-      Si necesitas algo para hoy mismo, manejamos entregas exprés. También ofrecemos entregas programadas con seguimiento para que siempre tengas tus trabajos a tiempo.</p>
-
-      <p><strong>📱 Atención directa y rápida</strong><br>
-      Puedes escribirnos para resolver dudas, pedir cambios o solicitar nuevos trabajos. Siempre respondemos lo más rápido posible y con comunicación clara.</p>
-
-      <p><strong>📚 Material hecho desde cero</strong><br>
-      Todo el contenido se crea individualmente para cada cliente, asegurando originalidad, coherencia y total personalización.</p>
-
-      <p><strong>🎯 Orientación completa</strong><br>
-      No solo redactamos: te ayudamos a entender el tema para que puedas defender o explicar cualquier parte del trabajo si te lo piden.</p>
-    </div>
-  </section>
-
-  <!-- PRECIOS -->
-  <section id="precios">
-    <div style="background-color: #ffd1e0; color: #5c001f; padding: 1rem; border-radius: 10px; font-weight: bold; text-align: center; font-size: 1.1rem; margin-bottom: 1rem;">
-      🔥 Descuentos por volumen: 3 a 10 cuartillas (30% OFF) | +10 cuartillas (50% OFF)
-    </div>
-
-    <div class="card">
-      <h2>Precios por Cuartilla</h2>
-
-      <p>Los precios varían según la complejidad del trabajo, el nivel académico, la profundidad requerida y el tiempo disponible para la entrega. A continuación te mostramos rangos aproximados que nos permiten cubrir el tiempo de investigación, redacción, análisis y revisión de calidad que cada trabajo necesita.</p>
-
-      <table>
-        <thead>
-          <tr>
-            <th>Nivel</th>
-            <th>Precio</th>
-            <th>¿Qué incluye?</th>
-            <th>Ejemplo</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>🍃 Básico</td>
-            <td>$10 – $20</td>
-            <td>Trabajos simples que requieren lectura ligera, resúmenes rápidos o ejercicios de comprensión básica.</td>
-            <td>Resumir una lectura corta o contestar preguntas directas.</td>
-          </tr>
-
-          <tr style="background-color: #6e0026;">
-            <td>📘 Intermedio</td>
-            <td>$20 – $40</td>
-            <td>Análisis, estructuración de ideas, redacción razonada y argumentativa, comparaciones y elaboración de contenido más profundo.</td>
-            <td>Ensayo con introducción, argumento central y conclusión.</td>
-          </tr>
-
-          <tr>
-            <td>🧠 Avanzado</td>
-            <td>$40 – $70</td>
-            <td>Investigación compleja, desarrollo teórico, análisis detallado, trabajo con fuentes, citas, bibliografía y contenido especializado.</td>
-            <td>Proyecto final, investigaciones semestrales o análisis profesionales.</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <p style="margin-top:1rem;">Cada trabajo incluye revisión final, formato limpio, redacción clara y posibilidad de solicitar pequeños ajustes sin costo adicional.</p>
-    </div>
-  </section>
-
-  <!-- CONTACTO -->
-  <section id="contacto">
-    <div class="card">
-      <h2>📬 Solicita tu tarea</h2>
-
-      <form onsubmit="enviarMensaje(); return false;">
-        <label for="mensaje">¿Qué necesitas?</label>
-        <textarea id="mensaje" rows="5" placeholder="Ejemplo: Necesito un ensayo de 4 páginas sobre comunicación para mañana..."></textarea>
-
-        <label for="contacto">¿Cómo te contactamos?</label>
-        <input id="contacto" type="text" placeholder="Tu WhatsApp o Correo" />
-
-        <button type="submit">Enviar solicitud vía WhatsApp</button>
-      </form>
-    </div>
-
-    <div class="card" style="text-align: center;">
-      <h2>Contacto Directo</h2>
-      <div class="contact-links">
-        <a class="whatsapp" href="https://wa.me/5215592005048" target="_blank">💬 WhatsApp</a>
-        <a class="facebook" href="https://www.facebook.com/jose.vazquez.916889" target="_blank">📘 Facebook</a>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 SolucionesEstudio | Apoyo académico en todas las áreas</p>
-  </footer>
-
-  <script>
-    function enviarMensaje() {
-      const mensaje = document.getElementById('mensaje').value.trim();
-      const contacto = document.getElementById('contacto').value.trim();
-
-      if (!mensaje || !contacto) {
-        alert("Por favor, llena ambos campos.");
-        return;
-      }
-
-      const texto = `Hola, necesito apoyo con una tarea:%0A%0A${mensaje}%0A%0AContacto: ${contacto}`;
-      const url = "https://wa.me/5215592005048?text=" + encodeURIComponent(texto);
-
-      window.open(url, "_blank");
+    if (!mensaje || !contacto) {
+      alert("Por favor, llena ambos campos.");
+      return;
     }
-  </script>
+
+    const texto = `Hola, necesito apoyo con una tarea:%0A%0A${mensaje}%0A%0AContacto: ${contacto}`;
+    const url = "https://wa.me/5215592005048?text=" + encodeURIComponent(texto);
+    window.open(url, "_blank");
+  }
+</script>
 
 </body>
 </html>
