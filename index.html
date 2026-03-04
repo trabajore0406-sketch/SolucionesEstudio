@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tarea Express | Apoyo Académico Integral</title>
+  <title>SolucionesEstudio | Apoyo Académico Integral</title>
   <link rel="icon" href="https://i.imgur.com/ojpfeGU.jpeg" type="image/x-icon" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
@@ -14,12 +14,15 @@
     }
     body {
       font-family: 'Inter', sans-serif;
-      background-color: #f9fafb;
-      color: #1e293b;
+      /* GRIS RATA */
+      background-color: #2f3542; 
+      /* LETRAS BLANCAS POR DEFECTO */
+      color: #f1f2f6;
       line-height: 1.6;
     }
     header {
-      background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+      /* COLOR VINO */
+      background: linear-gradient(135deg, #630330, #800020);
       color: white;
       text-align: center;
       padding: 4rem 1rem 2rem;
@@ -29,7 +32,7 @@
       width: 120px;
       border-radius: 50%;
       border: 4px solid white;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
     }
     header h1 {
       font-size: 2.8rem;
@@ -42,9 +45,9 @@
     nav {
       position: sticky;
       top: 0;
-      background-color: white;
+      background-color: #ffffff;
       padding: 0.8rem 2rem;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
       display: flex;
       justify-content: center;
       gap: 2rem;
@@ -52,7 +55,8 @@
     }
     nav a {
       text-decoration: none;
-      color: #1e3a8a;
+      /* COLOR VINO PARA LINKS */
+      color: #800020;
       font-weight: 600;
     }
     section {
@@ -61,15 +65,18 @@
       margin: auto;
     }
     h2 {
-      color: #1e40af;
+      /* COLOR VINO PARA TÍTULOS */
+      color: #800020;
       font-size: 2rem;
       margin-bottom: 1rem;
     }
     .card {
-      background-color: white;
+      /* FONDO DE TARJETAS LIGERAMENTE OSCURO O BLANCO */
+      background-color: #ffffff;
+      color: #2f3542; /* Texto oscuro dentro de tarjetas blancas para lectura */
       padding: 2rem;
       border-radius: 12px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
       margin-bottom: 2rem;
       transition: transform 0.3s ease;
     }
@@ -94,7 +101,8 @@
     }
     form button {
       margin-top: 15px;
-      background-color: #1e3a8a;
+      /* BOTÓN COLOR VINO */
+      background-color: #800020;
       color: white;
       border: none;
       padding: 14px 24px;
@@ -117,7 +125,7 @@
     a.whatsapp { background-color: #25d366; }
     a.facebook { background-color: #1877f2; }
     footer {
-      background-color: #1e293b;
+      background-color: #1a1a1a;
       color: white;
       text-align: center;
       padding: 2rem;
@@ -125,13 +133,13 @@
     }
     table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
     th, td { padding: 12px; border: 1px solid #ddd; text-align: left; }
-    th { background-color: #1e40af; color: white; }
+    th { background-color: #800020; color: white; }
   </style>
 </head>
 <body>
   <header>
-    <img src="https://i.imgur.com/ojpfeGU.jpeg" alt="Logo Tarea Express" />
-    <h1>Tarea Express</h1>
+    <img src="https://i.imgur.com/ojpfeGU.jpeg" alt="Logo SolucionesEstudio" />
+    <h1>SolucionesEstudio</h1>
     <p>Apoyo experto en todas las materias. Entrega rápida + explicación + calidad total.</p>
   </header>
 
@@ -147,29 +155,29 @@
     <div class="card">
       <h2>¿Qué ofrecemos?</h2>
 
-      <p><strong>📚 Tareas, ensayos, resúmenes y proyectos a tu medida</strong></p>
-      <p>Realizamos todo tipo de trabajos académicos de cualquier nivel y materia. Desde tareas sencillas hasta ensayos profundos, investigaciones, y cuadros comparativos. Cada entrega se adapta a tus requisitos específicos y los de tus profesores.</p>
+      <p><strong>📚 Tareas, ensayos y proyectos a tu medida</strong></p>
+      <p>Realizamos todo tipo de trabajos escolares de cualquier nivel. Desde tareas diarias hasta investigaciones profundas y cuadros comparativos. Cada entrega se adapta a tus requisitos específicos.</p>
 
-      <p><strong>📝 Elaboración de presentaciones y material didáctico</strong></p>
-      <p>Creamos diapositivas, mapas mentales, infografías y guiones de apoyo para tus clases. Todo diseñado de forma visual y profesional para que destaques en tus presentaciones escolares.</p>
+      <p><strong>📝 Material didáctico y presentaciones</strong></p>
+      <p>Creamos diapositivas, mapas mentales e infografías profesionales para que destaques en tus clases. Todo diseñado de forma visual y clara.</p>
 
-      <p><strong>🎤 Asesoría personalizada y resolución de dudas</strong></p>
-      <p>¿No entiendes un tema o tienes que exponer? Te brindamos apoyo para que comprendas el contenido de fondo. Te ayudamos a estructurar tus ideas y a presentarlas con total seguridad.</p>
+      <p><strong>🎤 Asesoría y resolución de dudas</strong></p>
+      <p>¿Tienes dudas sobre un tema? Te brindamos apoyo para que comprendas el contenido. Te ayudamos a estructurar tus ideas para que expongas con seguridad.</p>
 
-      <p><strong>💡 Material con explicación incluida</strong></p>
-      <p>No solo entregamos el documento; te explicamos los puntos clave para que realmente aprendas. Nuestro objetivo es que mejores tus notas y también tus conocimientos en la materia.</p>
+      <p><strong>💡 Material con explicación</strong></p>
+      <p>No solo te entregamos el trabajo; te explicamos los puntos clave para que realmente aprendas y mejores tus conocimientos en la materia.</p>
 
-      <p><strong>📖 Formato profesional (APA, Vancouver, etc.)</strong></p>
-      <p>Tus trabajos incluyen referencias correctamente citadas, ortografía impecable y una estructura limpia, listos para ser entregados sin necesidad de correcciones adicionales.</p>
+      <p><strong>📖 Formato y ortografía profesional</strong></p>
+      <p>Tus trabajos incluyen ortografía impecable, estructura limpia y el formato que necesites, listos para ser entregados.</p>
     </div>
   </section>
 
   <section id="beneficios">
     <div class="card">
       <h2>Beneficios</h2>
-      <p><strong>Atención Multidisciplinaria:</strong> Apoyo en áreas de ciencias sociales, humanidades, administración, comunicación y más.</p>
-      <p><strong>Calidad Académica:</strong> Documentos redactados con claridad, coherencia y bases sólidas en cada tema abordado.</p>
-      <p><strong>Aprendizaje Real:</strong> Fomentamos el entendimiento de los temas mediante guías y explicaciones personalizadas.</p>
+      <p><strong>Atención Integral:</strong> Apoyo en diversas áreas académicas y materias escolares.</p>
+      <p><strong>Calidad Académica:</strong> Documentos redactados con claridad y coherencia en cada tema abordado.</p>
+      <p><strong>Aprendizaje Real:</strong> Fomentamos el entendimiento de los temas mediante guías personalizadas.</p>
       <p><strong>Confidencialidad:</strong> Tu identidad y los detalles de tus trabajos están protegidos bajo estricta discreción.</p>
       <p><strong>Puntualidad:</strong> Entregas en el tiempo pactado para que nunca pierdas una fecha límite.</p>
     </div>
@@ -178,10 +186,10 @@
   <section id="porqueelegirnos">
     <div class="card">
       <h2>¿Por qué elegirnos?</h2>
-      <p><strong>💼 Amplia Experiencia:</strong> Contamos con expertos en diversas áreas académicas para asegurar que tu proyecto sea tratado por alguien que conoce el tema.</p>
-      <p><strong>💰 Precios para Estudiantes:</strong> Tarifas accesibles desde $20 pesos, pensadas en el presupuesto de un estudiante promedio.</p>
-      <p><strong>⏱️ Entregas Urgentes:</strong> ¿Lo necesitas para hoy? Contamos con servicio de entrega exprés el mismo día.</p>
-      <p><strong>📱 Comunicación Directa:</strong> Atención inmediata por WhatsApp para resolver dudas o hacer ajustes en tiempo real.</p>
+      <p><strong>💼 Amplia Experiencia:</strong> Contamos con colaboradores en diversas áreas para asegurar que tu proyecto sea de calidad.</p>
+      <p><strong>💰 Precios para Estudiantes:</strong> Tarifas accesibles desde $20 pesos, pensadas en tu presupuesto.</p>
+      <p><strong>⏱️ Entregas Urgentes:</strong> ¿Lo necesitas para hoy? Contamos con servicio de entrega rápida el mismo día.</p>
+      <p><strong>📱 Comunicación Directa:</strong> Atención inmediata por WhatsApp para resolver dudas en tiempo real.</p>
     </div>
   </section>
 
@@ -205,19 +213,19 @@
           <tr>
             <td>🍃 Básico</td>
             <td>$10 – $20</td>
-            <td>Resúmenes, cuestionarios simples, mapas conceptuales básicos.</td>
+            <td>Resúmenes, cuestionarios simples, mapas básicos.</td>
             <td>Resumir una lectura de 5 páginas.</td>
           </tr>
           <tr style="background-color: #f3f4f6;">
             <td>📘 Intermedio</td>
             <td>$20 – $40</td>
             <td>Ensayos estructurados, análisis de textos, cuadros comparativos.</td>
-            <td>Ensayo de opinión con introducción y desarrollo.</td>
+            <td>Ensayo con introducción y desarrollo.</td>
           </tr>
           <tr>
             <td>🧠 Avanzado</td>
             <td>$40 – $70</td>
-            <td>Investigaciones profundas, casos de estudio, proyectos técnicos.</td>
+            <td>Investigaciones profundas, casos de estudio, proyectos complejos.</td>
             <td>Proyecto final de semestre o investigación especializada.</td>
           </tr>
         </tbody>
@@ -227,10 +235,10 @@
 
   <section id="contacto">
     <div class="card">
-      <h2>📬 Solicita tu tarea</h2>
+      <h2>📬 Solicita tu apoyo</h2>
       <form onsubmit="enviarMensaje(); return false;">
         <label for="mensaje">¿Qué necesitas?</label>
-        <textarea id="mensaje" rows="5" placeholder="Ejemplo: Necesito un ensayo de 4 páginas sobre la historia de la comunicación para mañana..."></textarea>
+        <textarea id="mensaje" rows="5" placeholder="Ejemplo: Necesito un ensayo de 4 páginas sobre historia para mañana..."></textarea>
         <label for="contacto">¿Cómo te contactamos?</label>
         <input id="contacto" type="text" placeholder="Tu WhatsApp o Correo" />
         <button type="submit">Enviar solicitud vía WhatsApp</button>
@@ -247,7 +255,7 @@
   </section>
 
   <footer>
-    <p>&copy; 2025 Tarea Express | Tu apoyo académico de confianza en todas las áreas</p>
+    <p>&copy; 2026 SolucionesEstudio | Tu apoyo académico de confianza</p>
   </footer>
 
   <script>
@@ -258,7 +266,7 @@
         alert("Por favor, llena ambos campos.");
         return;
       }
-      const texto = `Hola, necesito apoyo con una tarea:%0A%0A${mensaje}%0A%0AContacto: ${contacto}`;
+      const texto = `Hola, necesito apoyo con una tarea en SolucionesEstudio:%0A%0A${mensaje}%0A%0AContacto: ${contacto}`;
       const url = "https://wa.me/5215592005048?text=" + encodeURIComponent(texto);
       window.open(url, "_blank");
     }
