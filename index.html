@@ -26,7 +26,7 @@
       font-family: 'Inter', sans-serif;
       background-color: #3f3f46; 
       color: #ffffff; 
-      line-height: 1.7;
+      line-height: 1.6;
     }
 
     /* COLORES Y VARIABLES CLAVE */
@@ -317,18 +317,22 @@
       opacity: 0.9;
     }
 
-    .table-wrapper { overflow-x: auto; }
+    /* ESTILOS DE LA TABLA */
+    .table-wrapper { overflow-x: auto; margin-bottom: 2rem; }
     table {
       width: 100%;
+      min-width: 800px;
       border-collapse: collapse;
       background-color: var(--bg-oscuro);
       border-radius: 10px;
       overflow: hidden;
     }
-    th, td { padding: 18px; border: 1px solid #3f3f46; text-align: left; }
+    th, td { padding: 15px; border: 1px solid #3f3f46; text-align: left; vertical-align: top; }
     th { background-color: var(--color-vino); color: white; font-size: 1.1rem; text-transform: uppercase; }
     tr.alt-row { background-color: var(--bg-secundario); }
     tr:hover td { background-color: rgba(212, 121, 133, 0.1); }
+    ul.table-list { margin-left: 20px; margin-top: 8px; font-size: 0.95rem; color: var(--texto-gris); }
+    ul.table-list li { margin-bottom: 5px; }
 
     /* PREGUNTAS FRECUENTES (FAQ) VISIBLES */
     .faq-item {
@@ -414,7 +418,7 @@
       position: fixed;
       width: 60px;
       height: 60px;
-      bottom: 100px; /* Arriba del de Facebook */
+      bottom: 100px;
       right: 30px;
       background-color: var(--whatsapp-verde);
       color: #FFF;
@@ -435,7 +439,7 @@
       position: fixed;
       width: 60px;
       height: 60px;
-      bottom: 30px; /* Abajo del de WhatsApp */
+      bottom: 30px;
       right: 30px;
       background-color: var(--facebook-azul);
       color: #FFF;
@@ -640,48 +644,126 @@
       <table>
         <thead>
           <tr>
-            <th>Nivel de Dificultad</th>
-            <th>Precio x Cuartilla (Aprox)</th>
-            <th>¿Qué incluye?</th>
-            <th>Ejemplo de Tarea</th>
+            <th style="width: 15%;">Nivel de Dificultad</th>
+            <th style="width: 20%;">Precio x Cuartilla (Aprox)</th>
+            <th style="width: 35%;">¿Qué incluye la tarifa?</th>
+            <th style="width: 30%;">Ejemplo de Tarea</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td>🍃 <strong>Básico</strong></td>
-            <td>$10 – $20 MXN</td>
-            <td>Lectura superficial, síntesis simple, estructura básica.</td>
-            <td>Resumir una lectura, cuestionarios de preparatoria.</td>
+            <td><strong>$10 – $20 MXN</strong></td>
+            <td>
+              <ul class="table-list">
+                <li>Lectura y síntesis rápida del material.</li>
+                <li>Estructura simple (Intro, Desarrollo, Cierre).</li>
+                <li>Sin investigación en fuentes externas.</li>
+                <li>Redacción sin formato específico estricto.</li>
+              </ul>
+            </td>
+            <td>
+              <ul class="table-list">
+                <li>Resúmenes de 1 sola fuente.</li>
+                <li>Cuestionarios de preparatoria.</li>
+                <li>Mapas mentales sencillos.</li>
+              </ul>
+            </td>
           </tr>
           <tr class="alt-row">
             <td>📘 <strong>Intermedio</strong></td>
-            <td>$20 – $40 MXN</td>
-            <td>Investigación en fuentes, opinión crítica, formato APA.</td>
-            <td>Ensayo argumentativo, cuadros comparativos universitarios.</td>
+            <td><strong>$20 – $40 MXN</strong></td>
+            <td>
+              <ul class="table-list">
+                <li>Investigación en 2 a 4 fuentes confiables.</li>
+                <li>Inclusión de opinión crítica y reflexiva.</li>
+                <li>Aplicación estricta de formato (APA, MLA).</li>
+                <li>Citas textuales y bibliografía correcta.</li>
+              </ul>
+            </td>
+            <td>
+              <ul class="table-list">
+                <li>Ensayos argumentativos universitarios.</li>
+                <li>Cuadros comparativos formales.</li>
+                <li>Reportes de investigación documental.</li>
+              </ul>
+            </td>
           </tr>
           <tr>
             <td>🧠 <strong>Avanzado</strong></td>
-            <td>$40 – $70 MXN</td>
-            <td>Investigación profunda, bases de datos académicas, análisis crítico.</td>
-            <td>Protocolos de investigación, proyectos finales de semestre.</td>
+            <td><strong>$40 – $70 MXN</strong></td>
+            <td>
+              <ul class="table-list">
+                <li>Búsqueda en bases académicas (EBSCO, Redalyc).</li>
+                <li>Análisis crítico profundo y estructura metodológica.</li>
+                <li>Múltiples fuentes bibliográficas actualizadas.</li>
+                <li>Redacción académica formal y argumentativa.</li>
+              </ul>
+            </td>
+            <td>
+              <ul class="table-list">
+                <li>Protocolos de investigación.</li>
+                <li>Proyectos o trabajos finales de semestre.</li>
+                <li>Críticas jurisprudenciales.</li>
+              </ul>
+            </td>
           </tr>
           <tr class="alt-row">
             <td>🎓 <strong>Especializado</strong></td>
-            <td>$70 – $150+ MXN</td>
-            <td>Metodología compleja, acompañamiento a largo plazo.</td>
-            <td>Apoyo en Tesinas, análisis estadístico o trabajos de maestría.</td>
+            <td><strong>$70 – $150+ MXN</strong></td>
+            <td>
+              <ul class="table-list">
+                <li>Nivel de exigencia para titulación o posgrado.</li>
+                <li>Metodología compleja y rigurosa.</li>
+                <li>Acompañamiento a largo plazo (entregas parciales).</li>
+                <li>Análisis de datos o dogmática profunda.</li>
+              </ul>
+            </td>
+            <td>
+              <ul class="table-list">
+                <li>Capítulos de Tesinas o Tesis.</li>
+                <li>Análisis estadístico (SPSS).</li>
+                <li>Trabajos finales de Maestría.</li>
+              </ul>
+            </td>
           </tr>
           <tr>
             <td>🎨 <strong>Diseño Visual</strong></td>
-            <td>$20 – $50 c/u</td>
-            <td>Diseño estético, síntesis de info, elementos gráficos.</td>
-            <td>Infografías completas, Presentaciones por diapositiva.</td>
+            <td><strong>$20 – $50 c/u</strong> <br><span style="font-size: 0.8rem; font-weight: normal;">(Por diapositiva/página)</span></td>
+            <td>
+              <ul class="table-list">
+                <li>Síntesis de información textual para exponer.</li>
+                <li>Diseño gráfico estético (Canva, Prezi, PPT).</li>
+                <li>Elementos gráficos visuales atractivos.</li>
+                <li><em>*No incluye redactar info desde cero.</em></li>
+              </ul>
+            </td>
+            <td>
+              <ul class="table-list">
+                <li>Presentaciones completas para exponer.</li>
+                <li>Infografías científicas.</li>
+                <li>Carteles de divulgación.</li>
+              </ul>
+            </td>
           </tr>
           <tr class="alt-row">
             <td>🌍 <strong>Traducciones</strong></td>
-            <td>$30 – $50 MXN</td>
-            <td>Traducción técnica y académica (Inglés - Español).</td>
-            <td>Abstracts, Papers o capítulos de libros.</td>
+            <td><strong>$30 – $50 MXN</strong></td>
+            <td>
+              <ul class="table-list">
+                <li>Traducción humana experta (Inglés - Español).</li>
+                <li>Ajuste de lenguaje técnico y académico.</li>
+                <li>Revisión de estilo en el idioma destino.</li>
+                <li>Respeto del formato original del documento.</li>
+              </ul>
+            </td>
+            <td>
+              <ul class="table-list">
+                <li>Abstracts para tesis.</li>
+                <li>Papers o artículos científicos.</li>
+                <li>Capítulos de libros en inglés.</li>
+              </ul>
+            </td>
           </tr>
         </tbody>
       </table>
