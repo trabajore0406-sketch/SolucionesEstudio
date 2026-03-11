@@ -40,6 +40,7 @@
       --texto-blanco: #ffffff;
       --texto-gris: #d4d4d8;
       --whatsapp-verde: #25d366;
+      --facebook-azul: #1877f2;
     }
 
     /* ENCABEZADO (HERO SECTION) */
@@ -220,7 +221,7 @@
       transform: translateX(-50%);
     }
 
-    /* TABLA Y CALCULADORA DE PRECIOS */
+    /* TABLA DE PRECIOS */
     .promo-banner {
       background: linear-gradient(90deg, var(--color-vino-oscuro), var(--color-vino));
       color: var(--texto-blanco);
@@ -238,7 +239,19 @@
       70% { box-shadow: 0 0 0 15px rgba(128, 0, 32, 0); }
       100% { box-shadow: 0 0 0 0 rgba(128, 0, 32, 0); }
     }
-    
+    .table-wrapper { overflow-x: auto; margin-bottom: 3rem; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: var(--bg-oscuro);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    th, td { padding: 18px; border: 1px solid #3f3f46; text-align: left; }
+    th { background-color: var(--color-vino); color: white; font-size: 1.1rem; text-transform: uppercase; }
+    tr.alt-row { background-color: var(--bg-secundario); }
+    tr:hover td { background-color: rgba(212, 121, 133, 0.1); }
+
     /* ESTILOS DE LA CALCULADORA */
     .calculator-box {
       background-color: var(--bg-oscuro);
@@ -246,7 +259,7 @@
       border-radius: 15px;
       padding: 2rem;
       max-width: 700px;
-      margin: 0 auto 3rem auto;
+      margin: 0 auto;
       box-shadow: 0 8px 25px rgba(0,0,0,0.4);
     }
     .calculator-box h3 {
@@ -316,47 +329,21 @@
       opacity: 0.9;
     }
 
-    .table-wrapper { overflow-x: auto; }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      background-color: var(--bg-oscuro);
-      border-radius: 10px;
-      overflow: hidden;
-    }
-    th, td { padding: 18px; border: 1px solid #3f3f46; text-align: left; }
-    th { background-color: var(--color-vino); color: white; font-size: 1.1rem; text-transform: uppercase; }
-    tr.alt-row { background-color: var(--bg-secundario); }
-    tr:hover td { background-color: rgba(212, 121, 133, 0.1); }
-
-    /* PREGUNTAS FRECUENTES INTERACTIVAS (FAQ) */
-    details {
+    /* PREGUNTAS FRECUENTES (FAQ) VISIBLES */
+    .faq-item {
       background-color: var(--bg-oscuro);
       margin-bottom: 1rem;
       padding: 1.5rem;
       border-radius: 10px;
       border-left: 5px solid var(--color-vino);
-      cursor: pointer;
-      transition: all 0.3s ease;
     }
-    summary {
+    .faq-item h4 {
       color: var(--color-vino-claro);
+      margin-bottom: 0.5rem;
       font-size: 1.2rem;
-      font-weight: bold;
-      outline: none;
-      list-style: none;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
     }
-    summary::-webkit-details-marker { display: none; }
-    summary::after { content: '▼'; font-size: 1rem; color: var(--color-vino); transition: transform 0.3s ease; }
-    details[open] summary::after { transform: rotate(180deg); }
-    details p {
-      margin-top: 1rem;
+    .faq-item p {
       color: var(--texto-gris);
-      padding-top: 1rem;
-      border-top: 1px solid #3f3f46;
     }
 
     /* FORMULARIO Y CONTACTO */
@@ -419,14 +406,14 @@
     }
     .social-btn:hover { transform: translateY(-3px); opacity: 0.9; }
     .whatsapp-btn { background-color: var(--whatsapp-verde); color: #1e293b; }
-    .facebook-btn { background-color: #1877f2; }
+    .facebook-btn { background-color: var(--facebook-azul); }
 
-    /* BOTÓN FLOTANTE WHATSAPP */
+    /* BOTONES FLOTANTES */
     .float-wa {
       position: fixed;
       width: 60px;
       height: 60px;
-      bottom: 30px;
+      bottom: 100px; /* Arriba del de Facebook */
       right: 30px;
       background-color: var(--whatsapp-verde);
       color: #FFF;
@@ -442,6 +429,27 @@
       transition: transform 0.3s ease;
     }
     .float-wa:hover { transform: scale(1.15); }
+
+    .float-fb {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 30px; /* Abajo del de WhatsApp */
+      right: 30px;
+      background-color: var(--facebook-azul);
+      color: #FFF;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 35px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+      z-index: 9998;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: transform 0.3s ease;
+    }
+    .float-fb:hover { transform: scale(1.15); }
 
     /* PIE DE PÁGINA */
     footer {
@@ -587,46 +595,6 @@
       🔥 ¡PROMOCIÓN EXCLUSIVA! Descuentos por volumen: 3 a 10 cuartillas (30% OFF) | +10 cuartillas (50% OFF) 🔥
     </div>
 
-    <div class="calculator-box">
-      <h3>🧮 Cotizador Automático de Tareas</h3>
-      
-      <div class="calc-grid">
-        <div class="calc-item">
-          <label for="calc-tipo">Nivel de Dificultad:</label>
-          <select id="calc-tipo" onchange="calcularCotizacion()">
-            <option value="15">🍃 Básico (Resúmenes, Cuestionarios)</option>
-            <option value="30" selected>📘 Intermedio (Ensayos APA, Mapas)</option>
-            <option value="55">🧠 Avanzado (Protocolos, Críticas Jurídicas)</option>
-            <option value="110">🎓 Especializado (Tesinas, Estadística)</option>
-            <option value="35">🎨 Diseño Visual (Infografías, Diapositivas)</option>
-            <option value="40">🌍 Traducciones (Inglés - Español)</option>
-          </select>
-        </div>
-        
-        <div class="calc-item">
-          <label for="calc-paginas">Cantidad (Cuartillas o Diapositivas):</label>
-          <input type="number" id="calc-paginas" min="1" value="1" oninput="calcularCotizacion()">
-        </div>
-        
-        <div class="calc-item" style="grid-column: 1 / -1;">
-          <label for="calc-urgencia">Tiempo de Entrega:</label>
-          <select id="calc-urgencia" onchange="calcularCotizacion()">
-            <option value="1">⏱️ Normal (Con días de anticipación)</option>
-            <option value="1.2">🚨 Urgente (Para mañana)</option>
-            <option value="1.5">🔥 EXPRESS (Para HOY Mismo)</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="calc-result">
-        Inversión Estimada (Descuentos Aplicados):
-        <span id="calc-total">$30.00 MXN</span>
-        <p id="calc-nota" style="font-size: 0.9rem; margin-top: 5px; color: var(--color-vino-claro); display: none;">¡Se ha aplicado un descuento por volumen!</p>
-      </div>
-
-      <button class="calc-btn" onclick="enviarCotizacionCalculada()">Enviar esta Cotización por WhatsApp 🚀</button>
-    </div>
-    
     <div class="table-wrapper">
       <table>
         <thead>
@@ -676,6 +644,46 @@
           </tr>
         </tbody>
       </table>
+    </div>
+
+    <div class="calculator-box">
+      <h3>🧮 Cotizador Automático de Tareas</h3>
+      
+      <div class="calc-grid">
+        <div class="calc-item">
+          <label for="calc-tipo">Nivel de Dificultad:</label>
+          <select id="calc-tipo" onchange="calcularCotizacion()">
+            <option value="15">🍃 Básico (Resúmenes, Cuestionarios)</option>
+            <option value="30" selected>📘 Intermedio (Ensayos APA, Mapas)</option>
+            <option value="55">🧠 Avanzado (Protocolos, Críticas Jurídicas)</option>
+            <option value="110">🎓 Especializado (Tesinas, Estadística)</option>
+            <option value="35">🎨 Diseño Visual (Infografías, Diapositivas)</option>
+            <option value="40">🌍 Traducciones (Inglés - Español)</option>
+          </select>
+        </div>
+        
+        <div class="calc-item">
+          <label for="calc-paginas">Cantidad (Cuartillas o Diapositivas):</label>
+          <input type="number" id="calc-paginas" min="1" value="1" oninput="calcularCotizacion()">
+        </div>
+        
+        <div class="calc-item" style="grid-column: 1 / -1;">
+          <label for="calc-urgencia">Tiempo de Entrega:</label>
+          <select id="calc-urgencia" onchange="calcularCotizacion()">
+            <option value="1">⏱️ Normal (Con días de anticipación)</option>
+            <option value="1.2">🚨 Urgente (Para mañana)</option>
+            <option value="1.5">🔥 EXPRESS (Para HOY Mismo)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="calc-result">
+        Inversión Estimada (Descuentos Aplicados):
+        <span id="calc-total">$30.00 MXN</span>
+        <p id="calc-nota" style="font-size: 0.9rem; margin-top: 5px; color: var(--color-vino-claro); display: none;">¡Se ha aplicado un descuento por volumen!</p>
+      </div>
+
+      <button class="calc-btn" onclick="enviarCotizacionCalculada()">Enviar esta Cotización por WhatsApp 🚀</button>
     </div>
   </section>
 
@@ -731,25 +739,25 @@
     <h2 class="section-title">Preguntas Frecuentes</h2>
     <div style="max-width: 800px; margin: auto;">
       
-      <details>
-        <summary>¿Piden algún anticipo o adelanto para empezar?</summary>
+      <div class="faq-item">
+        <h4>¿Piden algún anticipo o adelanto para empezar?</h4>
         <p><strong>¡NO! Ese es nuestro mayor diferenciador.</strong> Sabemos que hay mucha desconfianza en internet, así que trabajamos con base en resultados. Tú pides el trabajo, nosotros lo hacemos y te lo enviamos en formato de revisión. Una vez que validas que el trabajo está listo y bien hecho, nos realizas el pago y te liberamos el documento original.</p>
-      </details>
+      </div>
 
-      <details>
-        <summary>¿Cómo se realiza el pago final?</summary>
+      <div class="faq-item">
+        <h4>¿Cómo se realiza el pago final?</h4>
         <p>Aceptamos transferencias bancarias (SPEI) y depósitos en tiendas de conveniencia (OXXO, 7-Eleven). Te enviaremos los datos de cuenta junto con la revisión final de tu tarea.</p>
-      </details>
+      </div>
 
-      <details>
-        <summary>¿Qué pasa si mi profesor me pide correcciones?</summary>
+      <div class="faq-item">
+        <h4>¿Qué pasa si mi profesor me pide correcciones?</h4>
         <p>¡No te preocupes! Si las correcciones están dentro de las instrucciones originales que nos mandaste al principio, realizamos los ajustes totalmente GRATIS.</p>
-      </details>
+      </div>
 
-      <details>
-        <summary>¿Puedo pedir una tarea para el mismo día?</summary>
+      <div class="faq-item">
+        <h4>¿Puedo pedir una tarea para el mismo día?</h4>
         <p>Sí, manejamos el servicio "Express" para emergencias. Está sujeto a disponibilidad de nuestros asesores y tiene un cargo adicional por urgencia, pero haremos todo lo humanamente posible por salvar tu calificación.</p>
-      </details>
+      </div>
 
     </div>
   </section>
@@ -773,6 +781,14 @@
 
       <div class="contact-info">
         <h3 style="color: var(--color-vino-claro);">Contacto Directo</h3>
+        
+        <div style="background-color: rgba(24, 119, 242, 0.1); border-left: 4px solid #1877f2; padding: 1.2rem; border-radius: 8px; margin-bottom: 1.5rem;">
+          <p style="margin: 0; color: #d4d4d8; font-size: 0.95rem; line-height: 1.5;">
+            <strong style="color: #1877f2; font-size: 1.1rem;">⭐ ¡Cientos de estudiantes nos respaldan!</strong><br>
+            La confianza se gana con resultados. Puedes revisar todas nuestras referencias, opiniones y casos de éxito reales directamente en nuestra <a href="https://www.facebook.com/share/1AkH8o7Z1A/" target="_blank" style="color: #1877f2; text-decoration: underline; font-weight: bold;">página de Facebook</a>.
+          </p>
+        </div>
+
         <p>Estamos en línea para responder tus dudas casi de inmediato. Mándanos un mensaje y cotiza sin ningún compromiso (y sin pagar por adelantado).</p>
         
         <div style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1rem;">
@@ -798,6 +814,12 @@
   <a href="https://wa.me/5215592005048" class="float-wa" target="_blank" title="¡Escríbenos por WhatsApp!">
     <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" viewBox="0 0 16 16">
       <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+    </svg>
+  </a>
+
+  <a href="https://www.facebook.com/share/1AkH8o7Z1A/" class="float-fb" target="_blank" title="¡Visita nuestro Facebook!">
+    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" viewBox="0 0 16 16">
+      <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
     </svg>
   </a>
 
@@ -828,7 +850,7 @@
         notaDescuento.innerText = "¡Se aplicó un 50% de descuento por volumen! 🔥";
       }
 
-      // 4. Aplicar multiplicador de Urgencia (1.2 o 1.5)
+      // 4. Aplicar multiplicador de Urgencia
       total = total * multiplicadorUrgencia;
 
       // 5. Mostrar en pantalla
