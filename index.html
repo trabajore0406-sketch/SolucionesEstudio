@@ -53,11 +53,13 @@
       border-bottom: 5px solid var(--color-vino-oscuro);
     }
     header img {
-      width: 140px;
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
       border-radius: 50%;
-      border: 4px solid var(--texto-blanco);
-      box-shadow: 0 0 20px rgba(0,0,0,0.5);
-      margin-bottom: 1rem;
+      border: 5px solid var(--texto-blanco);
+      box-shadow: 0 0 25px rgba(0,0,0,0.6);
+      margin-bottom: 1.5rem;
       transition: transform 0.3s ease;
     }
     header img:hover {
@@ -221,6 +223,30 @@
       transform: translateX(-50%);
     }
 
+    /* TABLA COMPARATIVA (NOSOTROS VS ELLOS) */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: var(--bg-oscuro);
+      border-radius: 15px;
+      overflow: hidden;
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+    .compare-table th, .compare-table td {
+      padding: 1.5rem;
+      text-align: center;
+      border-bottom: 1px solid #3f3f46;
+      font-size: 1.05rem;
+    }
+    .compare-table th.col-feature { background-color: var(--color-vino-oscuro); color: white; text-align: left; width: 30%; font-size: 1.1rem;}
+    .compare-table th.col-bad { background-color: #3f3f46; color: #f87171; width: 35%; font-size: 1.2rem; }
+    .compare-table th.col-good { background-color: var(--whatsapp-verde); color: #1e293b; width: 35%; font-size: 1.2rem; }
+    .compare-table td:first-child { text-align: left; font-weight: bold; color: var(--texto-gris); }
+    .compare-table td.bad-item { color: #fca5a5; background-color: rgba(248, 113, 113, 0.05); }
+    .compare-table td.good-item { color: #6ee7b7; font-weight: bold; background-color: rgba(37, 211, 102, 0.05); }
+
     /* TABLA Y CALCULADORA DE PRECIOS */
     .promo-banner {
       background: linear-gradient(90deg, var(--color-vino-oscuro), var(--color-vino));
@@ -311,6 +337,9 @@
       font-weight: bold;
       text-transform: uppercase;
       transition: transform 0.2s;
+      text-align: center;
+      display: inline-block;
+      text-decoration: none;
     }
     .calc-btn:hover {
       transform: scale(1.02);
@@ -413,6 +442,26 @@
     .whatsapp-btn { background-color: var(--whatsapp-verde); color: #1e293b; }
     .facebook-btn { background-color: var(--facebook-azul); }
 
+    /* VÍA RÁPIDA (RÚBRICA) DENTRO DE CONTACTO */
+    .via-rapida-box {
+      background: linear-gradient(145deg, var(--bg-oscuro), #1f3325);
+      padding: 2rem;
+      border-radius: 10px;
+      border: 2px dashed var(--whatsapp-verde);
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .via-rapida-box h4 {
+      color: white;
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
+    .via-rapida-box p {
+      color: var(--texto-gris);
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
     /* BOTONES FLOTANTES */
     .float-wa {
       position: fixed;
@@ -494,7 +543,7 @@
       <br>
       <p>Actualmente somos una red de profesionales, tesistas y expertos asociados de diversas universidades. No somos una agencia fría y corporativa; somos ex-estudiantes que sabemos exactamente lo que piden los profesores más exigentes.</p>
       <br>
-      <p><em>(Y sí, nuestro mapache intelectual es el Jefe Oficial de Operaciones).</em> 🦝📚</p>
+      <p><em>(Y sí, nuestro cacomixtle intelectual es el Jefe Oficial de Operaciones).</em> 🐾📚</p>
     </div>
   </section>
 
@@ -590,6 +639,41 @@
         <p>Todo se redacta desde cero a la medida. No copiamos y pegamos de Wikipedia. Entregamos trabajos originales y analíticos.</p>
       </div>
       
+    </div>
+
+    <h3 style="text-align: center; color: var(--color-vino-claro); margin: 4rem 0 2rem; font-size: 2rem;">La Diferencia es Clara 🥊</h3>
+    <div style="overflow-x: auto;">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th class="col-feature">Característica</th>
+            <th class="col-bad">❌ Agencias y Grupos de Facebook</th>
+            <th class="col-good">✅ SolucionesEstudio</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Política de Pagos</td>
+            <td class="bad-item">Te exigen el 50% de anticipo (Alto riesgo de estafa o bloqueo).</td>
+            <td class="good-item">CERO ANTICIPOS. Pagas hasta que el trabajo está terminado y revisado.</td>
+          </tr>
+          <tr>
+            <td>Originalidad</td>
+            <td class="bad-item">Copy-paste de Wikipedia o uso básico de Inteligencia Artificial sin revisión.</td>
+            <td class="good-item">Redacción desde cero, enfoque analítico y libre de plagio.</td>
+          </tr>
+          <tr>
+            <td>Correcciones</td>
+            <td class="bad-item">Te cobran extra si el profesor pide algún ajuste.</td>
+            <td class="good-item">Correcciones GRATIS (siempre que respeten las instrucciones iniciales).</td>
+          </tr>
+          <tr>
+            <td>Atención</td>
+            <td class="bad-item">Trato robotizado, demoran horas en contestar.</td>
+            <td class="good-item">Trato directo por WhatsApp 24/7 de estudiante a estudiante.</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </section>
 
@@ -847,7 +931,7 @@
   </section>
 
   <section id="contacto" style="background-color: transparent;">
-    <h2 class="section-title">📬 Inicia tu Solución Hoy</h2>
+    <h2 class="section-title">📬 Cuéntanos qué necesitas</h2>
     
     <div style="background-color: rgba(24, 119, 242, 0.1); border-left: 4px solid #1877f2; padding: 1.5rem; border-radius: 8px; margin: 0 auto 3rem auto; max-width: 800px; text-align: center;">
       <p style="margin: 0; color: #d4d4d8; font-size: 1rem; line-height: 1.6;">
@@ -858,15 +942,21 @@
 
     <div class="contact-container">
       <div>
-        <h3 style="color: var(--color-vino-claro); margin-bottom: 1rem;">Cuéntanos qué necesitas</h3>
+        <div class="via-rapida-box">
+          <h4>📎 ¿Te da flojera llenar formularios o cotizar?</h4>
+          <p>No te compliques. <strong>Mándanos el PDF, la foto del pizarrón o un audio con las instrucciones de tu profesor.</strong> Nosotros analizamos la rúbrica y te damos el precio exacto en 2 minutos sin compromiso.</p>
+          <a href="https://wa.me/5215592005048?text=Hola!%20Les%20mando%20las%20instrucciones%20de%20mi%20tarea%20para%20que%20me%20den%20precio%20exacto.%20%F0%9F%93%8E" target="_blank" class="calc-btn" style="width: 100%; display: inline-block; text-decoration: none; text-align: center; box-sizing: border-box;">Enviar Rúbrica a WhatsApp 🚀</a>
+        </div>
+
+        <h3 style="color: var(--color-vino-claro); margin-bottom: 1rem; text-align: center;">O escríbelo manualmente:</h3>
         <form onsubmit="enviarMensaje(); return false;">
-          <label for="mensaje" style="font-weight: bold;">Detalles de la Tarea:</label>
-          <textarea id="mensaje" rows="5" placeholder="Ejemplo: Necesito un ensayo de 5 páginas sobre la Revolución Industrial, con formato APA y mínimo 3 fuentes. Es para el viernes a las 10 PM."></textarea>
+          <label for="mensaje" style="font-weight: bold; color: var(--texto-gris); display: block; margin-bottom: 0.5rem;">Detalles de la Tarea:</label>
+          <textarea id="mensaje" rows="4" placeholder="Ejemplo: Necesito un ensayo de 5 páginas sobre la Revolución Industrial, con formato APA y mínimo 3 fuentes. Es para el viernes a las 10 PM."></textarea>
           
-          <label for="contacto" style="font-weight: bold;">Tu Nombre / Medio de Contacto:</label>
+          <label for="contacto" style="font-weight: bold; color: var(--texto-gris); display: block; margin-bottom: 0.5rem;">Tu Nombre / Medio de Contacto:</label>
           <input id="contacto" type="text" placeholder="Ej: Juan Pérez - Mi correo o WhatsApp es..." />
           
-          <button type="submit">Enviar Solicitud a WhatsApp 🚀</button>
+          <button type="submit">Enviar Solicitud Manual</button>
         </form>
       </div>
 
