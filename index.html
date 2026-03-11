@@ -221,7 +221,7 @@
       transform: translateX(-50%);
     }
 
-    /* TABLA DE PRECIOS */
+    /* TABLA Y CALCULADORA DE PRECIOS */
     .promo-banner {
       background: linear-gradient(90deg, var(--color-vino-oscuro), var(--color-vino));
       color: var(--texto-blanco);
@@ -239,19 +239,7 @@
       70% { box-shadow: 0 0 0 15px rgba(128, 0, 32, 0); }
       100% { box-shadow: 0 0 0 0 rgba(128, 0, 32, 0); }
     }
-    .table-wrapper { overflow-x: auto; margin-bottom: 3rem; }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      background-color: var(--bg-oscuro);
-      border-radius: 10px;
-      overflow: hidden;
-    }
-    th, td { padding: 18px; border: 1px solid #3f3f46; text-align: left; }
-    th { background-color: var(--color-vino); color: white; font-size: 1.1rem; text-transform: uppercase; }
-    tr.alt-row { background-color: var(--bg-secundario); }
-    tr:hover td { background-color: rgba(212, 121, 133, 0.1); }
-
+    
     /* ESTILOS DE LA CALCULADORA */
     .calculator-box {
       background-color: var(--bg-oscuro);
@@ -259,7 +247,7 @@
       border-radius: 15px;
       padding: 2rem;
       max-width: 700px;
-      margin: 0 auto;
+      margin: 0 auto 3rem auto;
       box-shadow: 0 8px 25px rgba(0,0,0,0.4);
     }
     .calculator-box h3 {
@@ -328,6 +316,19 @@
       transform: scale(1.02);
       opacity: 0.9;
     }
+
+    .table-wrapper { overflow-x: auto; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: var(--bg-oscuro);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    th, td { padding: 18px; border: 1px solid #3f3f46; text-align: left; }
+    th { background-color: var(--color-vino); color: white; font-size: 1.1rem; text-transform: uppercase; }
+    tr.alt-row { background-color: var(--bg-secundario); }
+    tr:hover td { background-color: rgba(212, 121, 133, 0.1); }
 
     /* PREGUNTAS FRECUENTES (FAQ) VISIBLES */
     .faq-item {
@@ -595,6 +596,46 @@
       🔥 ¡PROMOCIÓN EXCLUSIVA! Descuentos por volumen: 3 a 10 cuartillas (30% OFF) | +10 cuartillas (50% OFF) 🔥
     </div>
 
+    <div class="calculator-box">
+      <h3>🧮 Cotizador Automático de Tareas</h3>
+      
+      <div class="calc-grid">
+        <div class="calc-item">
+          <label for="calc-tipo">Nivel de Dificultad:</label>
+          <select id="calc-tipo" onchange="calcularCotizacion()">
+            <option value="15">🍃 Básico (Resúmenes, Cuestionarios)</option>
+            <option value="30" selected>📘 Intermedio (Ensayos APA, Mapas)</option>
+            <option value="55">🧠 Avanzado (Protocolos, Críticas Jurídicas)</option>
+            <option value="110">🎓 Especializado (Tesinas, Estadística)</option>
+            <option value="35">🎨 Diseño Visual (Infografías, Diapositivas)</option>
+            <option value="40">🌍 Traducciones (Inglés - Español)</option>
+          </select>
+        </div>
+        
+        <div class="calc-item">
+          <label for="calc-paginas">Cantidad (Cuartillas o Diapositivas):</label>
+          <input type="number" id="calc-paginas" min="1" value="1" oninput="calcularCotizacion()">
+        </div>
+        
+        <div class="calc-item" style="grid-column: 1 / -1;">
+          <label for="calc-urgencia">Tiempo de Entrega:</label>
+          <select id="calc-urgencia" onchange="calcularCotizacion()">
+            <option value="1">⏱️ Normal (Con días de anticipación)</option>
+            <option value="1.2">🚨 Urgente (Para mañana)</option>
+            <option value="1.5">🔥 EXPRESS (Para HOY Mismo)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="calc-result">
+        Inversión Estimada (Descuentos Aplicados):
+        <span id="calc-total">$30.00 MXN</span>
+        <p id="calc-nota" style="font-size: 0.9rem; margin-top: 5px; color: var(--color-vino-claro); display: none;">¡Se ha aplicado un descuento por volumen!</p>
+      </div>
+
+      <button class="calc-btn" onclick="enviarCotizacionCalculada()">Enviar esta Cotización por WhatsApp 🚀</button>
+    </div>
+    
     <div class="table-wrapper">
       <table>
         <thead>
@@ -645,46 +686,6 @@
         </tbody>
       </table>
     </div>
-
-    <div class="calculator-box">
-      <h3>🧮 Cotizador Automático de Tareas</h3>
-      
-      <div class="calc-grid">
-        <div class="calc-item">
-          <label for="calc-tipo">Nivel de Dificultad:</label>
-          <select id="calc-tipo" onchange="calcularCotizacion()">
-            <option value="15">🍃 Básico (Resúmenes, Cuestionarios)</option>
-            <option value="30" selected>📘 Intermedio (Ensayos APA, Mapas)</option>
-            <option value="55">🧠 Avanzado (Protocolos, Críticas Jurídicas)</option>
-            <option value="110">🎓 Especializado (Tesinas, Estadística)</option>
-            <option value="35">🎨 Diseño Visual (Infografías, Diapositivas)</option>
-            <option value="40">🌍 Traducciones (Inglés - Español)</option>
-          </select>
-        </div>
-        
-        <div class="calc-item">
-          <label for="calc-paginas">Cantidad (Cuartillas o Diapositivas):</label>
-          <input type="number" id="calc-paginas" min="1" value="1" oninput="calcularCotizacion()">
-        </div>
-        
-        <div class="calc-item" style="grid-column: 1 / -1;">
-          <label for="calc-urgencia">Tiempo de Entrega:</label>
-          <select id="calc-urgencia" onchange="calcularCotizacion()">
-            <option value="1">⏱️ Normal (Con días de anticipación)</option>
-            <option value="1.2">🚨 Urgente (Para mañana)</option>
-            <option value="1.5">🔥 EXPRESS (Para HOY Mismo)</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="calc-result">
-        Inversión Estimada (Descuentos Aplicados):
-        <span id="calc-total">$30.00 MXN</span>
-        <p id="calc-nota" style="font-size: 0.9rem; margin-top: 5px; color: var(--color-vino-claro); display: none;">¡Se ha aplicado un descuento por volumen!</p>
-      </div>
-
-      <button class="calc-btn" onclick="enviarCotizacionCalculada()">Enviar esta Cotización por WhatsApp 🚀</button>
-    </div>
   </section>
 
   <section id="referidos">
@@ -720,7 +721,8 @@
             <p style="color: var(--texto-gris); font-size: 0.95rem;">Acumula referidos que paguen su trabajo y escala tus recompensas:<br><br>
               ⭐ <strong>1 amigo:</strong> 20% de descuento en tu tarea.<br>
               ⭐⭐ <strong>2 amigos:</strong> 60% de descuento en tu tarea.<br>
-              ⭐⭐⭐ <strong>3 amigos:</strong> ¡Tu próxima tarea es totalmente <strong>GRATIS!*</strong>
+              ⭐⭐⭐ <strong>3 amigos:</strong> ¡Tu próxima tarea es totalmente <strong>GRATIS!*</strong><br><br>
+              <span style="color: #6ee7b7;">🔄 <strong>¡Una vez que canjees tu tarea gratis, el ciclo se reinicia y puedes volver a sumar amigos para ganar más descuentos ilimitadamente!</strong></span>
             </p>
             <p style="font-size: 0.75rem; color: #a1a1aa; margin-top: 10px; line-height: 1.4;">
               <em>*Especificaciones de la tarea gratis: Válido para trabajos hasta nivel Avanzado, con un máximo de 30 cuartillas y solicitados con Tiempo Normal de entrega. Si tu proyecto supera estas especificaciones (ej. nivel Especializado/Tesis, más cuartillas o servicio Urgente/Express), la gratuidad se ajustará a un descuento proporcional muy atractivo.</em>
@@ -765,6 +767,13 @@
   <section id="contacto" style="background-color: transparent;">
     <h2 class="section-title">📬 Inicia tu Solución Hoy</h2>
     
+    <div style="background-color: rgba(24, 119, 242, 0.1); border-left: 4px solid #1877f2; padding: 1.5rem; border-radius: 8px; margin: 0 auto 3rem auto; max-width: 800px; text-align: center;">
+      <p style="margin: 0; color: #d4d4d8; font-size: 1rem; line-height: 1.6;">
+        <strong style="color: #1877f2; font-size: 1.2rem;">⭐ ¡Cientos de estudiantes nos respaldan!</strong><br>
+        La confianza se gana con resultados. Puedes revisar todas nuestras referencias, opiniones y casos de éxito reales de otros estudiantes directamente en nuestra <a href="https://www.facebook.com/share/1AkH8o7Z1A/" target="_blank" style="color: #1877f2; text-decoration: underline; font-weight: bold;">página de Facebook</a>.
+      </p>
+    </div>
+
     <div class="contact-container">
       <div>
         <h3 style="color: var(--color-vino-claro); margin-bottom: 1rem;">Cuéntanos qué necesitas</h3>
@@ -781,14 +790,6 @@
 
       <div class="contact-info">
         <h3 style="color: var(--color-vino-claro);">Contacto Directo</h3>
-        
-        <div style="background-color: rgba(24, 119, 242, 0.1); border-left: 4px solid #1877f2; padding: 1.2rem; border-radius: 8px; margin-bottom: 1.5rem;">
-          <p style="margin: 0; color: #d4d4d8; font-size: 0.95rem; line-height: 1.5;">
-            <strong style="color: #1877f2; font-size: 1.1rem;">⭐ ¡Cientos de estudiantes nos respaldan!</strong><br>
-            La confianza se gana con resultados. Puedes revisar todas nuestras referencias, opiniones y casos de éxito reales directamente en nuestra <a href="https://www.facebook.com/share/1AkH8o7Z1A/" target="_blank" style="color: #1877f2; text-decoration: underline; font-weight: bold;">página de Facebook</a>.
-          </p>
-        </div>
-
         <p>Estamos en línea para responder tus dudas casi de inmediato. Mándanos un mensaje y cotiza sin ningún compromiso (y sin pagar por adelantado).</p>
         
         <div style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1rem;">
