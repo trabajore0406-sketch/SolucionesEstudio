@@ -557,14 +557,22 @@
         <h3>⏱️ Entregas Urgentes (Express)</h3>
         <p>¿Se te olvidó la tarea y es para hoy en la noche? Contamos con modalidades de entrega express (hasta en 6 horas) para sacarte del apuro.</p>
       </div>
+
+      <div class="card">
+        <h3>📊 Tarifas de Urgencia Transparentes</h3>
+        <p>Las emergencias pasan y nosotros te respaldamos. Si pides con anticipación, pagas la tarifa normal. Si es para mañana, solo agregamos un 20% por la prioridad, y si es para HOY mismo, un 50%. Nosotros nos desvelamos por ti.</p>
+      </div>
+
       <div class="card">
         <h3>🔒 100% Confidencial</h3>
         <p>Garantizamos absoluta discreción con tu identidad, institución escolar y los archivos que nos compartes. Tu privacidad está blindada.</p>
       </div>
+      
       <div class="card">
         <h3>🚫 Cero Plagio</h3>
         <p>Todo se redacta desde cero a la medida. No copiamos y pegamos de Wikipedia. Entregamos trabajos originales y analíticos.</p>
       </div>
+      
     </div>
   </section>
 
@@ -600,8 +608,8 @@
           <label for="calc-urgencia">Tiempo de Entrega:</label>
           <select id="calc-urgencia" onchange="calcularCotizacion()">
             <option value="1">⏱️ Normal (Con días de anticipación)</option>
-            <option value="1.3">🚨 Urgente (Para mañana)</option>
-            <option value="1.6">🔥 EXPRESS (Para HOY Mismo)</option>
+            <option value="1.2">🚨 Urgente (Para mañana)</option>
+            <option value="1.5">🔥 EXPRESS (Para HOY Mismo)</option>
           </select>
         </div>
       </div>
@@ -768,7 +776,7 @@
         notaDescuento.innerText = "¡Se aplicó un 50% de descuento por volumen! 🔥";
       }
 
-      // 4. Aplicar multiplicador de Urgencia
+      // 4. Aplicar multiplicador de Urgencia (1.2 o 1.5)
       total = total * multiplicadorUrgencia;
 
       // 5. Mostrar en pantalla
