@@ -700,12 +700,12 @@
         <div class="calc-item">
           <label for="calc-tipo">Nivel de Dificultad:</label>
           <select id="calc-tipo" onchange="calcularCotizacion()">
-            <option value="15">🍃 Básico (Resúmenes, Cuestionarios)</option>
-            <option value="30" selected>📘 Intermedio (Ensayos APA, Mapas)</option>
-            <option value="55">🧠 Avanzado (Protocolos, Críticas Jurídicas)</option>
-            <option value="110">🎓 Especializado (Tesinas, Estadística)</option>
-            <option value="35">🎨 Diseño Visual (Infografías, Diapositivas)</option>
-            <option value="40">🌍 Traducciones (Inglés - Español)</option>
+            <option value="10">🍃 Básico (Resúmenes, Cuestionarios)</option>
+            <option value="20" selected>📘 Intermedio (Ensayos APA, Mapas)</option>
+            <option value="40">🧠 Avanzado (Protocolos, Críticas Jurídicas)</option>
+            <option value="70">🎓 Especializado (Tesinas, Estadística)</option>
+            <option value="20">🎨 Diseño Visual (Infografías, Diapositivas)</option>
+            <option value="30">🌍 Traducciones (Inglés - Español)</option>
           </select>
         </div>
         
@@ -726,7 +726,7 @@
 
       <div class="calc-result">
         Inversión Estimada (Descuentos Aplicados):
-        <span id="calc-total">$30.00 MXN</span>
+        <span id="calc-total">Desde $20.00 MXN</span>
         <p id="calc-nota" style="font-size: 0.9rem; margin-top: 5px; color: var(--color-vino-claro); display: none;">¡Se ha aplicado un descuento por volumen!</p>
       </div>
 
@@ -1035,8 +1035,8 @@
       // 4. Aplicar multiplicador de Urgencia
       total = total * multiplicadorUrgencia;
 
-      // 5. Mostrar en pantalla
-      document.getElementById('calc-total').innerText = "$" + total.toFixed(2) + " MXN*";
+      // 5. Mostrar en pantalla (SE AGREGÓ LA PALABRA "DESDE")
+      document.getElementById('calc-total').innerText = "Desde $" + total.toFixed(2) + " MXN*";
     }
 
     // Lógica para enviar el mensaje desde la Calculadora a WhatsApp
