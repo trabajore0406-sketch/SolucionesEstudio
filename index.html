@@ -21,7 +21,7 @@
   <meta property="og:type" content="website" />
 
   <link rel="icon" href="https://i.postimg.cc/pTZDbCGm/Gemini-Generated-Image-3ozdpf3ozdpf3ozd.png" type="image/png" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet" />
   <style>
     /* RESET BÁSICO */
     * {
@@ -33,170 +33,209 @@
     
     body {
       font-family: 'Inter', sans-serif;
-      background-color: #3f3f46; 
-      color: #ffffff; 
+      background-color: var(--bg-principal); 
+      color: var(--texto-blanco); 
       line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
     }
 
-    /* COLORES Y VARIABLES CLAVE */
+    /* COLORES Y VARIABLES CLAVE (MODO PREMIUM) */
     :root {
-      --bg-principal: #3f3f46;
-      --bg-secundario: #52525b;
-      --bg-oscuro: #27272a;
-      --color-vino: #800020;
-      --color-vino-oscuro: #5e0017;
-      --color-vino-claro: #d47985;
-      --texto-blanco: #ffffff;
-      --texto-gris: #d4d4d8;
-      --whatsapp-verde: #25d366;
+      --bg-principal: #101012;      /* Gris Oscuro Profundo (Fondo Base) */
+      --bg-secundario: #18181b;     /* Gris Elegante (Secciones) */
+      --bg-oscuro: #09090b;         /* Casi Negro (Header/Footer/Cards) */
+      --color-vino: #721c24;        /* Vino Premium */
+      --color-vino-oscuro: #4a0f16;
+      --color-vino-claro: #c85a67;
+      --azul-frances: #0055A4;      /* Azul Francés Sofisticado */
+      --azul-frances-claro: #337ab7;
+      --texto-blanco: #f4f4f5;
+      --texto-gris: #a1a1aa;
+      --borde-premium: rgba(255, 255, 255, 0.08); /* Borde sutil tipo cristal */
+      --whatsapp-verde: #25d366;    /* Exclusivo para el botón final */
       --facebook-azul: #1877f2;
     }
 
     /* ENCABEZADO (HERO SECTION) */
     header {
-      background: linear-gradient(135deg, rgba(74, 14, 27, 0.95), rgba(128, 0, 32, 0.95)), url('https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80') center/cover;
+      background: linear-gradient(135deg, rgba(9, 9, 11, 0.95), rgba(74, 15, 22, 0.85)), url('https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80') center/cover;
       color: var(--texto-blanco);
       text-align: center;
-      padding: 6rem 1rem 4rem;
+      padding: 7rem 1rem 5rem;
       position: relative;
-      border-bottom: 5px solid var(--color-vino-oscuro);
+      border-bottom: 2px solid var(--azul-frances);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.8);
     }
     header img {
-      width: 200px;
-      height: 200px;
+      width: 180px;
+      height: 180px;
       object-fit: cover;
       border-radius: 50%;
-      border: 5px solid var(--texto-blanco);
-      box-shadow: 0 0 25px rgba(0,0,0,0.6);
+      border: 3px solid var(--azul-frances);
+      padding: 5px;
+      background: rgba(255,255,255,0.05);
+      box-shadow: 0 0 30px rgba(0, 85, 164, 0.4);
       margin-bottom: 1.5rem;
-      transition: transform 0.3s ease;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
     }
     header img:hover {
       transform: scale(1.05);
+      box-shadow: 0 0 40px rgba(0, 85, 164, 0.6);
     }
     header h1 {
-      font-size: 3.5rem;
+      font-size: 3.8rem;
       font-weight: 700;
-      letter-spacing: -1px;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+      letter-spacing: -1.5px;
+      text-shadow: 2px 4px 8px rgba(0,0,0,0.7);
+      margin-bottom: 0.5rem;
     }
     header p {
-      font-size: 1.3rem;
-      opacity: 0.95;
+      font-size: 1.25rem;
+      opacity: 0.9;
       max-width: 700px;
-      margin: 1rem auto 2rem;
+      margin: 1rem auto 2.5rem;
       font-weight: 300;
+      color: #e4e4e7;
     }
     .btn-hero {
-      background-color: var(--texto-blanco);
-      color: var(--color-vino);
-      padding: 12px 30px;
+      background: linear-gradient(135deg, var(--azul-frances), #003b73);
+      color: var(--texto-blanco);
+      padding: 14px 35px;
       text-decoration: none;
-      font-weight: bold;
-      border-radius: 30px;
+      font-weight: 600;
+      border-radius: 4px; /* Bordes más rectos para look premium/formal */
       font-size: 1.1rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
       transition: all 0.3s;
+      border: 1px solid rgba(255,255,255,0.2);
       display: inline-block;
+      box-shadow: 0 8px 20px rgba(0, 85, 164, 0.3);
     }
     .btn-hero:hover {
-      background-color: var(--color-vino-claro);
-      color: var(--texto-blanco);
-      box-shadow: 0 4px 15px rgba(212, 121, 133, 0.4);
+      background: linear-gradient(135deg, #003b73, var(--azul-frances));
+      transform: translateY(-3px);
+      box-shadow: 0 12px 25px rgba(0, 85, 164, 0.5);
     }
 
     /* BARRA DE NAVEGACIÓN */
     nav {
       position: sticky;
       top: 0;
-      background-color: var(--bg-oscuro);
-      padding: 1rem 2rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      background-color: rgba(9, 9, 11, 0.95);
+      backdrop-filter: blur(10px); /* Efecto cristal */
+      padding: 1.2rem 2rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.6);
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 2rem;
+      gap: 2.5rem;
       z-index: 1000;
+      border-bottom: 1px solid var(--borde-premium);
     }
     nav a {
       text-decoration: none;
-      color: var(--texto-blanco);
-      font-weight: 600;
-      font-size: 1rem;
+      color: var(--texto-gris);
+      font-weight: 500;
+      font-size: 0.95rem;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 1.5px;
       transition: color 0.3s;
     }
     nav a:hover {
-      color: var(--color-vino-claro);
+      color: var(--azul-frances-claro);
     }
     .nav-destacado {
-      color: var(--whatsapp-verde) !important;
+      color: var(--color-vino-claro) !important;
+      font-weight: 700;
     }
 
     /* SECCIONES GENERALES */
     section {
-      padding: 5rem 1.5rem;
+      padding: 6rem 1.5rem;
       max-width: 1200px;
       margin: auto;
     }
     section:nth-child(even) {
       background-color: var(--bg-secundario);
-      border-radius: 20px;
+      border-top: 1px solid var(--borde-premium);
+      border-bottom: 1px solid var(--borde-premium);
     }
     h2.section-title {
       color: var(--texto-blanco);
-      font-size: 2.5rem;
+      font-size: 2.6rem;
       text-align: center;
-      margin-bottom: 3rem;
+      margin-bottom: 4rem;
       position: relative;
+      font-weight: 700;
+      letter-spacing: -0.5px;
     }
     h2.section-title::after {
       content: '';
       display: block;
-      width: 80px;
-      height: 4px;
-      background-color: var(--color-vino);
-      margin: 10px auto 0;
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--azul-frances), var(--color-vino));
+      margin: 15px auto 0;
       border-radius: 2px;
     }
 
-    /* TARJETAS Y GRIDS */
+    /* TARJETAS Y GRIDS (LOOK PREMIUM) */
     .grid-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2.5rem;
     }
     .card {
       background-color: var(--bg-oscuro);
       padding: 2.5rem 2rem;
-      border-radius: 15px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-      transition: transform 0.3s ease, border-bottom 0.3s ease;
-      border-bottom: 4px solid transparent;
+      border-radius: 8px; /* Menos redondeado, más serio */
+      border: 1px solid var(--borde-premium);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
       text-align: left;
+      position: relative;
+      overflow: hidden;
+    }
+    /* Brillo superior en las tarjetas */
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 3px;
+      background: var(--borde-premium);
+      transition: background 0.4s ease;
     }
     .card:hover {
-      transform: translateY(-10px);
-      border-bottom: 4px solid var(--color-vino);
+      transform: translateY(-8px);
+      border-color: rgba(0, 85, 164, 0.3);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.7);
+    }
+    .card:hover::before {
+      background: var(--azul-frances);
     }
     .card.destacada {
-      border: 2px solid var(--whatsapp-verde);
-      background: linear-gradient(145deg, var(--bg-oscuro), #1f3325);
+      border: 1px solid rgba(0, 85, 164, 0.5);
+      background: linear-gradient(160deg, var(--bg-oscuro), #071726); /* Azul muy oscuro al fondo */
+    }
+    .card.destacada::before {
+      background: var(--azul-frances);
     }
     .card h3 {
-      color: var(--color-vino-claro);
-      font-size: 1.4rem;
+      color: var(--texto-blanco);
+      font-size: 1.3rem;
       margin-bottom: 1rem;
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
+      font-weight: 600;
     }
     .card.destacada h3 {
-      color: var(--whatsapp-verde);
+      color: var(--azul-frances-claro);
     }
     .card p {
       color: var(--texto-gris);
       font-size: 1rem;
+      line-height: 1.7;
     }
 
     /* CÓMO FUNCIONA (PASOS) */
@@ -204,326 +243,374 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 2rem;
+      gap: 2.5rem;
     }
     .step-box {
-      background-color: var(--bg-secundario);
-      width: 250px;
-      padding: 2rem;
+      background-color: var(--bg-oscuro);
+      width: 260px;
+      padding: 2.5rem 2rem 2rem;
       text-align: center;
-      border-radius: 15px;
-      border: 1px solid var(--color-vino);
+      border-radius: 8px;
+      border: 1px solid var(--borde-premium);
       position: relative;
+      transition: border-color 0.3s;
+    }
+    .step-box:hover {
+      border-color: var(--color-vino);
     }
     .step-number {
-      background-color: var(--color-vino);
+      background: linear-gradient(135deg, var(--color-vino), var(--color-vino-oscuro));
       color: white;
-      width: 40px;
-      height: 40px;
+      width: 45px;
+      height: 45px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.5rem;
-      font-weight: bold;
+      font-size: 1.4rem;
+      font-weight: 700;
       position: absolute;
-      top: -20px;
+      top: -22px;
       left: 50%;
       transform: translateX(-50%);
+      box-shadow: 0 5px 15px rgba(114, 28, 36, 0.5);
+      border: 2px solid var(--bg-principal);
     }
 
-    /* TABLA COMPARATIVA (NOSOTROS VS ELLOS) */
+    /* TABLA COMPARATIVA PREMIUM */
     .compare-table {
       width: 100%;
       border-collapse: collapse;
       background-color: var(--bg-oscuro);
-      border-radius: 15px;
+      border-radius: 8px;
       overflow: hidden;
       margin-top: 3rem;
       margin-bottom: 1rem;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+      border: 1px solid var(--borde-premium);
     }
     .compare-table th, .compare-table td {
       padding: 1.5rem;
       text-align: center;
-      border-bottom: 1px solid #3f3f46;
+      border-bottom: 1px solid var(--borde-premium);
       font-size: 1.05rem;
     }
-    .compare-table th.col-feature { background-color: var(--color-vino-oscuro); color: white; text-align: left; width: 30%; font-size: 1.1rem;}
-    .compare-table th.col-bad { background-color: #3f3f46; color: #f87171; width: 35%; font-size: 1.2rem; }
-    .compare-table th.col-good { background-color: var(--whatsapp-verde); color: #1e293b; width: 35%; font-size: 1.2rem; }
-    .compare-table td:first-child { text-align: left; font-weight: bold; color: var(--texto-gris); }
-    .compare-table td.bad-item { color: #fca5a5; background-color: rgba(248, 113, 113, 0.05); }
-    .compare-table td.good-item { color: #6ee7b7; font-weight: bold; background-color: rgba(37, 211, 102, 0.05); }
+    .compare-table th.col-feature { background-color: #141417; color: white; text-align: left; width: 30%; font-size: 1.1rem; border-right: 1px solid var(--borde-premium);}
+    .compare-table th.col-bad { background-color: var(--color-vino-oscuro); color: #f87171; width: 35%; font-size: 1.1rem; }
+    .compare-table th.col-good { background-color: #002d5a; color: #60a5fa; width: 35%; font-size: 1.1rem; } /* Azul profundo */
+    .compare-table td:first-child { text-align: left; font-weight: 600; color: var(--texto-gris); border-right: 1px solid var(--borde-premium); background-color: #141417; }
+    .compare-table td.bad-item { color: #fca5a5; background-color: rgba(114, 28, 36, 0.1); }
+    .compare-table td.good-item { color: #93c5fd; font-weight: 600; background-color: rgba(0, 85, 164, 0.1); }
 
     /* TABLA Y CALCULADORA DE PRECIOS */
     .promo-banner {
-      background: linear-gradient(90deg, var(--color-vino-oscuro), var(--color-vino));
+      background: linear-gradient(90deg, var(--bg-oscuro), var(--color-vino-oscuro), var(--bg-oscuro));
       color: var(--texto-blanco);
       padding: 1.5rem;
-      border-radius: 10px;
-      font-weight: bold;
+      border-radius: 4px;
+      font-weight: 600;
       text-align: center;
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-      animation: pulse 2s infinite;
-    }
-    @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 rgba(128, 0, 32, 0.7); }
-      70% { box-shadow: 0 0 0 15px rgba(128, 0, 32, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(128, 0, 32, 0); }
+      font-size: 1.1rem;
+      letter-spacing: 0.5px;
+      margin-bottom: 3rem;
+      border: 1px solid rgba(200, 90, 103, 0.3);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
     }
     
     /* ESTILOS DE LA CALCULADORA */
     .calculator-box {
       background-color: var(--bg-oscuro);
-      border: 2px solid var(--color-vino);
-      border-radius: 15px;
-      padding: 2rem;
-      max-width: 700px;
-      margin: 0 auto 3rem auto;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+      border: 1px solid var(--azul-frances);
+      border-radius: 8px;
+      padding: 3rem;
+      max-width: 750px;
+      margin: 0 auto 4rem auto;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+      position: relative;
+    }
+    /* Efecto luz superior en calculadora */
+    .calculator-box::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 50%; transform: translateX(-50%);
+      width: 60%; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--azul-frances-claro), transparent);
     }
     .calculator-box h3 {
       text-align: center;
-      color: var(--color-vino-claro);
-      margin-bottom: 1.5rem;
-      font-size: 1.5rem;
+      color: var(--texto-blanco);
+      margin-bottom: 2rem;
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
     }
     .calc-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-      margin-bottom: 1.5rem;
+      gap: 2rem;
+      margin-bottom: 2rem;
     }
     @media(max-width: 600px) {
       .calc-grid { grid-template-columns: 1fr; }
     }
     .calc-item label {
       display: block;
-      margin-bottom: 0.5rem;
-      font-weight: bold;
+      margin-bottom: 0.7rem;
+      font-weight: 600;
       color: var(--texto-gris);
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
     .calc-item select, .calc-item input {
       width: 100%;
-      padding: 12px;
-      border-radius: 8px;
-      border: 1px solid var(--bg-secundario);
-      background-color: #3f3f46;
-      color: white;
+      padding: 14px;
+      border-radius: 4px;
+      border: 1px solid var(--borde-premium);
+      background-color: var(--bg-secundario);
+      color: var(--texto-blanco);
       font-size: 1rem;
+      transition: border-color 0.3s, box-shadow 0.3s;
     }
     .calc-item select:focus, .calc-item input:focus {
       outline: none;
-      border-color: var(--color-vino-claro);
+      border-color: var(--azul-frances-claro);
+      box-shadow: 0 0 10px rgba(0, 85, 164, 0.3);
     }
     .calc-result {
-      background-color: var(--bg-secundario);
-      padding: 1.5rem;
-      border-radius: 10px;
+      background-color: rgba(0, 85, 164, 0.05);
+      border: 1px solid rgba(0, 85, 164, 0.2);
+      padding: 2rem;
+      border-radius: 4px;
       text-align: center;
-      font-size: 1.2rem;
-      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      color: var(--texto-gris);
     }
     .calc-result span {
       display: block;
-      font-size: 2.5rem;
-      font-weight: bold;
-      color: var(--whatsapp-verde);
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--azul-frances-claro);
       margin-top: 0.5rem;
+      letter-spacing: -1px;
     }
     .calc-btn {
       width: 100%;
-      background-color: var(--whatsapp-verde);
-      color: #1e293b;
-      border: none;
-      padding: 15px;
+      background: linear-gradient(135deg, var(--azul-frances), #003b73);
+      color: var(--texto-blanco);
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 16px;
       font-size: 1.1rem;
-      border-radius: 8px;
+      border-radius: 4px;
       cursor: pointer;
-      font-weight: bold;
+      font-weight: 600;
+      letter-spacing: 1px;
       text-transform: uppercase;
-      transition: transform 0.2s;
+      transition: all 0.3s;
       text-align: center;
       display: inline-block;
       text-decoration: none;
+      box-shadow: 0 8px 20px rgba(0, 85, 164, 0.3);
     }
     .calc-btn:hover {
-      transform: scale(1.02);
-      opacity: 0.9;
+      background: linear-gradient(135deg, #003b73, var(--azul-frances));
+      transform: translateY(-2px);
+      box-shadow: 0 12px 25px rgba(0, 85, 164, 0.5);
     }
 
-    /* ESTILOS DE LA TABLA */
-    .table-wrapper { overflow-x: auto; margin-bottom: 2rem; }
+    /* ESTILOS DE LA TABLA (TARIFARIO) */
+    .table-wrapper { overflow-x: auto; margin-bottom: 2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border-radius: 8px; }
     table {
       width: 100%;
       min-width: 800px;
       border-collapse: collapse;
       background-color: var(--bg-oscuro);
-      border-radius: 10px;
-      overflow: hidden;
     }
-    th, td { padding: 15px; border: 1px solid #3f3f46; text-align: left; vertical-align: top; }
-    th { background-color: var(--color-vino); color: white; font-size: 1.1rem; text-transform: uppercase; }
-    tr.alt-row { background-color: var(--bg-secundario); }
-    tr:hover td { background-color: rgba(212, 121, 133, 0.1); }
+    th, td { padding: 18px; border: 1px solid var(--borde-premium); text-align: left; vertical-align: top; }
+    th { background-color: #141417; color: var(--texto-blanco); font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; border-bottom: 2px solid var(--azul-frances);}
+    tr.alt-row { background-color: rgba(255,255,255,0.02); }
+    tr:hover td { background-color: rgba(0, 85, 164, 0.05); }
     ul.table-list { margin-left: 20px; margin-top: 8px; font-size: 0.95rem; color: var(--texto-gris); }
-    ul.table-list li { margin-bottom: 5px; }
+    ul.table-list li { margin-bottom: 8px; }
 
     /* PREGUNTAS FRECUENTES (FAQ) VISIBLES */
     .faq-item {
       background-color: var(--bg-oscuro);
-      margin-bottom: 1rem;
-      padding: 1.5rem;
-      border-radius: 10px;
-      border-left: 5px solid var(--color-vino);
+      margin-bottom: 1.5rem;
+      padding: 2rem;
+      border-radius: 8px;
+      border-left: 4px solid var(--color-vino);
+      border-top: 1px solid var(--borde-premium);
+      border-right: 1px solid var(--borde-premium);
+      border-bottom: 1px solid var(--borde-premium);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      transition: transform 0.3s;
+    }
+    .faq-item:hover {
+      transform: translateX(5px);
+      border-left-color: var(--azul-frances);
     }
     .faq-item h4 {
-      color: var(--color-vino-claro);
-      margin-bottom: 0.5rem;
-      font-size: 1.2rem;
+      color: var(--texto-blanco);
+      margin-bottom: 0.8rem;
+      font-size: 1.25rem;
+      font-weight: 600;
     }
     .faq-item p {
       color: var(--texto-gris);
+      line-height: 1.7;
     }
 
     /* FORMULARIO Y CONTACTO */
     .contact-container {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      background-color: var(--bg-secundario);
-      padding: 3rem;
-      border-radius: 20px;
+      gap: 4rem;
+      background-color: var(--bg-oscuro);
+      padding: 4rem;
+      border-radius: 8px;
+      border: 1px solid var(--borde-premium);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.6);
     }
-    @media(max-width: 768px) { .contact-container { grid-template-columns: 1fr; } }
+    @media(max-width: 768px) { .contact-container { grid-template-columns: 1fr; padding: 2rem;} }
     form input, form textarea {
       width: 100%;
-      padding: 15px;
-      margin-top: 10px;
-      margin-bottom: 20px;
-      background-color: var(--bg-oscuro);
+      padding: 16px;
+      margin-top: 8px;
+      margin-bottom: 24px;
+      background-color: var(--bg-secundario);
       color: var(--texto-blanco);
-      border: 1px solid var(--color-vino);
-      border-radius: 8px;
+      border: 1px solid var(--borde-premium);
+      border-radius: 4px;
       font-size: 1rem;
       font-family: inherit;
+      transition: all 0.3s;
     }
-    form input::placeholder, form textarea::placeholder { color: #a1a1aa; }
+    form input::placeholder, form textarea::placeholder { color: #71717a; }
     form input:focus, form textarea:focus {
       outline: none;
       border-color: var(--color-vino-claro);
-      box-shadow: 0 0 8px rgba(212, 121, 133, 0.5);
+      box-shadow: 0 0 10px rgba(200, 90, 103, 0.2);
+      background-color: #1f1f22;
     }
     form button {
       width: 100%;
-      background-color: var(--color-vino);
+      background: linear-gradient(135deg, var(--color-vino), var(--color-vino-oscuro));
       color: white;
-      border: none;
-      padding: 16px;
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 18px;
       font-size: 1.1rem;
-      border-radius: 8px;
+      border-radius: 4px;
       cursor: pointer;
-      font-weight: bold;
+      font-weight: 600;
+      letter-spacing: 1px;
       text-transform: uppercase;
-      transition: background-color 0.3s, transform 0.2s;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 8px 20px rgba(114, 28, 36, 0.4);
     }
-    form button:hover { background-color: var(--color-vino-oscuro); transform: scale(1.02); }
-    .contact-info { display: flex; flex-direction: column; justify-content: center; gap: 1.5rem; }
-    .contact-info p { font-size: 1.1rem; }
+    form button:hover { transform: translateY(-2px); box-shadow: 0 12px 25px rgba(114, 28, 36, 0.6); }
+    
+    .contact-info { display: flex; flex-direction: column; justify-content: center; gap: 2rem; }
+    .contact-info p { font-size: 1.1rem; color: var(--texto-gris); line-height: 1.7;}
     .social-btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 15px 25px;
-      border-radius: 30px;
+      padding: 16px 25px;
+      border-radius: 4px;
       text-decoration: none;
-      font-size: 1.1rem;
-      font-weight: bold;
+      font-size: 1.05rem;
+      font-weight: 600;
       color: white;
-      transition: transform 0.3s, opacity 0.3s;
+      transition: transform 0.3s, box-shadow 0.3s;
       width: 100%;
       text-align: center;
+      letter-spacing: 0.5px;
+      border: 1px solid rgba(255,255,255,0.1);
     }
-    .social-btn:hover { transform: translateY(-3px); opacity: 0.9; }
-    .whatsapp-btn { background-color: var(--whatsapp-verde); color: #1e293b; }
-    .facebook-btn { background-color: var(--facebook-azul); }
+    .social-btn:hover { transform: translateY(-3px); }
+    .whatsapp-btn { background-color: var(--whatsapp-verde); color: #101012; box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);}
+    .facebook-btn { background-color: var(--facebook-azul); box-shadow: 0 8px 20px rgba(24, 119, 242, 0.3); }
 
     /* VÍA RÁPIDA (RÚBRICA) DENTRO DE CONTACTO */
     .via-rapida-box {
-      background: linear-gradient(145deg, var(--bg-oscuro), #1f3325);
-      padding: 2rem;
-      border-radius: 10px;
-      border: 2px dashed var(--whatsapp-verde);
+      background: linear-gradient(145deg, #141417, #0d1b2a);
+      padding: 2.5rem;
+      border-radius: 8px;
+      border: 1px dashed var(--azul-frances-claro);
       text-align: center;
-      margin-bottom: 2rem;
+      margin-bottom: 3rem;
+      box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
     }
     .via-rapida-box h4 {
-      color: white;
+      color: var(--texto-blanco);
       font-size: 1.3rem;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
+      font-weight: 600;
     }
     .via-rapida-box p {
       color: var(--texto-gris);
       font-size: 1rem;
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;
+      line-height: 1.6;
     }
 
-    /* BOTONES FLOTANTES */
+    /* BOTONES FLOTANTES (SE MANTIENEN SUS COLORES ORIGINALES POR UX) */
     .float-wa {
       position: fixed;
-      width: 60px;
-      height: 60px;
+      width: 65px;
+      height: 65px;
       bottom: 100px;
       right: 30px;
       background-color: var(--whatsapp-verde);
       color: #FFF;
-      border-radius: 50px;
+      border-radius: 50%;
       text-align: center;
-      font-size: 35px;
-      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+      font-size: 38px;
+      box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.6);
       z-index: 9999;
       display: flex;
       align-items: center;
       justify-content: center;
       text-decoration: none;
       transition: transform 0.3s ease;
+      border: 2px solid rgba(255,255,255,0.2);
     }
-    .float-wa:hover { transform: scale(1.15); }
+    .float-wa:hover { transform: scale(1.1); }
 
     .float-fb {
       position: fixed;
-      width: 60px;
-      height: 60px;
-      bottom: 30px;
+      width: 65px;
+      height: 65px;
+      bottom: 25px;
       right: 30px;
       background-color: var(--facebook-azul);
       color: #FFF;
-      border-radius: 50px;
+      border-radius: 50%;
       text-align: center;
-      font-size: 35px;
-      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+      font-size: 38px;
+      box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.6);
       z-index: 9998;
       display: flex;
       align-items: center;
       justify-content: center;
       text-decoration: none;
       transition: transform 0.3s ease;
+      border: 2px solid rgba(255,255,255,0.2);
     }
-    .float-fb:hover { transform: scale(1.15); }
+    .float-fb:hover { transform: scale(1.1); }
 
     /* PIE DE PÁGINA */
     footer {
-      background-color: var(--bg-oscuro);
-      color: var(--texto-gris);
+      background-color: #050505;
+      color: #71717a;
       text-align: center;
-      padding: 3rem 1rem;
+      padding: 4rem 1rem;
       font-size: 0.95rem;
-      border-top: 2px solid var(--color-vino);
+      border-top: 1px solid var(--borde-premium);
     }
-    footer span { color: var(--color-vino-claro); font-weight: bold; }
+    footer span { color: var(--azul-frances-claro); font-weight: bold; }
   </style>
 </head>
 <body>
@@ -531,8 +618,8 @@
   <header id="inicio">
     <img src="https://i.postimg.cc/pTZDbCGm/Gemini-Generated-Image-3ozdpf3ozdpf3ozd.png" alt="Logo SolucionesEstudio" />
     <h1>SolucionesEstudio</h1>
-    <p>La agencia académica exclusiva de Área 3 (Ciencias Sociales y Humanidades). Ensayos argumentativos, investigaciones jurídicas y marcos teóricos listos para salvar tu semestre. Pagas hasta que lo recibes.</p>
-    <a href="#contacto" class="btn-hero">Cotizar mi Tarea Ahora</a>
+    <p>La agencia académica exclusiva de Área 3 (Ciencias Sociales y Humanidades). Ensayos argumentativos, investigaciones jurídicas y marcos teóricos de alto nivel. Pagas hasta que lo recibes.</p>
+    <a href="#contacto" class="btn-hero">Cotizar mi Proyecto Ahora</a>
   </header>
 
   <nav>
@@ -540,17 +627,17 @@
     <a href="#servicios">Servicios</a>
     <a href="#como-funciona">Metodología</a>
     <a href="#beneficios">Beneficios</a>
-    <a href="#precios">Precios</a>
+    <a href="#precios">Tarifador</a>
     <a href="#referidos" class="nav-destacado">⭐ Referidos</a>
     <a href="#faq">FAQ</a>
   </nav>
 
   <section id="nosotros">
-    <h2 class="section-title">¿Quiénes Somos?</h2>
-    <div style="text-align: center; max-width: 800px; margin: auto; font-size: 1.1rem; color: #d4d4d8;">
-      <p>Lo que empezó como un equipo de estudiantes de Derecho ayudando a sus compañeros a sobrevivir a los ensayos y al análisis de sentencias, hoy ha evolucionado a <strong>SolucionesEstudio</strong>.</p>
+    <h2 class="section-title">Nuestra Filosofía</h2>
+    <div style="text-align: center; max-width: 800px; margin: auto; font-size: 1.15rem; color: var(--texto-gris);">
+      <p>Lo que empezó como un equipo de estudiantes de Derecho ayudando a sus compañeros a sobrevivir a los análisis de sentencias y la teoría del Estado, hoy ha evolucionado a <strong>SolucionesEstudio</strong>.</p>
       <br>
-      <p>Nos especializamos EXCLUSIVAMENTE en el Área 3 (Derecho, Sociología, Ciencias Políticas, Economía e Historia). Somos ex-estudiantes que dominamos el formato APA, la argumentación académica y el rigor teórico que exigen las facultades más pesadas.</p>
+      <p>Nos especializamos EXCLUSIVAMENTE en el Área 3 (Derecho, Sociología, Ciencias Políticas, Economía e Historia). Somos ex-estudiantes que dominamos el formato APA, la argumentación académica y el rigor metodológico que exigen las facultades más pesadas de Ciudad Universitaria.</p>
       <br>
       <p><em>(Y sí, nuestro cacomixtle intelectual sigue siendo el Jefe Oficial de Operaciones).</em> 🐾📚</p>
     </div>
@@ -565,7 +652,7 @@
         <p>Redacción de ensayos críticos, monografías y reportes de lectura. Estructurados con hipótesis, desarrollo respaldado por autores y conclusiones. Formato APA 100% aplicado.</p>
       </div>
 
-      <div class="card">
+      <div class="card destacada">
         <h3>⚖️ Investigaciones Jurídicas</h3>
         <p>Nuestra especialidad fundadora: Análisis profundos sobre sentencias, control de convencionalidad, derecho laboral, amparos y desglose dogmático de tribunales.</p>
       </div>
@@ -594,92 +681,92 @@
   </section>
 
   <section id="como-funciona" style="background-color: transparent;">
-    <h2 class="section-title">¿Cómo trabajamos?</h2>
+    <h2 class="section-title">Nuestra Metodología</h2>
     <div class="steps-container">
       <div class="step-box">
         <div class="step-number">1</div>
-        <h4 style="color: var(--color-vino-claro); margin-bottom: 10px;">Contacto Inicial</h4>
-        <p>Mándanos las instrucciones de tu profesor, la rúbrica y la fecha de entrega de tu trabajo vía WhatsApp.</p>
+        <h4 style="color: var(--texto-blanco); margin-bottom: 10px; font-weight: 600;">Contacto Inicial</h4>
+        <p style="color: var(--texto-gris); font-size: 0.95rem;">Mándanos las instrucciones de tu profesor, la rúbrica estricta y la fecha límite de entrega vía WhatsApp.</p>
       </div>
       <div class="step-box">
         <div class="step-number">2</div>
-        <h4 style="color: var(--color-vino-claro); margin-bottom: 10px;">Cotización Rápida</h4>
-        <p>Analizamos la complejidad del texto y te damos un presupuesto justo al instante. <strong>Sin pedir anticipos.</strong></p>
+        <h4 style="color: var(--texto-blanco); margin-bottom: 10px; font-weight: 600;">Presupuesto Transparente</h4>
+        <p style="color: var(--texto-gris); font-size: 0.95rem;">Analizamos la complejidad del texto y te damos un presupuesto justo al instante. <strong>Sin pedir anticipos.</strong></p>
       </div>
       <div class="step-box">
         <div class="step-number">3</div>
-        <h4 style="color: var(--color-vino-claro); margin-bottom: 10px;">Desarrollo Experto</h4>
-        <p>Nuestros especialistas del Área 3 investigan y redactan tu proyecto desde cero. Cero plagio, puro análisis.</p>
+        <h4 style="color: var(--texto-blanco); margin-bottom: 10px; font-weight: 600;">Desarrollo Académico</h4>
+        <p style="color: var(--texto-gris); font-size: 0.95rem;">Nuestros especialistas del Área 3 investigan y redactan tu proyecto desde cero. Cero plagio, puro análisis crítico.</p>
       </div>
       <div class="step-box">
         <div class="step-number">4</div>
-        <h4 style="color: var(--color-vino-claro); margin-bottom: 10px;">Revisas y Pagas</h4>
-        <p>Te mostramos el documento final. Compruebas que cumple con todo el rigor académico y hasta ese momento realizas tu pago.</p>
+        <h4 style="color: var(--texto-blanco); margin-bottom: 10px; font-weight: 600;">Revisión y Liberación</h4>
+        <p style="color: var(--texto-gris); font-size: 0.95rem;">Te mostramos el documento final. Compruebas el rigor académico y hasta ese momento realizas el pago.</p>
       </div>
     </div>
   </section>
 
   <section id="beneficios">
-    <h2 class="section-title">¿Por qué elegir SolucionesEstudio?</h2>
+    <h2 class="section-title">El Estándar SolucionesEstudio</h2>
     <div class="grid-container">
       
       <div class="card destacada">
-        <h3>💸 PAGA AL RECIBIR (Cero Anticipos)</h3>
-        <p>A diferencia de otras agencias, <strong>nosotros NO pedimos pagos por adelantado.</strong> Tienes nuestra garantía: primero redactamos el trabajo, te mostramos los resultados y pagas únicamente hasta que compruebes que está perfecto.</p>
+        <h3>💸 PAGO CONTRA ENTREGA (Cero Anticipos)</h3>
+        <p>A diferencia de otras agencias genéricas, <strong>nosotros NO pedimos pagos por adelantado.</strong> Tienes nuestra garantía: primero redactamos la investigación, te mostramos los resultados y pagas únicamente hasta que compruebes la calidad del trabajo.</p>
       </div>
 
       <div class="card">
         <h3>🏛️ Especialistas en tu Área</h3>
-        <p>No hacemos matemáticas ni planos arquitectónicos. Somos expertos exclusivos en Ciencias Sociales, lo que garantiza que dominamos tu lenguaje, tus autores y el enfoque crítico que pide tu profesor.</p>
+        <p>No hacemos matemáticas ni planos arquitectónicos. Somos especialistas exclusivos en Ciencias Sociales, lo que garantiza que dominamos tu lenguaje, la doctrina, tus autores y el enfoque crítico que pide la rúbrica.</p>
       </div>
 
       <div class="card">
-        <h3>📊 Tarifas de Urgencia Transparentes</h3>
+        <h3>📊 Tarifas de Urgencia Claras</h3>
         <p>Las emergencias pasan. Si pides con anticipación, pagas la tarifa normal. Si es para mañana, solo agregamos un 20% por prioridad, y si es para HOY mismo, un 50%. Nosotros nos desvelamos leyendo por ti.</p>
       </div>
 
       <div class="card">
-        <h3>🔒 100% Confidencial</h3>
-        <p>Garantizamos absoluta discreción con tu identidad y la de tu facultad. Tu privacidad académica está blindada.</p>
+        <h3>🔒 Confidencialidad Absoluta</h3>
+        <p>Garantizamos secrecía total con tu identidad, la de tu facultad y tus documentos. Tu privacidad académica está blindada bajo nuestros protocolos internos.</p>
       </div>
       
-      <div class="card">
-        <h3>🚫 Cero Plagio y Citas Reales</h3>
-        <p>No usamos Wikipedia ni inventamos bibliografía. Buscamos en repositorios académicos (SciELO, Redalyc) y citamos correctamente para que tu trabajo pase cualquier filtro anti-plagio.</p>
+      <div class="card" style="grid-column: 1 / -1; max-width: 800px; margin: 0 auto;">
+        <h3 style="justify-content: center;">🚫 Autenticidad y Citas Reales</h3>
+        <p style="text-align: center;">No usamos Wikipedia ni inventamos bibliografía. Buscamos en repositorios académicos (SciELO, Redalyc, Dialnet) y citamos correctamente (APA/Vancouver) para que tu ensayo pase cualquier filtro de software anti-plagio universitario.</p>
       </div>
       
     </div>
 
-    <h3 style="text-align: center; color: var(--color-vino-claro); margin: 4rem 0 2rem; font-size: 2rem;">La Diferencia es Clara 🥊</h3>
-    <div style="overflow-x: auto;">
+    <h3 style="text-align: center; color: var(--texto-blanco); margin: 5rem 0 2rem; font-size: 2rem; font-weight: 700;">La Diferencia es Evidente</h3>
+    <div class="table-wrapper">
       <table class="compare-table">
         <thead>
           <tr>
-            <th class="col-feature">Característica</th>
+            <th class="col-feature">Criterio de Evaluación</th>
             <th class="col-bad">❌ Agencias Generalistas</th>
             <th class="col-good">✅ SolucionesEstudio (Área 3)</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Política de Pagos</td>
-            <td class="bad-item">Te exigen el 50% de anticipo.</td>
-            <td class="good-item">CERO ANTICIPOS. Pagas hasta revisar el trabajo terminado.</td>
+            <td>Modelo de Pago</td>
+            <td class="bad-item">Te exigen el 50% de anticipo (riesgo de fraude).</td>
+            <td class="good-item">CERO ANTICIPOS. Pagas al revisar el trabajo terminado.</td>
           </tr>
           <tr>
-            <td>Calidad de Contenido</td>
-            <td class="bad-item">Redactan de todo un poco, entregando análisis superficiales.</td>
-            <td class="good-item">Dominio total en Derecho, Política y Sociología. Análisis profundo.</td>
+            <td>Calidad Argumentativa</td>
+            <td class="bad-item">Redactan de todo, entregando resúmenes superficiales.</td>
+            <td class="good-item">Dominio en Derecho, Política y Sociología. Análisis profundo.</td>
           </tr>
           <tr>
-            <td>Referencias y APA</td>
-            <td class="bad-item">Formato mal aplicado o links rotos de blogs de dudosa calidad.</td>
+            <td>Rigor Metodológico</td>
+            <td class="bad-item">Formatos mal aplicados o fuentes de blogs dudosos.</td>
             <td class="good-item">Citas precisas y bibliografía de revistas indexadas reales.</td>
           </tr>
           <tr>
-            <td>Atención</td>
+            <td>Atención al Cliente</td>
             <td class="bad-item">Trato robotizado, demoran horas en contestar.</td>
-            <td class="good-item">Trato directo por WhatsApp 24/7 de estudiante a estudiante.</td>
+            <td class="good-item">Trato directo y profesional por WhatsApp 24/7.</td>
           </tr>
         </tbody>
       </table>
@@ -687,36 +774,36 @@
   </section>
 
   <section id="precios" style="background-color: transparent;">
-    <h2 class="section-title">Inversión Educativa</h2>
+    <h2 class="section-title">Inversión y Tarifador</h2>
     
     <div class="promo-banner">
-      🔥 ¡PROMOCIÓN EXCLUSIVA! Descuentos por volumen: 3 a 10 cuartillas (30% OFF) | +10 cuartillas (50% OFF) 🔥
+      💼 PROGRAMA DE VOLUMEN: 3 a 10 cuartillas (30% OFF) | +10 cuartillas (50% OFF) aplicados al instante.
     </div>
 
     <div class="calculator-box">
-      <h3>🧮 Cotizador de Ciencias Sociales</h3>
+      <h3>🧮 Calculadora de Honorarios Académicos</h3>
       
       <div class="calc-grid">
         <div class="calc-item">
-          <label for="calc-tipo">Nivel de Dificultad:</label>
+          <label for="calc-tipo">Nivel de Exigencia:</label>
           <select id="calc-tipo" onchange="calcularCotizacion()">
-            <option value="10">🍃 Básico (Resúmenes de lectura, Cuestionarios)</option>
-            <option value="20" selected>📘 Intermedio (Ensayos APA, Reseñas críticas)</option>
-            <option value="40">🧠 Avanzado (Críticas de sentencias, Protocolos)</option>
-            <option value="70">🎓 Especializado (Marcos teóricos de Tesina)</option>
-            <option value="20">🎨 Diseño Visual (Mapas conceptuales, Diapositivas)</option>
+            <option value="15">📝 Básico (Reportes de lectura, Cuestionarios)</option>
+            <option value="30" selected>📘 Intermedio (Ensayos APA, Reseñas críticas)</option>
+            <option value="50">🧠 Avanzado (Críticas jurisprudenciales, Protocolos)</option>
+            <option value="85">🎓 Especializado (Marcos teóricos, Tesinas)</option>
+            <option value="25">🎨 Diseño (Mapas conceptuales, Diapositivas PPT)</option>
           </select>
         </div>
         
         <div class="calc-item">
-          <label for="calc-paginas">Cantidad (Cuartillas o Diapositivas):</label>
+          <label for="calc-paginas">Extensión (Cuartillas o Slides):</label>
           <input type="number" id="calc-paginas" min="1" value="1" oninput="calcularCotizacion()">
         </div>
         
         <div class="calc-item" style="grid-column: 1 / -1;">
-          <label for="calc-urgencia">Tiempo de Entrega:</label>
+          <label for="calc-urgencia">Plazo de Entrega:</label>
           <select id="calc-urgencia" onchange="calcularCotizacion()">
-            <option value="1">⏱️ Normal (Con días de anticipación)</option>
+            <option value="1">⏱️ Ordinario (Con días de anticipación)</option>
             <option value="1.2">🚨 Urgente (Para mañana)</option>
             <option value="1.5">🔥 EXPRESS (Para HOY Mismo)</option>
           </select>
@@ -724,97 +811,97 @@
       </div>
 
       <div class="calc-result">
-        Inversión Estimada (Descuentos Aplicados):
-        <span id="calc-total">Desde $20.00 MXN</span>
-        <p id="calc-nota" style="font-size: 0.9rem; margin-top: 5px; color: var(--color-vino-claro); display: none;">¡Se ha aplicado un descuento por volumen!</p>
+        Presupuesto Estimado (Descuentos Aplicados):
+        <span id="calc-total">Desde $30.00 MXN</span>
+        <p id="calc-nota" style="font-size: 0.95rem; margin-top: 8px; color: var(--azul-frances-claro); display: none; font-weight: 600;">¡Tarifa preferencial por volumen aplicada! ✨</p>
       </div>
 
-      <button class="calc-btn" onclick="enviarCotizacionCalculada()">Enviar esta Cotización por WhatsApp 🚀</button>
+      <button class="calc-btn" onclick="enviarCotizacionCalculada()">Enviar Cotización a Recepción 🚀</button>
     </div>
     
     <div class="table-wrapper">
       <table>
         <thead>
           <tr>
-            <th style="width: 15%;">Nivel de Dificultad</th>
-            <th style="width: 20%;">Precio x Cuartilla (Aprox)</th>
-            <th style="width: 35%;">¿Qué incluye la tarifa?</th>
-            <th style="width: 30%;">Ejemplo de Tarea</th>
+            <th style="width: 18%;">Categoría</th>
+            <th style="width: 22%;">Honorarios x Cuartilla</th>
+            <th style="width: 30%;">Alcance del Servicio</th>
+            <th style="width: 30%;">Documentos Típicos</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>🍃 <strong>Básico</strong></td>
-            <td><strong>$10 – $20 MXN</strong></td>
+            <td>📝 <strong>Básico</strong></td>
+            <td><strong>$15 – $25 MXN</strong></td>
             <td>
               <ul class="table-list">
                 <li>Lectura y síntesis rápida de textos.</li>
                 <li>Estructura simple (Intro, Desarrollo, Cierre).</li>
-                <li>Sin investigación en fuentes externas adicionales.</li>
+                <li>Sin investigación documental externa.</li>
               </ul>
             </td>
             <td>
               <ul class="table-list">
-                <li>Reportes de lectura (ej. Teoría Política).</li>
-                <li>Cuestionarios de preparatoria.</li>
-                <li>Síntesis históricas simples.</li>
+                <li>Reportes de lectura directa.</li>
+                <li>Cuestionarios guiados.</li>
+                <li>Síntesis históricas.</li>
               </ul>
             </td>
           </tr>
           <tr class="alt-row">
             <td>📘 <strong>Intermedio</strong></td>
-            <td><strong>$20 – $40 MXN</strong></td>
+            <td><strong>$30 – $50 MXN</strong></td>
             <td>
               <ul class="table-list">
                 <li>Investigación en 2 a 4 fuentes académicas.</li>
                 <li>Inclusión de opinión crítica y reflexiva.</li>
                 <li>Aplicación estricta de formato APA 7ma ed.</li>
-                <li>Citas textuales y parafraseadas correctamente.</li>
+                <li>Citas textuales y parafraseadas exactas.</li>
               </ul>
             </td>
             <td>
               <ul class="table-list">
-                <li>Ensayos argumentativos de sociología o derecho.</li>
+                <li>Ensayos de sociología o derecho.</li>
                 <li>Reseñas críticas de libros.</li>
-                <li>Cuadros comparativos de teorías económicas.</li>
+                <li>Cuadros comparativos de teorías.</li>
               </ul>
             </td>
           </tr>
           <tr>
             <td>🧠 <strong>Avanzado</strong></td>
-            <td><strong>$40 – $70 MXN</strong></td>
+            <td><strong>$50 – $80 MXN</strong></td>
             <td>
               <ul class="table-list">
                 <li>Búsqueda en bases indexadas (EBSCO, Redalyc).</li>
-                <li>Análisis crítico profundo y estructura metodológica.</li>
-                <li>Múltiples fuentes bibliográficas actualizadas.</li>
-                <li>Lenguaje altamente técnico y jurídico/social.</li>
+                <li>Análisis crítico profundo y metodología.</li>
+                <li>Múltiples fuentes bibliográficas verificables.</li>
+                <li>Lenguaje altamente técnico y jurídico.</li>
               </ul>
             </td>
             <td>
               <ul class="table-list">
                 <li>Protocolos de investigación social.</li>
-                <li>Críticas y análisis de sentencias/amparos.</li>
-                <li>Proyectos finales de semestre universitario.</li>
+                <li>Análisis de sentencias/amparos.</li>
+                <li>Proyectos finales de semestre.</li>
               </ul>
             </td>
           </tr>
           <tr class="alt-row">
             <td>🎓 <strong>Especializado</strong></td>
-            <td><strong>$70 – $150+ MXN</strong></td>
+            <td><strong>$85 – $160+ MXN</strong></td>
             <td>
               <ul class="table-list">
                 <li>Nivel de exigencia para titulación o posgrado.</li>
-                <li>Metodología cualitativa/cuantitativa compleja.</li>
-                <li>Acompañamiento a largo plazo (entregas parciales).</li>
-                <li>Dogmática jurídica profunda.</li>
+                <li>Metodología cualitativa dogmática compleja.</li>
+                <li>Acompañamiento a largo plazo.</li>
+                <li>Estructuración de marco lógico y jurídico.</li>
               </ul>
             </td>
             <td>
               <ul class="table-list">
                 <li>Marcos Teóricos para Tesinas.</li>
                 <li>Capítulos de investigación para titulación.</li>
-                <li>Proyectos de maestría en ciencias sociales.</li>
+                <li>Monografías de grado.</li>
               </ul>
             </td>
           </tr>
@@ -824,50 +911,50 @@
   </section>
 
   <section id="referidos">
-    <div class="calculator-box" style="border-color: var(--whatsapp-verde); background: linear-gradient(145deg, var(--bg-oscuro), #1f3325); max-width: 800px;">
-      <h3 style="color: var(--whatsapp-verde); display: flex; align-items: center; justify-content: center; gap: 10px;">
-        🤝 Programa "Socio Estudiantil" (Trae a un amigo)
+    <div class="calculator-box" style="border-color: var(--azul-frances); background: linear-gradient(145deg, var(--bg-oscuro), #001f3f); max-width: 800px; padding: 4rem 3rem;">
+      <h3 style="color: var(--azul-frances-claro); display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 1.8rem;">
+        🤝 Programa de Alianzas Estudiantiles
       </h3>
-      <p style="text-align: center; font-size: 1.1rem; margin-bottom: 2rem; color: #d4d4d8;">
-        Las buenas calificaciones se comparten. Conviértete en nuestro representante en tu facultad y haz que tus ensayos y tareas te salgan <strong>GRATIS</strong>.
+      <p style="text-align: center; font-size: 1.15rem; margin-bottom: 2.5rem; color: #d4d4d8; line-height: 1.6;">
+        El prestigio se comparte. Conviértete en nuestro enlace en tu facultad y haz que tus propios ensayos e investigaciones sean financiadas por la agencia (<strong>GRATIS</strong>).
       </p>
       
       <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-        <div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 10px; display: flex; align-items: center; gap: 20px; border-left: 4px solid var(--whatsapp-verde);">
+        <div style="background: rgba(255,255,255,0.03); padding: 1.8rem; border-radius: 6px; display: flex; align-items: center; gap: 20px; border-left: 4px solid var(--azul-frances-claro); border-top: 1px solid var(--borde-premium); border-right: 1px solid var(--borde-premium); border-bottom: 1px solid var(--borde-premium);">
           <div style="font-size: 2.5rem;">🗣️</div>
           <div>
-            <h4 style="color: white; margin-bottom: 5px;">1. Pasa la voz</h4>
-            <p style="color: var(--texto-gris); font-size: 0.95rem;">Recomienda SolucionesEstudio en los grupos de WhatsApp o Facebook de tu escuela o facultad.</p>
+            <h4 style="color: white; margin-bottom: 5px; font-weight: 600;">1. Red de Contactos</h4>
+            <p style="color: var(--texto-gris); font-size: 0.95rem;">Recomienda los servicios de SolucionesEstudio en tu facultad o en tus grupos de generación.</p>
           </div>
         </div>
 
-        <div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 10px; display: flex; align-items: center; gap: 20px; border-left: 4px solid var(--whatsapp-verde);">
+        <div style="background: rgba(255,255,255,0.03); padding: 1.8rem; border-radius: 6px; display: flex; align-items: center; gap: 20px; border-left: 4px solid var(--azul-frances-claro); border-top: 1px solid var(--borde-premium); border-right: 1px solid var(--borde-premium); border-bottom: 1px solid var(--borde-premium);">
           <div style="font-size: 2.5rem;">✅</div>
           <div>
-            <h4 style="color: white; margin-bottom: 5px;">2. Tu amigo contrata</h4>
-            <p style="color: var(--texto-gris); font-size: 0.95rem;">Dile a tu compañero que, cuando pida su cotización, mencione que viene de tu parte (con tu nombre completo).</p>
+            <h4 style="color: white; margin-bottom: 5px; font-weight: 600;">2. Vinculación</h4>
+            <p style="color: var(--texto-gris); font-size: 0.95rem;">Dile a tu colega que, al solicitar su cotización, mencione tu nombre completo como referencia directa.</p>
           </div>
         </div>
 
-        <div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 10px; display: flex; align-items: center; gap: 20px; border-left: 4px solid var(--whatsapp-verde);">
-          <div style="font-size: 2.5rem;">🏆</div>
+        <div style="background: rgba(255,255,255,0.03); padding: 1.8rem; border-radius: 6px; display: flex; align-items: center; gap: 20px; border-left: 4px solid var(--azul-frances-claro); border-top: 1px solid var(--borde-premium); border-right: 1px solid var(--borde-premium); border-bottom: 1px solid var(--borde-premium);">
+          <div style="font-size: 2.5rem;">🏛️</div>
           <div>
-            <h4 style="color: white; margin-bottom: 5px;">3. ¡Escala y Gana!</h4>
-            <p style="color: var(--texto-gris); font-size: 0.95rem;">Acumula referidos que paguen su trabajo y escala tus recompensas:<br><br>
-              ⭐ <strong>1 amigo:</strong> 20% de descuento en tu tarea.<br>
-              ⭐⭐ <strong>2 amigos:</strong> 60% de descuento en tu tarea.<br>
-              ⭐⭐⭐ <strong>3 amigos:</strong> ¡Tu próxima tarea es totalmente <strong>GRATIS!*</strong><br><br>
-              <span style="color: #6ee7b7;">🔄 <strong>¡Una vez que canjees tu tarea gratis, el ciclo se reinicia y puedes volver a sumar amigos!</strong></span>
+            <h4 style="color: white; margin-bottom: 5px; font-weight: 600;">3. Sistema de Honorarios Reembolsables</h4>
+            <p style="color: var(--texto-gris); font-size: 0.95rem;">Por cada referido que concrete un proyecto, acumulas beneficios:<br><br>
+              🔹 <strong>1 Proyecto referido:</strong> 20% de bonificación en tu siguiente solicitud.<br>
+              🔹🔹 <strong>2 Proyectos referidos:</strong> 60% de bonificación.<br>
+              🔹🔹🔹 <strong>3 Proyectos referidos:</strong> ¡Tu próximo encargo es cortesía de la agencia (<strong>GRATIS</strong>)!*<br><br>
+              <span style="color: #93c5fd; font-weight: 600;">🔄 El ciclo es perpetuo. Una vez que redimes tu cortesía, puedes reiniciar el conteo ilimitadamente.</span>
             </p>
-            <p style="font-size: 0.75rem; color: #a1a1aa; margin-top: 10px; line-height: 1.4;">
-              <em>*Especificaciones de la tarea gratis: Válido para trabajos hasta nivel Avanzado, con un máximo de 30 cuartillas y solicitados con Tiempo Normal de entrega.</em>
+            <p style="font-size: 0.8rem; color: #71717a; margin-top: 12px; line-height: 1.4;">
+              <em>*Términos y condiciones: La cortesía cubre proyectos hasta nivel Avanzado, con una extensión máxima de 30 cuartillas y en plazo Ordinario de entrega.</em>
             </p>
           </div>
         </div>
       </div>
       
-      <div style="text-align: center; margin-top: 2rem;">
-        <a href="https://wa.me/5215592005048?text=Hola,%20quiero%20más%20información%20para%20unirme%20al%20programa%20Socio%20Estudiantil%20y%20ganar%20mis%20tareas%20gratis." target="_blank" class="calc-btn" style="display: inline-block; width: auto; padding: 12px 30px;">Quiero mis tareas GRATIS 🎓</a>
+      <div style="text-align: center; margin-top: 3rem;">
+        <a href="https://wa.me/5215592005048?text=Hola,%20solicito%20ingresar%20al%20Programa%20de%20Alianzas%20Estudiantiles%20para%20financiar%20mis%20proyectos." target="_blank" class="calc-btn" style="display: inline-block; width: auto; padding: 16px 40px; font-size: 1.15rem;">Quiero unirme al Programa 🎓</a>
       </div>
     </div>
   </section>
@@ -877,68 +964,68 @@
     <div style="max-width: 800px; margin: auto;">
       
       <div class="faq-item">
-        <h4>¿Piden algún anticipo o adelanto para empezar?</h4>
-        <p><strong>¡NO! Ese es nuestro mayor diferenciador.</strong> Sabemos que hay mucha desconfianza en internet, así que trabajamos con base en resultados. Tú pides tu ensayo o investigación, nosotros lo hacemos y te lo enviamos en formato de revisión. Una vez que validas que el trabajo está listo y bien argumentado, nos realizas el pago y te liberamos el documento original.</p>
+        <h4>¿Exigen algún fondo en garantía o anticipo?</h4>
+        <p><strong>De ninguna manera. Es nuestra política de hierro.</strong> Entendemos la desconfianza natural en servicios digitales. Por ello, redactamos tu investigación, te enviamos el borrador para revisión de formato y contenido, y <em>solo</em> procedes con el pago cuando constatas la excelencia del documento. Una vez cubiertos los honorarios, liberamos el archivo original sin marcas de agua.</p>
       </div>
 
       <div class="faq-item">
-        <h4>¿Cómo se realiza el pago final?</h4>
-        <p>Aceptamos transferencias bancarias (SPEI) y depósitos en tiendas de conveniencia (OXXO, 7-Eleven). Te enviaremos los datos de cuenta junto con la revisión final de tu tarea.</p>
+        <h4>¿Cuáles son los canales de liquidación?</h4>
+        <p>Operamos mediante transferencias interbancarias (SPEI) para tu mayor seguridad y comodidad, así como depósitos en corresponsales (OXXO, 7-Eleven). Proporcionaremos los datos bancarios junto con la entrega de tu revisión preliminar.</p>
       </div>
 
       <div class="faq-item">
-        <h4>¿Qué pasa si mi profesor me pide correcciones?</h4>
-        <p>¡No te preocupes! Si las correcciones están dentro de las instrucciones originales o de la rúbrica que nos mandaste al principio, realizamos los ajustes totalmente GRATIS.</p>
+        <h4>¿Qué sucede si el catedrático solicita enmiendas?</h4>
+        <p>Garantía académica total. Si las correcciones solicitadas se ajustan a las instrucciones iniciales de la rúbrica proporcionada, nuestros asesores ejecutarán los ajustes pertinentes sin ningún cargo adicional.</p>
       </div>
 
       <div class="faq-item">
-        <h4>¿Puedo pedir una tarea para el mismo día?</h4>
-        <p>Sí, manejamos el servicio "Express" para emergencias. Está sujeto a disponibilidad de nuestros asesores y tiene un cargo adicional por urgencia, pero haremos todo lo humanamente posible por salvar tu calificación.</p>
+        <h4>¿Manejan tiempos de entrega para el mismo día?</h4>
+        <p>Afirmativo. Disponemos del protocolo "Express" para entregas urgentes. Su viabilidad está sujeta a la disponibilidad de nuestros redactores especializados y conlleva un incremento arancelario por la prioridad, pero garantizamos resolver tu contingencia académica.</p>
       </div>
 
     </div>
   </section>
 
   <section id="contacto" style="background-color: transparent;">
-    <h2 class="section-title">📬 Cuéntanos qué necesitas</h2>
+    <h2 class="section-title">📬 Recepción de Proyectos</h2>
     
-    <div style="background-color: rgba(24, 119, 242, 0.1); border-left: 4px solid #1877f2; padding: 1.5rem; border-radius: 8px; margin: 0 auto 3rem auto; max-width: 800px; text-align: center;">
-      <p style="margin: 0; color: #d4d4d8; font-size: 1rem; line-height: 1.6;">
-        <strong style="color: #1877f2; font-size: 1.2rem;">⭐ ¡Cientos de estudiantes nos respaldan!</strong><br>
-        La confianza se gana con resultados. Puedes revisar todas nuestras referencias y opiniones reales de estudiantes de Ciencias Sociales y Humanidades en nuestra <a href="https://www.facebook.com/share/1AkH8o7Z1A/" target="_blank" style="color: #1877f2; text-decoration: underline; font-weight: bold;">página de Facebook</a>.
+    <div style="background-color: rgba(0, 85, 164, 0.08); border-left: 4px solid var(--azul-frances); padding: 1.8rem; border-radius: 4px; margin: 0 auto 4rem auto; max-width: 800px; text-align: center; border-right: 1px solid var(--borde-premium); border-top: 1px solid var(--borde-premium); border-bottom: 1px solid var(--borde-premium);">
+      <p style="margin: 0; color: #d4d4d8; font-size: 1.05rem; line-height: 1.6;">
+        <strong style="color: var(--azul-frances-claro); font-size: 1.25rem;">⚖️ El rigor nos precede.</strong><br>
+        La autoridad no se impone, se demuestra. Consulta nuestro acervo de referencias y opiniones de estudiantes reales de Ciudad Universitaria y otras facultades en nuestra <a href="https://www.facebook.com/share/1AkH8o7Z1A/" target="_blank" style="color: var(--azul-frances-claro); text-decoration: underline; font-weight: 600;">página oficial de Facebook</a>.
       </p>
     </div>
 
     <div class="contact-container">
       <div>
         <div class="via-rapida-box">
-          <h4>📎 ¿Te da flojera llenar formularios o cotizar?</h4>
-          <p>No te compliques. <strong>Mándanos el PDF, la foto del pizarrón o un audio con las instrucciones de tu ensayo.</strong> Nosotros analizamos la rúbrica y te damos el precio exacto en 2 minutos sin compromiso.</p>
-          <a href="https://wa.me/5215592005048?text=Hola!%20Les%20mando%20las%20instrucciones%20de%20mi%20tarea%20para%20que%20me%20den%20precio%20exacto.%20%F0%9F%93%8E" target="_blank" class="calc-btn" style="width: 100%; display: inline-block; text-decoration: none; text-align: center; box-sizing: border-box;">Enviar Rúbrica a WhatsApp 🚀</a>
+          <h4>📎 Protocolo de Cotización Inmediata</h4>
+          <p>La burocracia ralentiza. <strong>Envíanos el documento PDF, la captura de pantalla o un audio con la rúbrica de tu docente.</strong> Realizaremos el dictamen de viabilidad y honorarios en menos de 5 minutos, sin compromiso alguno.</p>
+          <a href="https://wa.me/5215592005048?text=Saludos.%20Adjunto%20las%20especificaciones%20de%20mi%20proyecto%20para%20su%20evaluación%20y%20cotización.%20%F0%9F%93%8E" target="_blank" class="calc-btn" style="width: 100%; display: inline-block; text-decoration: none; text-align: center; box-sizing: border-box; background: linear-gradient(135deg, var(--bg-secundario), #1f2937); border-color: var(--azul-frances-claro); color: var(--texto-blanco);">Remitir Rúbrica vía WhatsApp 🚀</a>
         </div>
 
-        <h3 style="color: var(--color-vino-claro); margin-bottom: 1rem; text-align: center;">O escríbelo manualmente:</h3>
+        <h3 style="color: var(--texto-blanco); margin-bottom: 1.5rem; text-align: center; font-size: 1.2rem; font-weight: 400; color: var(--texto-gris);">O documenta tu solicitud manualmente:</h3>
         <form onsubmit="enviarMensaje(); return false;">
-          <label for="mensaje" style="font-weight: bold; color: var(--texto-gris); display: block; margin-bottom: 0.5rem;">Detalles de la Tarea:</label>
-          <textarea id="mensaje" rows="4" placeholder="Ejemplo: Necesito un ensayo de 5 páginas sobre la División de Poderes, con formato APA y mínimo 3 fuentes. Es para el viernes a las 10 PM."></textarea>
+          <label for="mensaje" style="font-weight: 600; color: var(--texto-gris); display: block; margin-bottom: 0.5rem; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;">Especificaciones Técnicas:</label>
+          <textarea id="mensaje" rows="4" placeholder="Ej: Requiero un análisis de 5 cuartillas sobre la División de Poderes, con base en la jurisprudencia actual. Formato APA 7. Plazo: viernes a las 10 PM."></textarea>
           
-          <label for="contacto" style="font-weight: bold; color: var(--texto-gris); display: block; margin-bottom: 0.5rem;">Tu Nombre / Medio de Contacto:</label>
-          <input id="contacto" type="text" placeholder="Ej: Juan Pérez - Mi correo o WhatsApp es..." />
+          <label for="contacto" style="font-weight: 600; color: var(--texto-gris); display: block; margin-bottom: 0.5rem; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;">Identificación del Solicitante:</label>
+          <input id="contacto" type="text" placeholder="Ej: Lic. Juan Pérez - Mi número directo es..." />
           
-          <button type="submit">Enviar Solicitud Manual</button>
+          <button type="submit">Procesar Solicitud Manual</button>
         </form>
       </div>
 
       <div class="contact-info">
-        <h3 style="color: var(--color-vino-claro);">Contacto Directo</h3>
-        <p>Estamos en línea para responder tus dudas casi de inmediato. Mándanos un mensaje y cotiza sin ningún compromiso (y sin pagar por adelantado).</p>
+        <h3 style="color: var(--texto-blanco); font-size: 1.8rem; letter-spacing: -0.5px;">Atención Ejecutiva</h3>
+        <p>Nuestros asesores se encuentran en línea para desahogar cualquier duda operativa o metodológica. Contáctenos para estructurar su proyecto sin desembolsos previos.</p>
         
-        <div style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1rem;">
+        <div style="display: flex; flex-direction: column; gap: 1.2rem; margin-top: 1.5rem;">
           <a class="social-btn whatsapp-btn" href="https://wa.me/5215592005048" target="_blank">
-            💬 Enviar mensaje por WhatsApp
+            💬 Contactar Operador en WhatsApp
           </a>
           <a class="social-btn facebook-btn" href="https://www.facebook.com/share/1AkH8o7Z1A/" target="_blank">
-            📘 Visitar nuestra página de Facebook
+            📘 Revisar nuestro Portafolio Público
           </a>
         </div>
       </div>
@@ -946,21 +1033,21 @@
   </section>
 
   <footer>
-    <h2>SolucionesEstudio</h2>
-    <p style="margin-top: 10px;">La agencia académica exclusiva para Área 3. Nosotros nos encargamos de los ensayos, tú te encargas de aprobar.</p>
-    <p style="margin-top: 20px; font-size: 0.85rem; opacity: 0.7;">
-      &copy; 2026 SolucionesEstudio. Todos los derechos reservados. | Diseñado para el éxito universitario.
+    <h2 style="font-size: 2rem; color: var(--texto-blanco); margin-bottom: 15px; font-weight: 700; letter-spacing: -1px;">Soluciones<span>Estudio</span></h2>
+    <p style="margin-top: 10px; font-size: 1.1rem;">La agencia de élite exclusiva para Ciencias Sociales y Humanidades.</p>
+    <p style="margin-top: 30px; font-size: 0.85rem; opacity: 0.5;">
+      &copy; 2026 SolucionesEstudio. Todos los derechos reservados. | Diseñado para el rigor universitario.
     </p>
   </footer>
 
   <a href="https://wa.me/5215592005048" class="float-wa" target="_blank" title="¡Escríbenos por WhatsApp!">
-    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" viewBox="0 0 16 16">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
       <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
     </svg>
   </a>
 
   <a href="https://www.facebook.com/share/1AkH8o7Z1A/" class="float-fb" target="_blank" title="¡Visita nuestro Facebook!">
-    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" viewBox="0 0 16 16">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
       <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
     </svg>
   </a>
@@ -985,17 +1072,17 @@
       if (paginas >= 3 && paginas <= 10) {
         total = total - (total * 0.30); // 30% OFF
         notaDescuento.style.display = "block";
-        notaDescuento.innerText = "¡Se aplicó un 30% de descuento por volumen! 🎉";
+        notaDescuento.innerText = "¡Tarifa preferencial por volumen aplicada (30% OFF)! ✨";
       } else if (paginas > 10) {
         total = total - (total * 0.50); // 50% OFF
         notaDescuento.style.display = "block";
-        notaDescuento.innerText = "¡Se aplicó un 50% de descuento por volumen! 🔥";
+        notaDescuento.innerText = "¡Tarifa de proyecto extenso aplicada (50% OFF)! 🔥";
       }
 
       // 4. Aplicar multiplicador de Urgencia
       total = total * multiplicadorUrgencia;
 
-      // 5. Mostrar en pantalla (SE AGREGÓ LA PALABRA "DESDE")
+      // 5. Mostrar en pantalla
       document.getElementById('calc-total').innerText = "Desde $" + total.toFixed(2) + " MXN*";
     }
 
@@ -1008,7 +1095,7 @@
       const nombreUrgencia = selectUrgencia.options[selectUrgencia.selectedIndex].text;
       const totalEstimado = document.getElementById('calc-total').innerText;
 
-      const texto = `👋 Hola SolucionesEstudio, utilicé su cotizador web y me gustaría encargar un trabajo del Área 3.%0A%0A*Detalles de la cotización:*%0A- Nivel: ${nombreTipo}%0A- Cantidad: ${paginas} cuartillas/páginas%0A- Urgencia: ${nombreUrgencia}%0A- *Estimado: ${totalEstimado}*%0A%0A¿Podemos confirmar los detalles y empezar sin anticipo?`;
+      const texto = `⚖️ Saludos cordiales, utilicé su tarifador web para un proyecto de Área 3.%0A%0A*Especificaciones:*%0A- Categoría: ${nombreTipo}%0A- Extensión: ${paginas} cuartillas/páginas%0A- Plazo: ${nombreUrgencia}%0A- *Honorarios estimados: ${totalEstimado}*%0A%0A¿Podemos agendar el inicio del proyecto bajo la política de cero anticipos?`;
       const url = "https://wa.me/5215592005048?text=" + texto;
       window.open(url, "_blank");
     }
@@ -1019,11 +1106,11 @@
       const contacto = document.getElementById('contacto').value.trim();
       
       if (!mensaje || !contacto) {
-        alert("Por favor, llena todos los campos para poder darte una cotización exacta.");
+        alert("Le solicitamos amablemente completar todos los campos para emitir un dictamen preciso.");
         return;
       }
       
-      const texto = `👋 Hola SolucionesEstudio, quiero cotizar una tarea de Ciencias Sociales.%0A%0A*Detalles:*%0A${mensaje}%0A%0A*Mis datos:*%0A${contacto}`;
+      const texto = `⚖️ Saludos cordiales, requiero la evaluación para un proyecto académico.%0A%0A*Especificaciones Técnicas:*%0A${mensaje}%0A%0A*Datos de Contacto:*%0A${contacto}`;
       const url = "https://wa.me/5215592005048?text=" + texto;
       
       window.open(url, "_blank");
