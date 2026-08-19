@@ -39,16 +39,16 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* COLORES Y VARIABLES CLAVE (MODO PREMIUM) */
+    /* COLORES Y VARIABLES CLAVE (MODO PREMIUM ACADÉMICO) */
     :root {
       --bg-principal: #101012;      /* Gris Oscuro Profundo (Fondo Base) */
       --bg-secundario: #18181b;     /* Gris Elegante (Secciones) */
       --bg-oscuro: #09090b;         /* Casi Negro (Header/Footer/Cards) */
-      --color-vino: #721c24;        /* Vino Premium */
-      --color-vino-oscuro: #4a0f16;
-      --color-vino-claro: #c85a67;
-      --azul-frances: #0055A4;      /* Azul Francés Sofisticado */
-      --azul-frances-claro: #337ab7;
+      --color-vino: #8a1a2b;        /* Vino Académico Principal */
+      --color-vino-oscuro: #5e0b17; /* Sombra del Vino */
+      --color-vino-claro: #d6455a;  /* Brillo del Vino */
+      --azul-frances: #004b8d;      /* Azul Francés Secundario */
+      --azul-frances-claro: #428bca;
       --texto-blanco: #f4f4f5;
       --texto-gris: #a1a1aa;
       --borde-premium: rgba(255, 255, 255, 0.08); /* Borde sutil tipo cristal */
@@ -56,14 +56,26 @@
       --facebook-azul: #1877f2;
     }
 
+    /* ANIMACIONES FLOTANTES */
+    @keyframes floatElement {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-12px); }
+      100% { transform: translateY(0px); }
+    }
+    @keyframes pulseGlow {
+      0% { box-shadow: 0 0 0 0 rgba(138, 26, 43, 0.7); }
+      70% { box-shadow: 0 0 0 15px rgba(138, 26, 43, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(138, 26, 43, 0); }
+    }
+
     /* ENCABEZADO (HERO SECTION) */
     header {
-      background: linear-gradient(135deg, rgba(9, 9, 11, 0.95), rgba(74, 15, 22, 0.85)), url('https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80') center/cover;
+      background: linear-gradient(135deg, rgba(9, 9, 11, 0.95), rgba(40, 5, 12, 0.90)), url('https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80') center/cover;
       color: var(--texto-blanco);
       text-align: center;
       padding: 7rem 1rem 5rem;
       position: relative;
-      border-bottom: 2px solid var(--azul-frances);
+      border-bottom: 3px solid var(--color-vino);
       box-shadow: 0 10px 30px rgba(0,0,0,0.8);
     }
     header img {
@@ -71,22 +83,23 @@
       height: 180px;
       object-fit: cover;
       border-radius: 50%;
-      border: 3px solid var(--azul-frances);
+      border: 3px solid var(--color-vino);
       padding: 5px;
       background: rgba(255,255,255,0.05);
-      box-shadow: 0 0 30px rgba(0, 85, 164, 0.4);
+      box-shadow: 0 0 35px rgba(138, 26, 43, 0.6);
       margin-bottom: 1.5rem;
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      animation: floatElement 5s ease-in-out infinite; /* Animación Premium */
+      transition: box-shadow 0.4s ease;
     }
     header img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 40px rgba(0, 85, 164, 0.6);
+      box-shadow: 0 0 50px rgba(138, 26, 43, 0.9);
+      animation-play-state: paused;
     }
     header h1 {
       font-size: 3.8rem;
       font-weight: 700;
       letter-spacing: -1.5px;
-      text-shadow: 2px 4px 8px rgba(0,0,0,0.7);
+      text-shadow: 2px 4px 8px rgba(0,0,0,0.8);
       margin-bottom: 0.5rem;
     }
     header p {
@@ -98,24 +111,26 @@
       color: #e4e4e7;
     }
     .btn-hero {
-      background: linear-gradient(135deg, var(--azul-frances), #003b73);
+      background: linear-gradient(135deg, var(--color-vino), var(--color-vino-oscuro));
       color: var(--texto-blanco);
-      padding: 14px 35px;
+      padding: 16px 40px;
       text-decoration: none;
-      font-weight: 600;
-      border-radius: 4px; /* Bordes más rectos para look premium/formal */
-      font-size: 1.1rem;
-      letter-spacing: 1px;
+      font-weight: 700;
+      border-radius: 6px; 
+      font-size: 1.15rem;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
       transition: all 0.3s;
       border: 1px solid rgba(255,255,255,0.2);
       display: inline-block;
-      box-shadow: 0 8px 20px rgba(0, 85, 164, 0.3);
+      box-shadow: 0 8px 25px rgba(138, 26, 43, 0.5);
+      animation: pulseGlow 2.5s infinite;
     }
     .btn-hero:hover {
-      background: linear-gradient(135deg, #003b73, var(--azul-frances));
+      background: linear-gradient(135deg, var(--color-vino-claro), var(--color-vino));
       transform: translateY(-3px);
-      box-shadow: 0 12px 25px rgba(0, 85, 164, 0.5);
+      box-shadow: 0 12px 30px rgba(138, 26, 43, 0.7);
+      animation: none;
     }
 
     /* BARRA DE NAVEGACIÓN */
@@ -123,7 +138,7 @@
       position: sticky;
       top: 0;
       background-color: rgba(9, 9, 11, 0.95);
-      backdrop-filter: blur(10px); /* Efecto cristal */
+      backdrop-filter: blur(10px); 
       padding: 1.2rem 2rem;
       box-shadow: 0 4px 20px rgba(0,0,0,0.6);
       display: flex;
@@ -143,10 +158,10 @@
       transition: color 0.3s;
     }
     nav a:hover {
-      color: var(--azul-frances-claro);
+      color: var(--color-vino-claro);
     }
     .nav-destacado {
-      color: var(--color-vino-claro) !important;
+      color: var(--azul-frances-claro) !important;
       font-weight: 700;
     }
 
@@ -174,13 +189,13 @@
       content: '';
       display: block;
       width: 60px;
-      height: 3px;
-      background: linear-gradient(90deg, var(--azul-frances), var(--color-vino));
+      height: 4px;
+      background: linear-gradient(90deg, var(--color-vino), var(--azul-frances));
       margin: 15px auto 0;
       border-radius: 2px;
     }
 
-    /* TARJETAS Y GRIDS (LOOK PREMIUM) */
+    /* TARJETAS Y GRIDS (LOOK PREMIUM VINO) */
     .grid-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -189,7 +204,7 @@
     .card {
       background-color: var(--bg-oscuro);
       padding: 2.5rem 2rem;
-      border-radius: 8px; /* Menos redondeado, más serio */
+      border-radius: 8px; 
       border: 1px solid var(--borde-premium);
       box-shadow: 0 10px 30px rgba(0,0,0,0.5);
       transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
@@ -197,7 +212,6 @@
       position: relative;
       overflow: hidden;
     }
-    /* Brillo superior en las tarjetas */
     .card::before {
       content: '';
       position: absolute;
@@ -207,15 +221,16 @@
     }
     .card:hover {
       transform: translateY(-8px);
-      border-color: rgba(0, 85, 164, 0.3);
-      box-shadow: 0 15px 40px rgba(0,0,0,0.7);
+      border-color: rgba(138, 26, 43, 0.4);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.8);
     }
     .card:hover::before {
-      background: var(--azul-frances);
+      background: var(--color-vino);
     }
+    /* Tarjeta Destacada ahora usa el Azul Francés como secundario elegante */
     .card.destacada {
-      border: 1px solid rgba(0, 85, 164, 0.5);
-      background: linear-gradient(160deg, var(--bg-oscuro), #071726); /* Azul muy oscuro al fondo */
+      border: 1px solid rgba(0, 75, 141, 0.5);
+      background: linear-gradient(160deg, var(--bg-oscuro), #051320); 
     }
     .card.destacada::before {
       background: var(--azul-frances);
@@ -256,10 +271,10 @@
       transition: border-color 0.3s;
     }
     .step-box:hover {
-      border-color: var(--color-vino);
+      border-color: var(--azul-frances);
     }
     .step-number {
-      background: linear-gradient(135deg, var(--color-vino), var(--color-vino-oscuro));
+      background: linear-gradient(135deg, var(--azul-frances), #002244);
       color: white;
       width: 45px;
       height: 45px;
@@ -273,11 +288,11 @@
       top: -22px;
       left: 50%;
       transform: translateX(-50%);
-      box-shadow: 0 5px 15px rgba(114, 28, 36, 0.5);
+      box-shadow: 0 5px 15px rgba(0, 75, 141, 0.5);
       border: 2px solid var(--bg-principal);
     }
 
-    /* TABLA COMPARATIVA PREMIUM */
+    /* TABLA COMPARATIVA EXPANDIDA */
     .compare-table {
       width: 100%;
       border-collapse: collapse;
@@ -295,12 +310,12 @@
       border-bottom: 1px solid var(--borde-premium);
       font-size: 1.05rem;
     }
-    .compare-table th.col-feature { background-color: #141417; color: white; text-align: left; width: 30%; font-size: 1.1rem; border-right: 1px solid var(--borde-premium);}
-    .compare-table th.col-bad { background-color: var(--color-vino-oscuro); color: #f87171; width: 35%; font-size: 1.1rem; }
-    .compare-table th.col-good { background-color: #002d5a; color: #60a5fa; width: 35%; font-size: 1.1rem; } /* Azul profundo */
+    .compare-table th.col-feature { background-color: #141417; color: white; text-align: left; width: 25%; font-size: 1.1rem; border-right: 1px solid var(--borde-premium);}
+    .compare-table th.col-bad { background-color: #1a1a1a; color: #f87171; width: 37.5%; font-size: 1.1rem; }
+    .compare-table th.col-good { background-color: var(--color-vino-oscuro); color: #fca5a5; width: 37.5%; font-size: 1.1rem; } 
     .compare-table td:first-child { text-align: left; font-weight: 600; color: var(--texto-gris); border-right: 1px solid var(--borde-premium); background-color: #141417; }
-    .compare-table td.bad-item { color: #fca5a5; background-color: rgba(114, 28, 36, 0.1); }
-    .compare-table td.good-item { color: #93c5fd; font-weight: 600; background-color: rgba(0, 85, 164, 0.1); }
+    .compare-table td.bad-item { color: #fca5a5; background-color: rgba(255, 255, 255, 0.02); }
+    .compare-table td.good-item { color: #fecdd3; font-weight: 600; background-color: rgba(138, 26, 43, 0.1); }
 
     /* TABLA Y CALCULADORA DE PRECIOS */
     .promo-banner {
@@ -313,14 +328,14 @@
       font-size: 1.1rem;
       letter-spacing: 0.5px;
       margin-bottom: 3rem;
-      border: 1px solid rgba(200, 90, 103, 0.3);
+      border: 1px solid rgba(138, 26, 43, 0.3);
       box-shadow: 0 8px 20px rgba(0,0,0,0.4);
     }
     
     /* ESTILOS DE LA CALCULADORA */
     .calculator-box {
       background-color: var(--bg-oscuro);
-      border: 1px solid var(--azul-frances);
+      border: 1px solid var(--color-vino);
       border-radius: 8px;
       padding: 3rem;
       max-width: 750px;
@@ -328,13 +343,12 @@
       box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
       position: relative;
     }
-    /* Efecto luz superior en calculadora */
     .calculator-box::after {
       content: '';
       position: absolute;
       top: 0; left: 50%; transform: translateX(-50%);
-      width: 60%; height: 1px;
-      background: linear-gradient(90deg, transparent, var(--azul-frances-claro), transparent);
+      width: 60%; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--color-vino-claro), transparent);
     }
     .calculator-box h3 {
       text-align: center;
@@ -374,12 +388,12 @@
     }
     .calc-item select:focus, .calc-item input:focus {
       outline: none;
-      border-color: var(--azul-frances-claro);
-      box-shadow: 0 0 10px rgba(0, 85, 164, 0.3);
+      border-color: var(--color-vino-claro);
+      box-shadow: 0 0 10px rgba(138, 26, 43, 0.3);
     }
     .calc-result {
-      background-color: rgba(0, 85, 164, 0.05);
-      border: 1px solid rgba(0, 85, 164, 0.2);
+      background-color: rgba(138, 26, 43, 0.05);
+      border: 1px solid rgba(138, 26, 43, 0.2);
       padding: 2rem;
       border-radius: 4px;
       text-align: center;
@@ -391,13 +405,13 @@
       display: block;
       font-size: 3rem;
       font-weight: 700;
-      color: var(--azul-frances-claro);
+      color: var(--color-vino-claro);
       margin-top: 0.5rem;
       letter-spacing: -1px;
     }
     .calc-btn {
       width: 100%;
-      background: linear-gradient(135deg, var(--azul-frances), #003b73);
+      background: linear-gradient(135deg, var(--color-vino), var(--color-vino-oscuro));
       color: var(--texto-blanco);
       border: 1px solid rgba(255,255,255,0.1);
       padding: 16px;
@@ -411,12 +425,12 @@
       text-align: center;
       display: inline-block;
       text-decoration: none;
-      box-shadow: 0 8px 20px rgba(0, 85, 164, 0.3);
+      box-shadow: 0 8px 20px rgba(138, 26, 43, 0.3);
     }
     .calc-btn:hover {
-      background: linear-gradient(135deg, #003b73, var(--azul-frances));
+      background: linear-gradient(135deg, var(--color-vino-claro), var(--color-vino));
       transform: translateY(-2px);
-      box-shadow: 0 12px 25px rgba(0, 85, 164, 0.5);
+      box-shadow: 0 12px 25px rgba(138, 26, 43, 0.5);
     }
 
     /* ESTILOS DE LA TABLA (TARIFARIO) */
@@ -428,9 +442,9 @@
       background-color: var(--bg-oscuro);
     }
     th, td { padding: 18px; border: 1px solid var(--borde-premium); text-align: left; vertical-align: top; }
-    th { background-color: #141417; color: var(--texto-blanco); font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; border-bottom: 2px solid var(--azul-frances);}
+    th { background-color: #141417; color: var(--texto-blanco); font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; border-bottom: 2px solid var(--color-vino);}
     tr.alt-row { background-color: rgba(255,255,255,0.02); }
-    tr:hover td { background-color: rgba(0, 85, 164, 0.05); }
+    tr:hover td { background-color: rgba(138, 26, 43, 0.05); }
     ul.table-list { margin-left: 20px; margin-top: 8px; font-size: 0.95rem; color: var(--texto-gris); }
     ul.table-list li { margin-bottom: 8px; }
 
@@ -440,7 +454,7 @@
       margin-bottom: 1.5rem;
       padding: 2rem;
       border-radius: 8px;
-      border-left: 4px solid var(--color-vino);
+      border-left: 4px solid var(--azul-frances);
       border-top: 1px solid var(--borde-premium);
       border-right: 1px solid var(--borde-premium);
       border-bottom: 1px solid var(--borde-premium);
@@ -449,7 +463,7 @@
     }
     .faq-item:hover {
       transform: translateX(5px);
-      border-left-color: var(--azul-frances);
+      border-left-color: var(--color-vino);
     }
     .faq-item h4 {
       color: var(--texto-blanco);
@@ -491,7 +505,7 @@
     form input:focus, form textarea:focus {
       outline: none;
       border-color: var(--color-vino-claro);
-      box-shadow: 0 0 10px rgba(200, 90, 103, 0.2);
+      box-shadow: 0 0 10px rgba(138, 26, 43, 0.3);
       background-color: #1f1f22;
     }
     form button {
@@ -507,9 +521,9 @@
       letter-spacing: 1px;
       text-transform: uppercase;
       transition: transform 0.3s, box-shadow 0.3s;
-      box-shadow: 0 8px 20px rgba(114, 28, 36, 0.4);
+      box-shadow: 0 8px 20px rgba(138, 26, 43, 0.4);
     }
-    form button:hover { transform: translateY(-2px); box-shadow: 0 12px 25px rgba(114, 28, 36, 0.6); }
+    form button:hover { transform: translateY(-2px); box-shadow: 0 12px 25px rgba(138, 26, 43, 0.6); }
     
     .contact-info { display: flex; flex-direction: column; justify-content: center; gap: 2rem; }
     .contact-info p { font-size: 1.1rem; color: var(--texto-gris); line-height: 1.7;}
@@ -535,10 +549,10 @@
 
     /* VÍA RÁPIDA (RÚBRICA) DENTRO DE CONTACTO */
     .via-rapida-box {
-      background: linear-gradient(145deg, #141417, #0d1b2a);
+      background: linear-gradient(145deg, #141417, #1c0e11);
       padding: 2.5rem;
       border-radius: 8px;
-      border: 1px dashed var(--azul-frances-claro);
+      border: 1px dashed var(--color-vino-claro);
       text-align: center;
       margin-bottom: 3rem;
       box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
@@ -556,7 +570,7 @@
       line-height: 1.6;
     }
 
-    /* BOTONES FLOTANTES (SE MANTIENEN SUS COLORES ORIGINALES POR UX) */
+    /* BOTONES FLOTANTES */
     .float-wa {
       position: fixed;
       width: 65px;
@@ -610,7 +624,7 @@
       font-size: 0.95rem;
       border-top: 1px solid var(--borde-premium);
     }
-    footer span { color: var(--azul-frances-claro); font-weight: bold; }
+    footer span { color: var(--color-vino-claro); font-weight: bold; }
   </style>
 </head>
 <body>
@@ -696,12 +710,18 @@
       <div class="step-box">
         <div class="step-number">3</div>
         <h4 style="color: var(--texto-blanco); margin-bottom: 10px; font-weight: 600;">Desarrollo Académico</h4>
-        <p style="color: var(--texto-gris); font-size: 0.95rem;">Nuestros especialistas del Área 3 investigan y redactan tu proyecto desde cero. Cero plagio, puro análisis crítico.</p>
+        <p style="color: var(--texto-gris); font-size: 0.95rem;">Nuestros especialistas investigan y redactan tu proyecto desde cero. Cero plagio, puro análisis crítico.</p>
       </div>
       <div class="step-box">
         <div class="step-number">4</div>
         <h4 style="color: var(--texto-blanco); margin-bottom: 10px; font-weight: 600;">Revisión y Liberación</h4>
-        <p style="color: var(--texto-gris); font-size: 0.95rem;">Te mostramos el documento final. Compruebas el rigor académico y hasta ese momento realizas el pago.</p>
+        <p style="color: var(--texto-gris); font-size: 0.95rem;">Te mostramos el documento final. Compruebas el rigor académico y realizas el pago con total seguridad.</p>
+      </div>
+      <!-- QUINTO PASO AÑADIDO -->
+      <div class="step-box">
+        <div class="step-number">5</div>
+        <h4 style="color: var(--texto-blanco); margin-bottom: 10px; font-weight: 600;">Garantía de Ajustes</h4>
+        <p style="color: var(--texto-gris); font-size: 0.95rem;">¿Tu profesor pidió modificaciones? Realizamos las correcciones posteriores pertinentes <strong>sin costo extra</strong>.</p>
       </div>
     </div>
   </section>
@@ -719,6 +739,12 @@
         <h3>🏛️ Especialistas en tu Área</h3>
         <p>No hacemos matemáticas ni planos arquitectónicos. Somos especialistas exclusivos en Ciencias Sociales, lo que garantiza que dominamos tu lenguaje, la doctrina, tus autores y el enfoque crítico que pide la rúbrica.</p>
       </div>
+      
+      <!-- NUEVA TARJETA: CERO IA -->
+      <div class="card">
+        <h3>🤖 100% Libres de IA (Textos Humanos)</h3>
+        <p>No arriesgues tu carrera académica con ChatGPT. Redactamos desde el análisis intelectual puro. Garantizamos que tu trabajo es orgánico y pasará sin problemas cualquier escáner universitario anti-IA (Turnitin, GPTZero).</p>
+      </div>
 
       <div class="card">
         <h3>📊 Tarifas de Urgencia Claras</h3>
@@ -729,44 +755,55 @@
         <h3>🔒 Confidencialidad Absoluta</h3>
         <p>Garantizamos secrecía total con tu identidad, la de tu facultad y tus documentos. Tu privacidad académica está blindada bajo nuestros protocolos internos.</p>
       </div>
-      
-      <div class="card" style="grid-column: 1 / -1; max-width: 800px; margin: 0 auto;">
-        <h3 style="justify-content: center;">🚫 Autenticidad y Citas Reales</h3>
-        <p style="text-align: center;">No usamos Wikipedia ni inventamos bibliografía. Buscamos en repositorios académicos (SciELO, Redalyc, Dialnet) y citamos correctamente (APA/Vancouver) para que tu ensayo pase cualquier filtro de software anti-plagio universitario.</p>
+
+      <!-- NUEVA TARJETA: ROMPE EL HIELO -->
+      <div class="card destacada" style="border-color: var(--color-vino);">
+        <h3 style="color: var(--color-vino-claro);">🤝 Orientación Total (Escríbenos ya)</h3>
+        <p>No dejes tu calificación para "algún día". Estamos completamente dispuestos a ayudarte a estructurar tu trabajo, por más confusa que sea la instrucción de tu profesor. ¡Anímate a mandar mensaje y cuéntanos tu caso sin compromiso!</p>
       </div>
       
     </div>
 
-    <h3 style="text-align: center; color: var(--texto-blanco); margin: 5rem 0 2rem; font-size: 2rem; font-weight: 700;">La Diferencia es Evidente</h3>
+    <h3 style="text-align: center; color: var(--texto-blanco); margin: 5rem 0 2rem; font-size: 2.2rem; font-weight: 700;">La Diferencia es Evidente ⚖️</h3>
     <div class="table-wrapper">
       <table class="compare-table">
         <thead>
           <tr>
             <th class="col-feature">Criterio de Evaluación</th>
-            <th class="col-bad">❌ Agencias Generalistas</th>
+            <th class="col-bad">❌ Agencias Generalistas / Facebook</th>
             <th class="col-good">✅ SolucionesEstudio (Área 3)</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td>Modelo de Pago</td>
-            <td class="bad-item">Te exigen el 50% de anticipo (riesgo de fraude).</td>
-            <td class="good-item">CERO ANTICIPOS. Pagas al revisar el trabajo terminado.</td>
+            <td class="bad-item">Te exigen el 50% de anticipo (riesgo alto de estafa o bloqueo).</td>
+            <td class="good-item">CERO ANTICIPOS. Pagas con confianza al revisar el trabajo terminado.</td>
+          </tr>
+          <tr>
+            <td>Uso de Inteligencia Artificial</td>
+            <td class="bad-item">Generan textos automáticos con ChatGPT que tu profesor detectará.</td>
+            <td class="good-item">100% humano y analítico. Supera sin problema escáneres anti-IA.</td>
           </tr>
           <tr>
             <td>Calidad Argumentativa</td>
-            <td class="bad-item">Redactan de todo, entregando resúmenes superficiales.</td>
-            <td class="good-item">Dominio en Derecho, Política y Sociología. Análisis profundo.</td>
+            <td class="bad-item">Redactan de todo un poco, entregando resúmenes superficiales.</td>
+            <td class="good-item">Dominio exclusivo en Derecho, Política y Sociología. Análisis profundo.</td>
           </tr>
           <tr>
-            <td>Rigor Metodológico</td>
-            <td class="bad-item">Formatos mal aplicados o fuentes de blogs dudosos.</td>
-            <td class="good-item">Citas precisas y bibliografía de revistas indexadas reales.</td>
+            <td>Correcciones Posteriores</td>
+            <td class="bad-item">Te cobran extra por cada ajuste o simplemente te ignoran.</td>
+            <td class="good-item">Modificaciones y ajustes sobre la rúbrica original incluidos SIN COSTO.</td>
           </tr>
           <tr>
-            <td>Atención al Cliente</td>
-            <td class="bad-item">Trato robotizado, demoran horas en contestar.</td>
-            <td class="good-item">Trato directo y profesional por WhatsApp 24/7.</td>
+            <td>Rigor Metodológico y APA</td>
+            <td class="bad-item">Formatos mal aplicados o fuentes de blogs dudosos (Wikipedia, Rincón del Vago).</td>
+            <td class="good-item">Citas precisas y bibliografía verificable de repositorios indexados reales.</td>
+          </tr>
+          <tr>
+            <td>Privacidad y Seguridad</td>
+            <td class="bad-item">Tus documentos circulan en grupos públicos o se revenden.</td>
+            <td class="good-item">Protocolo de confidencialidad estricto. Tu identidad académica está protegida.</td>
           </tr>
         </tbody>
       </table>
@@ -813,7 +850,7 @@
       <div class="calc-result">
         Presupuesto Estimado (Descuentos Aplicados):
         <span id="calc-total">Desde $30.00 MXN</span>
-        <p id="calc-nota" style="font-size: 0.95rem; margin-top: 8px; color: var(--azul-frances-claro); display: none; font-weight: 600;">¡Tarifa preferencial por volumen aplicada! ✨</p>
+        <p id="calc-nota" style="font-size: 0.95rem; margin-top: 8px; color: var(--color-vino-claro); display: none; font-weight: 600;">¡Tarifa preferencial por volumen aplicada! ✨</p>
       </div>
 
       <button class="calc-btn" onclick="enviarCotizacionCalculada()">Enviar Cotización a Recepción 🚀</button>
@@ -989,10 +1026,10 @@
   <section id="contacto" style="background-color: transparent;">
     <h2 class="section-title">📬 Recepción de Proyectos</h2>
     
-    <div style="background-color: rgba(0, 85, 164, 0.08); border-left: 4px solid var(--azul-frances); padding: 1.8rem; border-radius: 4px; margin: 0 auto 4rem auto; max-width: 800px; text-align: center; border-right: 1px solid var(--borde-premium); border-top: 1px solid var(--borde-premium); border-bottom: 1px solid var(--borde-premium);">
+    <div style="background-color: rgba(138, 26, 43, 0.08); border-left: 4px solid var(--color-vino); padding: 1.8rem; border-radius: 4px; margin: 0 auto 4rem auto; max-width: 800px; text-align: center; border-right: 1px solid var(--borde-premium); border-top: 1px solid var(--borde-premium); border-bottom: 1px solid var(--borde-premium);">
       <p style="margin: 0; color: #d4d4d8; font-size: 1.05rem; line-height: 1.6;">
-        <strong style="color: var(--azul-frances-claro); font-size: 1.25rem;">⚖️ El rigor nos precede.</strong><br>
-        La autoridad no se impone, se demuestra. Consulta nuestro acervo de referencias y opiniones de estudiantes reales de Ciudad Universitaria y otras facultades en nuestra <a href="https://www.facebook.com/share/1AkH8o7Z1A/" target="_blank" style="color: var(--azul-frances-claro); text-decoration: underline; font-weight: 600;">página oficial de Facebook</a>.
+        <strong style="color: var(--color-vino-claro); font-size: 1.25rem;">⚖️ El rigor nos precede.</strong><br>
+        La autoridad no se impone, se demuestra. Consulta nuestro acervo de referencias y opiniones de estudiantes reales de Ciudad Universitaria y otras facultades en nuestra <a href="https://www.facebook.com/share/1AkH8o7Z1A/" target="_blank" style="color: var(--color-vino-claro); text-decoration: underline; font-weight: 600;">página oficial de Facebook</a>.
       </p>
     </div>
 
@@ -1001,7 +1038,7 @@
         <div class="via-rapida-box">
           <h4>📎 Protocolo de Cotización Inmediata</h4>
           <p>La burocracia ralentiza. <strong>Envíanos el documento PDF, la captura de pantalla o un audio con la rúbrica de tu docente.</strong> Realizaremos el dictamen de viabilidad y honorarios en menos de 5 minutos, sin compromiso alguno.</p>
-          <a href="https://wa.me/5215592005048?text=Saludos.%20Adjunto%20las%20especificaciones%20de%20mi%20proyecto%20para%20su%20evaluación%20y%20cotización.%20%F0%9F%93%8E" target="_blank" class="calc-btn" style="width: 100%; display: inline-block; text-decoration: none; text-align: center; box-sizing: border-box; background: linear-gradient(135deg, var(--bg-secundario), #1f2937); border-color: var(--azul-frances-claro); color: var(--texto-blanco);">Remitir Rúbrica vía WhatsApp 🚀</a>
+          <a href="https://wa.me/5215592005048?text=Saludos.%20Adjunto%20las%20especificaciones%20de%20mi%20proyecto%20para%20su%20evaluación%20y%20cotización.%20%F0%9F%93%8E" target="_blank" class="calc-btn" style="width: 100%; display: inline-block; text-decoration: none; text-align: center; box-sizing: border-box; background: linear-gradient(135deg, var(--bg-secundario), #1f2937); border-color: var(--color-vino-claro); color: var(--texto-blanco);">Remitir Rúbrica vía WhatsApp 🚀</a>
         </div>
 
         <h3 style="color: var(--texto-blanco); margin-bottom: 1.5rem; text-align: center; font-size: 1.2rem; font-weight: 400; color: var(--texto-gris);">O documenta tu solicitud manualmente:</h3>
@@ -1018,7 +1055,7 @@
 
       <div class="contact-info">
         <h3 style="color: var(--texto-blanco); font-size: 1.8rem; letter-spacing: -0.5px;">Atención Ejecutiva</h3>
-        <p>Nuestros asesores se encuentran en línea para desahogar cualquier duda operativa o metodológica. Contáctenos para estructurar su proyecto sin desembolsos previos.</p>
+        <p>Nuestros asesores se encuentran en línea para desahogar cualquier duda operativa o metodológica. Contáctenos para estructurar su proyecto sin desembolsos previos. No importa qué tan compleja sea la rúbrica, estamos aquí para escucharte.</p>
         
         <div style="display: flex; flex-direction: column; gap: 1.2rem; margin-top: 1.5rem;">
           <a class="social-btn whatsapp-btn" href="https://wa.me/5215592005048" target="_blank">
